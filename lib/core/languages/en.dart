@@ -1,4 +1,5 @@
 const Map<String, String> en = {
+  'no_internet_connection': 'No internet connection',
   'no_route_found': 'No route found',
   'title_onBoarding_one': 'Muhtawaana',
   'title_onBoarding_two': 'Reservation',

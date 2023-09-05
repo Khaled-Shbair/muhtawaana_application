@@ -5,8 +5,6 @@ final instance = GetIt.instance;
 Future<void> initModule() async {
   WidgetsFlutterBinding.ensureInitialized();
   await _initSharedPreferences();
-  // await _intiDio();
-  // await _intiInternetChecker();
 }
 
 Future<void> _initSharedPreferences() async {
@@ -17,10 +15,21 @@ Future<void> _initSharedPreferences() async {
   }
 }
 
-initSplash() {
-  Get.put<SplashController>(SplashController());
+initSplash() => Get.put<SplashController>(SplashController());
+
+_disposeSplash() => Get.delete<SplashController>();
+
+initOnBoarding() {
+  _disposeSplash();
+  Get.put<OnBoardingController>(OnBoardingController());
 }
 
-_disposeSplash() {
-  Get.delete<SplashController>();
+_disposeOnBoarding() => Get.delete<OnBoardingController>();
+
+initAuthScreen() {
+  _disposeSplash();
+  _disposeOnBoarding();
+  Get.put<AuthController>(AuthController());
 }
+
+_disposeAuthScreen() => Get.delete<AuthController>();

@@ -6,6 +6,12 @@ class RouteGenerator {
       case Routes.splashScreen:
         initSplash();
         return MaterialPageRoute(builder: (_) => const SplashScreen());
+      case Routes.onBoardingScreen:
+        initOnBoarding();
+        return MaterialPageRoute(builder: (_) => const OnBoardingScreen());
+      case Routes.authScreen:
+        initOnBoarding();
+        return MaterialPageRoute(builder: (_) => const AuthScreen());
       default:
         return unDefinedRoute();
     }

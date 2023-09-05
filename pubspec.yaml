@@ -41,6 +41,8 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/splash/
+    - assets/images/on_boarding/
 
   # fonts:
   #   - family: Schyler

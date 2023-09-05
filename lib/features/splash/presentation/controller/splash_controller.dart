@@ -11,9 +11,9 @@ class SplashController extends GetxController {
       const Duration(seconds: AppConstants.durationSplashScreen),
       () async {
         String route = _sharedPreferences.getLoggedIn
-            ? 'Routes.mainScreen'
+            ? Routes.mainScreen
             : _sharedPreferences.getOnBoarding
-                ? Routes.loginScreen
+                ? Routes.authScreen
                 : Routes.onBoardingScreen;
         await Get.offAllNamed(route);
       },
