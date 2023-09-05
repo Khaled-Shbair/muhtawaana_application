@@ -38,10 +38,14 @@ export '/core/storage/local/shared_preferences/app_settings_shared_preferences.d
 export '/core/use_case/base_use_case.dart';
 export '/core/widgets/will_pop_scope.dart';
 export '/core/widgets/logo_app.dart';
+export '/core/widgets/main_button.dart';
 
 // features file
 export '/features/splash/presentation/controller/splash_controller.dart';
 export '/features/splash/presentation/view/screens/splash_Screen.dart';
+export '/features/on_boarding/presentation/view/screens/on_boarding_screen.dart';
+export '/features/on_boarding/presentation/controller/on_boarding_controller.dart';
+export '/features/on_boarding/presentation/view/widgets/page_view_item.dart';
 
 // routes file
 export '/routes/route_generator.dart';
