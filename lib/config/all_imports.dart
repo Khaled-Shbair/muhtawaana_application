@@ -46,6 +46,8 @@ export '/features/splash/presentation/view/screens/splash_Screen.dart';
 export '/features/on_boarding/presentation/view/screens/on_boarding_screen.dart';
 export '/features/on_boarding/presentation/controller/on_boarding_controller.dart';
 export '/features/on_boarding/presentation/view/widgets/page_view_item.dart';
+export '/features/auth/presentation/view/screens/auth_screen.dart';
+export '/features/auth/presentation/controller/auth_controller.dart';
 
 // routes file
 export '/routes/route_generator.dart';
