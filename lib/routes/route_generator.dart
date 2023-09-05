@@ -5,7 +5,7 @@ class RouteGenerator {
     switch (settings.name) {
       case Routes.splashScreen:
         initSplash();
-        return MaterialPageRoute(builder: (_) => SplashScreen());
+        return MaterialPageRoute(builder: (_) => const SplashScreen());
       default:
         return unDefinedRoute();
     }
