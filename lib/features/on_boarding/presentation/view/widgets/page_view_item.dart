@@ -18,9 +18,18 @@ class PageViewItem extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(
-          title,
-          style: titleOnBoarding(),
+        Padding(
+          padding: EdgeInsetsDirectional.only(
+            start: ManagerWidth.w74,
+            end: ManagerWidth.w74,
+          ),
+          child: SizedBox(
+            child: Text(
+              title,
+              textAlign: TextAlign.center,
+              style: titleOnBoarding(),
+            ),
+          ),
         ),
         Padding(
           padding: EdgeInsetsDirectional.only(
