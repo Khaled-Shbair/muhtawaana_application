@@ -3,7 +3,7 @@ const Map<String, String> en = {
   'no_route_found': 'No route found',
   'title_onBoarding_one': 'Muhtawaana',
   'title_onBoarding_two': 'Reservation',
-  'title_onBoarding_three': 'Photos with details via  app',
+  'title_onBoarding_three': 'Photos with details via app',
   'sub_title_onBoarding_one':
       'Our store is for everything a woman needs for the home, including furniture, kitchen utensils, sofas, carpets, lights,',
   'sub_title_onBoarding_two':
