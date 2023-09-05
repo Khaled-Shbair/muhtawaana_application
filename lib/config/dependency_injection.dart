@@ -15,19 +15,21 @@ Future<void> _initSharedPreferences() async {
   }
 }
 
-initSplash() {
-  Get.put<SplashController>(SplashController());
-}
+initSplash() => Get.put<SplashController>(SplashController());
 
-_disposeSplash() {
-  Get.delete<SplashController>();
-}
+_disposeSplash() => Get.delete<SplashController>();
 
 initOnBoarding() {
   _disposeSplash();
   Get.put<OnBoardingController>(OnBoardingController());
 }
 
-_disposeOnBoarding() {
-  Get.delete<OnBoardingController>();
+_disposeOnBoarding() => Get.delete<OnBoardingController>();
+
+initAuthScreen() {
+  _disposeSplash();
+  _disposeOnBoarding();
+  Get.put<AuthController>(AuthController());
 }
+
+_disposeAuthScreen() => Get.delete<AuthController>();
