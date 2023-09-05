@@ -7,11 +7,11 @@ ThemeData managerLightThemeData() {
     // disabledColor: ManagerColors.disabledColorLight,
     primaryColor: ManagerColors.primaryColor,
     // primaryColorLight: ManagerColors.primaryColorLight,
-    // scaffoldBackgroundColor: ManagerColors.white,
+    scaffoldBackgroundColor: ManagerColors.whiteColor,
 
     textTheme: ManagerTextThemeLight(),
     appBarTheme: const AppBarTheme(
-      // backgroundColor: ManagerColors.appBarBackgroundColorLight,
+      backgroundColor: ManagerColors.whiteColor,
       centerTitle: true,
       elevation: AppConstants.elevationAppBar,
       // titleTextStyle: mediumTextStyle(
