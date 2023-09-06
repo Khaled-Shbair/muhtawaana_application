@@ -26,10 +26,18 @@ initOnBoarding() {
 
 _disposeOnBoarding() => Get.delete<OnBoardingController>();
 
-initAuthScreen() {
+initLogin() {
   _disposeSplash();
   _disposeOnBoarding();
-  Get.put<AuthController>(AuthController());
+  _disposeSignUp();
+  Get.put<LoginController>(LoginController());
 }
 
-_disposeAuthScreen() => Get.delete<AuthController>();
+_disposeLogin() => Get.delete<LoginController>();
+
+initSignUp() {
+  _disposeLogin();
+  Get.put<SignUpController>(SignUpController());
+}
+
+_disposeSignUp() => Get.delete<SignUpController>();
