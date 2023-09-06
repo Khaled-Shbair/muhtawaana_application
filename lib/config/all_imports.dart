@@ -39,6 +39,7 @@ export '/core/use_case/base_use_case.dart';
 export '/core/widgets/will_pop_scope.dart';
 export '/core/widgets/logo_app.dart';
 export '/core/widgets/main_button.dart';
+export '/core/widgets/main_text_field.dart';
 
 // features file
 export '/features/splash/presentation/controller/splash_controller.dart';
@@ -47,7 +48,10 @@ export '/features/on_boarding/presentation/view/screens/on_boarding_screen.dart'
 export '/features/on_boarding/presentation/controller/on_boarding_controller.dart';
 export '/features/on_boarding/presentation/view/widgets/page_view_item.dart';
 export '/features/auth/presentation/view/screens/auth_screen.dart';
-export '/features/auth/presentation/controller/auth_controller.dart';
+export '/features/auth/presentation/controller/login_controller.dart';
+export '/features/auth/presentation/view/screens/login_screen.dart';
+export '/features/auth/presentation/view/screens/sign_up_screen.dart';
+export '/features/auth/presentation/controller/sign_up_controller.dart';
 
 // routes file
 export '/routes/route_generator.dart';
