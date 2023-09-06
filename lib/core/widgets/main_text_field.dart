@@ -3,22 +3,29 @@ import '/config/all_imports.dart';
 class MainTextField extends StatelessWidget {
   const MainTextField({
     required this.controller,
-    required this.prefixIcon,
     required this.hintText,
-    this.validator,
+    required this.validator,
+    this.prefixIcon,
+    this.prefixImageIcon,
+    this.changeObscureText,
     this.keyboardType = TextInputType.emailAddress,
+    this.obscureText = false,
     super.key,
   });
 
   final TextInputType keyboardType;
   final TextEditingController controller;
-  final String? Function(String?)? validator;
-  final IconData prefixIcon;
+  final String? Function(String? value) validator;
+  final IconData? prefixIcon;
+  final String? prefixImageIcon;
   final String hintText;
+  final bool obscureText;
+  final Function()? changeObscureText;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: obscureText,
       controller: controller,
       validator: validator,
       keyboardType: keyboardType,
@@ -31,15 +38,30 @@ class MainTextField extends StatelessWidget {
           top: ManagerHeight.h14,
           bottom: ManagerHeight.h14,
         ),
+        suffixIcon: obscureText
+            ? IconButton(
+                onPressed: changeObscureText,
+                icon: Icon(
+                  obscureText ? Icons.visibility_off : Icons.visibility,
+                  color: ManagerColors.primaryColor,
+                ),
+              )
+            : null,
         prefixIcon: Padding(
           padding: EdgeInsetsDirectional.only(
             start: ManagerWidth.w16,
             end: ManagerWidth.w10,
           ),
-          child: Icon(
-            prefixIcon,
-            color: ManagerColors.c2,
-          ),
+          child: prefixImageIcon == null
+              ? Icon(
+                  prefixIcon,
+                  color: ManagerColors.c2,
+                )
+              : SvgPicture.asset(
+                  prefixImageIcon!,
+                  height: ManagerHeight.h16,
+                  width: ManagerWidth.w16,
+                ),
         ),
         hintText: hintText,
         hintStyle: textStyleOfMainTextField(),
