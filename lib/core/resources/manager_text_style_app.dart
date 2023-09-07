@@ -55,11 +55,20 @@ TextStyle styleOfORTextInLoginScreen() {
     fontFamily: ManagerFontFamily.inter,
     fontSize: ManagerFontSize.s15,
   );
-}TextStyle loginByFacebookOrGoogleInLoginScreen() {
+}
+
+TextStyle loginByFacebookOrGoogleInLoginScreen() {
   return regularTextStyle(
     fontSize: ManagerFontSize.s17,
     fontFamily: ManagerFontFamily.inter,
     color: ManagerColors.c5,
   );
+}
 
+TextStyle termsAndConditionsInMyCheckBox([bool condition = false]) {
+  return regularTextStyle(
+    fontFamily: ManagerFontFamily.inter,
+    fontSize: ManagerFontSize.s13,
+    color: condition ? ManagerColors.c11 : ManagerColors.c10,
+  );
 }
