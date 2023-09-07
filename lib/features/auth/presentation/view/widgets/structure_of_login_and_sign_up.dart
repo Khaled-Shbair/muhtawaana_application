@@ -21,22 +21,10 @@ class StructureOfLoginAndSignUp extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: AppConstants.elevationAppBar,
-        leading: IconButton(
-          onPressed: () => Get.back(),
-          icon: SvgPicture.asset(
-            ManagerAssets.arrowBackIcon,
-            height: ManagerHeight.h14,
-            width: ManagerWidth.w13,
-          ),
-        ),
+        leading: const MyBackIcon(),
         title: Text(
           titleAppBar.toUpperCase(),
-          style: TextStyle(
-            color: ManagerColors.blackColor,
-            fontSize: ManagerFontSize.s15,
-            fontWeight: ManagerFontWeight.w500,
-            fontFamily: ManagerFontFamily.inter,
-          ),
+          style: titleAppBarInAuthScreen(),
         ),
       ),
       body: Stack(
