@@ -34,4 +34,8 @@ class ManagerStrings {
   static String or = 'or'.tr;
   static String invalidEmail = 'invalid_email'.tr;
   static String invalidPhone = 'invalid_phone'.tr;
+  static String enterCurrentPassword = 'enter_current_password'.tr;
+  static String enterNewPassword = 'enter_new_password'.tr;
+  static String submit = 'submit'.tr;
+  static String changePassword = 'change_password'.tr;
 }

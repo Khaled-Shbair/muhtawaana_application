@@ -37,4 +37,9 @@ const Map<String, String> en = {
       'Please enter the email address linked to this account',
   'invalid_email': 'Invalid Email',
   'invalid_phone': 'Invalid Phone',
+  'enter_current_password': 'Enter Current Password',
+  'enter_new_password': 'Enter New Password',
+  'submit': 'submit',
+  'change_password': 'Change Password',
+
 };
