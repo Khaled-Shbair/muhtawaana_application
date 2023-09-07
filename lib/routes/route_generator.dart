@@ -17,6 +17,9 @@ class RouteGenerator {
       case Routes.signUpScreen:
         initSignUp();
         return MaterialPageRoute(builder: (_) => const SignUpScreen());
+        case Routes.changePasswordScreen:
+        initChangePassword();
+        return MaterialPageRoute(builder: (_) => const ChangePasswordScreen());
       default:
         return unDefinedRoute();
     }
