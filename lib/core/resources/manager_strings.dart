@@ -30,4 +30,5 @@ class ManagerStrings {
   static String forgetPassword = 'forget_password'.tr;
   static String resetYourPassword = 'reset_your_password'.tr;
   static String subTitleForgetPassword = 'sub_title_forget_password'.tr;
+  static String or = 'or'.tr;
 }

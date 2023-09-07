@@ -22,6 +22,7 @@ const Map<String, String> en = {
   'forget_password_?': 'Forget Password?',
   'remember_me': 'Remember Me',
   'full_name': 'Full name',
+  'or': 'Or',
   'phone': 'Phone',
   'confirm_password': 'Confirm Password',
   'i_have_agree_terms_&_conditions': 'I have agree terms & conditions',
