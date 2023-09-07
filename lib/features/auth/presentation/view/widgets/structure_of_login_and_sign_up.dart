@@ -15,6 +15,7 @@ class StructureOfLoginAndSignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ManagerColors.whiteColor,
       resizeToAvoidBottomInset: false,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -24,6 +25,8 @@ class StructureOfLoginAndSignUp extends StatelessWidget {
           onPressed: () => Get.back(),
           icon: SvgPicture.asset(
             ManagerAssets.arrowBackIcon,
+            height: ManagerHeight.h14,
+            width: ManagerWidth.w13,
           ),
         ),
         title: Text(
