@@ -57,6 +57,16 @@ export '/features/auth/presentation/view/widgets/my_check_box.dart';
 export '/features/auth/presentation/view/widgets/structure_of_login_and_sign_up.dart';
 export '/features/auth/presentation/view/screens/change_password_screen.dart';
 export '/features/auth/presentation/controller/change_password_controller.dart';
+export '/features/auth/data/response/data_sign_up_response.dart';
+export '/features/auth/data/response/sing_up_response.dart';
+export '/features/auth/data/response/login_response.dart';
+export '/features/auth/data/response/data_login_response.dart';
+export '/features/auth/domain/model/data_login_model.dart';
+export '/features/auth/domain/model/data_sign_up_model.dart';
+export '/features/auth/domain/model/login_model.dart';
+export '/features/auth/data/mapper/data_login_mapper.dart';
+export '/features/auth/data/mapper/data_sign_up_mapper.dart';
+export '/features/auth/domain/model/sing_up_model.dart';
 
 // routes file
 export '/routes/route_generator.dart';
