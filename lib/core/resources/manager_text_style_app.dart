@@ -72,3 +72,19 @@ TextStyle termsAndConditionsInMyCheckBox([bool condition = false]) {
     color: condition ? ManagerColors.c11 : ManagerColors.c10,
   );
 }
+
+TextStyle textStyleOfNamedFiledInChangePasswordScreen() {
+  return mediumTextStyle(
+    color: ManagerColors.blackColor,
+    fontSize: ManagerFontSize.s17,
+    fontFamily: ManagerFontFamily.inter,
+  );
+}
+
+TextStyle titleAppBarInAuthScreen() {
+  return mediumTextStyle(
+    color: ManagerColors.blackColor,
+    fontSize: ManagerFontSize.s15,
+    fontFamily: ManagerFontFamily.inter,
+  );
+}
