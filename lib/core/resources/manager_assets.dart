@@ -20,9 +20,9 @@ class ManagerAssets {
   static const String imageAuthScreen =
       '${_imagePath}auth/image_auth_screen.svg';
   static const String topLeftCorner = '${_imagePath}auth/top_left_corner.svg';
-  static const String facebookIcon = '${_imagePath}auth/facebook_icon.svg';
   static const String googleIcon = '${_imagePath}auth/google_icon.svg';
   static const String lockIcon = '${_imagePath}auth/lock.svg';
+  static const String arrowBackIcon = '${_imagePath}icon/arrow_back_icon.svg';
 }
 
 class ManagerJson {}
