@@ -22,8 +22,9 @@ class ManagerStrings {
   static String fullName = 'full_name'.tr;
   static String phone = 'phone'.tr;
   static String confirmPassword = 'confirm_password'.tr;
-  static String iHaveAgreeTermsConditions =
-      'i_have_agree_terms_&_conditions'.tr;
+  static String iHaveAgree = 'i_have_agree'.tr;
+  static String conditions = 'conditions'.tr;
+  static String terms = 'terms_&'.tr;
   static String doNotHaveAnyAccount = 'do_not_have_any_account_?'.tr;
   static String loginWithGoogle = 'login_with_google'.tr;
   static String loginWithFacebook = 'login_with_facebook'.tr;
