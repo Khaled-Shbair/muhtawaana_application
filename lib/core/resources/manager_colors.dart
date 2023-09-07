@@ -9,8 +9,10 @@ class ManagerColors {
   static const Color c5 = Color(0XFF1C1C1C);
   static const Color c6 = Color.fromRGBO(224, 225, 226, 0.8);
   static const Color c7 = Color(0XFFC4C4C5);
-  static  Color c8 = c7.withOpacity(0.80);
+  static Color c8 = c7.withOpacity(0.80);
   static const Color c9 = Color(0XFFE6E7E8);
+  static const Color c10 = Color.fromRGBO(83, 79, 79, 0.55);
+  static const Color c11 = Color(0XFF2555FF);
 
   static const Color whiteColor = Colors.white;
   static const Color blackColor = Colors.black;
