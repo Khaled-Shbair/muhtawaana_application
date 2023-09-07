@@ -10,6 +10,7 @@ class MainTextField extends StatelessWidget {
     this.changeObscureText,
     this.keyboardType = TextInputType.emailAddress,
     this.obscureText = false,
+    this.isPassword = false,
     super.key,
   });
 
@@ -20,6 +21,7 @@ class MainTextField extends StatelessWidget {
   final String? prefixImageIcon;
   final String hintText;
   final bool obscureText;
+  final bool isPassword;
   final Function()? changeObscureText;
 
   @override
@@ -38,7 +40,7 @@ class MainTextField extends StatelessWidget {
           top: ManagerHeight.h14,
           bottom: ManagerHeight.h14,
         ),
-        suffixIcon: obscureText
+        suffixIcon: isPassword
             ? IconButton(
                 onPressed: changeObscureText,
                 icon: Icon(
