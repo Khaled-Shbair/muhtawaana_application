@@ -40,6 +40,7 @@ export '/core/widgets/will_pop_scope.dart';
 export '/core/widgets/logo_app.dart';
 export '/core/widgets/main_button.dart';
 export '/core/widgets/main_text_field.dart';
+export '/core/widgets/my_back_icon.dart';
 
 // features file
 export '/features/splash/presentation/controller/splash_controller.dart';
@@ -54,6 +55,8 @@ export '/features/auth/presentation/view/screens/sign_up_screen.dart';
 export '/features/auth/presentation/controller/sign_up_controller.dart';
 export '/features/auth/presentation/view/widgets/my_check_box.dart';
 export '/features/auth/presentation/view/widgets/structure_of_login_and_sign_up.dart';
+export '/features/auth/presentation/view/screens/change_password_screen.dart';
+export '/features/auth/presentation/controller/change_password_controller.dart';
 
 // routes file
 export '/routes/route_generator.dart';
