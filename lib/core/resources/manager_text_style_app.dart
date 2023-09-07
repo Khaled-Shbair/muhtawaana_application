@@ -32,3 +32,34 @@ TextStyle textStyleOfMainTextField([Color? color]) {
     fontSize: ManagerFontSize.s15,
   );
 }
+
+TextStyle titleLoginScreen() {
+  return semiBoldTextStyle(
+    fontSize: ManagerFontSize.s17,
+    fontFamily: ManagerFontFamily.inter,
+    color: ManagerColors.blackColor,
+  );
+}
+
+TextStyle rememberMeInLoginScreen() {
+  return mediumTextStyle(
+    fontFamily: ManagerFontFamily.inter,
+    fontSize: ManagerFontSize.s13,
+    color: ManagerColors.c5,
+  );
+}
+
+TextStyle styleOfORTextInLoginScreen() {
+  return mediumTextStyle(
+    color: ManagerColors.c8,
+    fontFamily: ManagerFontFamily.inter,
+    fontSize: ManagerFontSize.s15,
+  );
+}TextStyle loginByFacebookOrGoogleInLoginScreen() {
+  return regularTextStyle(
+    fontSize: ManagerFontSize.s17,
+    fontFamily: ManagerFontFamily.inter,
+    color: ManagerColors.c5,
+  );
+
+}
