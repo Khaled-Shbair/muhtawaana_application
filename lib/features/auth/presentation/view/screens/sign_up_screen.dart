@@ -71,7 +71,7 @@ class SignUpScreen extends StatelessWidget {
             SizedBox(height: ManagerHeight.h24),
             MainButton(
               text: ManagerStrings.signUp,
-              onPressed: controller.performSingUp,
+              onPressed: () => controller.performSingUp(context),
             ),
           ],
         );
