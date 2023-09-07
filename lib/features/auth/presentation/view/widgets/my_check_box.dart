@@ -4,11 +4,13 @@ class MyCheckBox extends StatelessWidget {
   const MyCheckBox({
     required this.onTap,
     required this.isCheck,
+    this.isSignUp = false,
     super.key,
   });
 
   final Function() onTap;
   final bool isCheck;
+  final bool isSignUp;
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +44,27 @@ class MyCheckBox extends StatelessWidget {
                   )
                 : null,
           ),
-          Text(
-            ManagerStrings.rememberMe,
-            style: rememberMeInLoginScreen(),
-          ),
+          isSignUp
+              ? RichText(
+                  text: TextSpan(
+                    text: ManagerStrings.iHaveAgree,
+                    style: termsAndConditionsInMyCheckBox(),
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: ManagerStrings.terms,
+                        style: termsAndConditionsInMyCheckBox(true),
+                      ),
+                      TextSpan(
+                        text: ManagerStrings.conditions,
+                        style: termsAndConditionsInMyCheckBox(true),
+                      ),
+                    ],
+                  ),
+                )
+              : Text(
+                  ManagerStrings.rememberMe,
+                  style: rememberMeInLoginScreen(),
+                ),
         ],
       ),
     );
