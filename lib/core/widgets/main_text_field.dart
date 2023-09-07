@@ -44,7 +44,7 @@ class MainTextField extends StatelessWidget {
             ? IconButton(
                 onPressed: changeObscureText,
                 icon: Icon(
-                  obscureText ? Icons.visibility_off : Icons.visibility,
+                  !obscureText ? Icons.visibility_off : Icons.visibility,
                   color: ManagerColors.primaryColor,
                 ),
               )
