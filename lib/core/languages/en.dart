@@ -35,4 +35,6 @@ const Map<String, String> en = {
   'reset_your_password': 'Reset your password',
   'sub_title_forget_password':
       'Please enter the email address linked to this account',
+  'invalid_email': 'Invalid Email',
+  'invalid_phone': 'Invalid Phone',
 };
