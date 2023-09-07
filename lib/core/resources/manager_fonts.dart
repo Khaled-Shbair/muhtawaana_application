@@ -1,6 +1,7 @@
 import '/config/all_imports.dart';
 
 class ManagerFontSize {
+  static double s13 = SizeUtil.setFontSize(13);
   static double s14 = SizeUtil.setFontSize(14);
   static double s15 = SizeUtil.setFontSize(15);
   static double s17 = SizeUtil.setFontSize(17);
@@ -17,6 +18,6 @@ class ManagerFontWeight {
 }
 
 class ManagerFontFamily {
-   static const String  roboto= 'Roboto';
-   static const String  inter= 'Inter';
+  static const String roboto = 'Roboto';
+  static const String inter = 'Inter';
 }
