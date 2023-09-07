@@ -41,3 +41,9 @@ initSignUp() {
 }
 
 _disposeSignUp() => Get.delete<SignUpController>();
+
+initChangePassword() {
+  Get.put<ChangePasswordController>(ChangePasswordController());
+}
+
+_disposeChangePassword() => Get.delete<ChangePasswordController>();
