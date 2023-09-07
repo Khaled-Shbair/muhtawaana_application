@@ -52,6 +52,8 @@ export '/features/auth/presentation/controller/login_controller.dart';
 export '/features/auth/presentation/view/screens/login_screen.dart';
 export '/features/auth/presentation/view/screens/sign_up_screen.dart';
 export '/features/auth/presentation/controller/sign_up_controller.dart';
+export '/features/auth/presentation/view/widgets/my_check_box.dart';
+export '/features/auth/presentation/view/widgets/structure_of_login_and_sign_up.dart';
 
 // routes file
 export '/routes/route_generator.dart';
