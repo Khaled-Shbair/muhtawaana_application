@@ -41,6 +41,7 @@ export '/core/widgets/logo_app.dart';
 export '/core/widgets/main_button.dart';
 export '/core/widgets/main_text_field.dart';
 export '/core/widgets/my_back_icon.dart';
+export '/core/helpers/show_snack_bar.dart';
 
 // features file
 export '/features/splash/presentation/controller/splash_controller.dart';
@@ -67,6 +68,18 @@ export '/features/auth/domain/model/login_model.dart';
 export '/features/auth/data/mapper/data_login_mapper.dart';
 export '/features/auth/data/mapper/data_sign_up_mapper.dart';
 export '/features/auth/domain/model/sing_up_model.dart';
+export '/features/auth/data/request/login_request.dart';
+export '/features/auth/data/request/sign_up_request.dart';
+export '/features/auth/data/data_source/remote_login_data_source.dart';
+export '/features/auth/domain/repository/login_repository.dart';
+export '/features/auth/data/mapper/login_mapper.dart';
+export '/features/auth/data/data_source/remote_sign_up_data_source.dart';
+export '/features/auth/data/mapper/sign_up_mapper.dart';
+export '/features/auth/domain/repository/sign_up_repository.dart';
+export '/features/auth/domain/use_case/login_use_case.dart';
+export '/features/auth/domain/use_case/sign_up_use_case.dart';
+export '/features/auth/data/repository_implementation/login_repository_implementation.dart';
+export '/features/auth/data/repository_implementation/sign_up_repository_implementation.dart';
 
 // routes file
 export '/routes/route_generator.dart';
@@ -83,3 +96,4 @@ export 'package:pretty_dio_logger/pretty_dio_logger.dart';
 export 'package:json_annotation/json_annotation.dart';
 export 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 export 'package:carousel_slider/carousel_slider.dart';
+export 'package:fluttertoast/fluttertoast.dart';
