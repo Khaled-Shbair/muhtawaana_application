@@ -23,7 +23,6 @@ class LoginScreen extends StatelessWidget {
               controller: controller.email,
               prefixIcon: Icons.mail,
               hintText: ManagerStrings.email,
-              validator: (value) => controller.validatorEmail(value),
             ),
             SizedBox(height: ManagerHeight.h20),
             MainTextField(
@@ -34,7 +33,6 @@ class LoginScreen extends StatelessWidget {
               obscureText: controller.obscureText,
               isPassword: true,
               changeObscureText: controller.changeObscureText,
-              validator: (value) => controller.validatorPassword(value),
             ),
             SizedBox(height: ManagerHeight.h10),
             Row(
@@ -62,7 +60,7 @@ class LoginScreen extends StatelessWidget {
             SizedBox(height: ManagerHeight.h46),
             MainButton(
               text: ManagerStrings.login,
-              onPressed: controller.performLogin,
+              onPressed: () => controller.performLogin(context),
             ),
             SizedBox(height: ManagerHeight.h10),
             Row(
