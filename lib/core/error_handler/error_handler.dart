@@ -8,7 +8,7 @@ class ErrorHandler implements Exception {
     String? message,
     var data,
   }) {
-    if (status == false || data == null) {
+    if (status == false && data == null) {
       failure = Failure(
         status: status!,
         message: message ?? ApiConstants.badRequest,
