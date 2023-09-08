@@ -19,4 +19,5 @@ class ManagerColors {
   static const Color transparentColor = Colors.transparent;
   static const Color textGeryColor = Color(0XFF6A6A6A);
   static const Color errorColor = Colors.red;
+  static const Color successColor = Colors.green;
 }
