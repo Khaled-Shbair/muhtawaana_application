@@ -104,3 +104,19 @@ TextStyle hiUserNameInHomeScreen() {
     color: ManagerColors.blackColor,
   );
 }
+
+TextStyle styleOfSectionsInHomeScreen() {
+  return mediumTextStyle(
+    color: ManagerColors.blackColor,
+    fontFamily: ManagerFontFamily.roboto,
+    fontSize: ManagerFontSize.s17,
+  );
+}
+
+TextStyle buttonMoreSectionsInHomeScreen() {
+  return mediumTextStyle(
+    color: ManagerColors.c14,
+    fontFamily: ManagerFontFamily.roboto,
+    fontSize: ManagerFontSize.s13,
+  );
+}
