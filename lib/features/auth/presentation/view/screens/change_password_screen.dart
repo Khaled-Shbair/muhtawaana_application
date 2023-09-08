@@ -48,7 +48,7 @@ class ChangePasswordScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(ManagerRadius.r30),
                   boxShadow: const [
                     BoxShadow(
-                      color: ManagerColors.shadow,
+                      color: ManagerColors.shadow_09,
                       offset: Offset(0, 10),
                       spreadRadius: 5,
                       blurRadius: 10,
