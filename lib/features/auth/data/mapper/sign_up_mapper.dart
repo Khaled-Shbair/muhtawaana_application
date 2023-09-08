@@ -5,7 +5,7 @@ extension SignUpMapper on SignUpResponse {
     return SignUpModel(
       status: status.onNull(),
       message: message.onNull(),
-      data: data!.map<DataSignUpModel>((e) => e.toDomain()).toList(),
+      data: data?.toDomain(),
     );
   }
 }

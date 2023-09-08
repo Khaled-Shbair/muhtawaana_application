@@ -14,8 +14,6 @@ DataSignUpResponse _$DataSignUpResponseFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String?,
       image: json['image'] as String?,
       id: json['id'] as int?,
-      credit: json['credit'] as int?,
-      points: json['points'] as int?,
     );
 
 Map<String, dynamic> _$DataSignUpResponseToJson(DataSignUpResponse instance) =>
@@ -26,6 +24,4 @@ Map<String, dynamic> _$DataSignUpResponseToJson(DataSignUpResponse instance) =>
       'phone': instance.phone,
       'image': instance.image,
       'token': instance.token,
-      'points': instance.points,
-      'credit': instance.credit,
     };

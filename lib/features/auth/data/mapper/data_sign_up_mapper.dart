@@ -9,8 +9,6 @@ extension DataSignUpMapper on DataSignUpResponse {
       token: token.onNull(),
       email: email.onNull(),
       phone: phone.onNull(),
-      credit: credit.onNull(),
-      points: points.onNull(),
     );
   }
 }

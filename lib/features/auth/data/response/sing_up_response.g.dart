@@ -10,9 +10,9 @@ SignUpResponse _$SignUpResponseFromJson(Map<String, dynamic> json) =>
     SignUpResponse(
       status: json['status'] as bool?,
       message: json['message'] as String?,
-      data: (json['data'] as List<dynamic>?)
-          ?.map((e) => DataSignUpResponse.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      data: json['data'] == null
+          ? null
+          : DataSignUpResponse.fromJson(json['data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$SignUpResponseToJson(SignUpResponse instance) =>

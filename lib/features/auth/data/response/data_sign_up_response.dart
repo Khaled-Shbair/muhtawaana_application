@@ -16,10 +16,6 @@ class DataSignUpResponse {
   String? image;
   @JsonKey(name: ApiConstants.token)
   String? token;
-  @JsonKey(name: ApiConstants.points)
-  int? points;
-  @JsonKey(name: ApiConstants.credit)
-  int? credit;
 
   DataSignUpResponse({
     this.token,
@@ -28,8 +24,6 @@ class DataSignUpResponse {
     this.name,
     this.image,
     this.id,
-    this.credit,
-    this.points,
   });
 
   factory DataSignUpResponse.fromJson(Map<String, dynamic> json) =>
