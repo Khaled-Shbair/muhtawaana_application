@@ -8,4 +8,6 @@ class AppConstants {
   static const double blurRadiusOfBottomNavBarInMainScreen = 20;
   static const double xOffsetOfBottomNavBarInMainScreen = 0;
   static const double yOffsetOfBottomNavBarInMainScreen = -3;
+  static const int initialPageInSliderInHomeScreen = 0;
+  static const double viewportFractionInSliderInHomeScreen = 0.8;
 }
