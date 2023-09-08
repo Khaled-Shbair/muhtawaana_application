@@ -79,8 +79,6 @@ class ChangePasswordScreen extends StatelessWidget {
                             changeObscureText:
                                 controller.changeObscureTextCurrentPassword,
                             prefixImageIcon: ManagerAssets.lockIcon,
-                            validator: (value) =>
-                                controller.validatorPassword(value),
                           ),
                           SizedBox(height: ManagerHeight.h16),
                           Text(
@@ -98,8 +96,6 @@ class ChangePasswordScreen extends StatelessWidget {
                             keyboardType: TextInputType.visiblePassword,
                             changeObscureText:
                                 controller.changeObscureTextNewPassword,
-                            validator: (value) =>
-                                controller.validatorPassword(value),
                           ),
                           SizedBox(height: ManagerHeight.h30),
                           MainButton(
