@@ -1,9 +1,9 @@
 class Failure {
-  int code;
+  bool status;
   String message;
 
   Failure({
-    required this.code,
+    required this.status,
     required this.message,
   });
 }
