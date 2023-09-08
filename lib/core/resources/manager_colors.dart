@@ -3,6 +3,7 @@ import '/config/all_imports.dart';
 class ManagerColors {
   static const Color primaryColor = Color(0XFFFF9B5A);
   static const Color c1 = Color(0XFFD9D9D9);
+  static const Color c13 = Color.fromRGBO(255, 155, 90, 0.6);
   static const Color c2 = Color(0XFF200E32);
   static const Color c3 = Color(0XFFCFD8DC);
   static const Color c4 = Color(0XFF979797);
