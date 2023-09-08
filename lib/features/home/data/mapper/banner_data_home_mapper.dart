@@ -4,9 +4,9 @@ extension BannerDataHomeMapper on BannerDataHomeResponse {
   toDomain() {
     return BannerDataHomeModel(
       image: image.onNull(),
-      category: category.onNull(),
+      category: category,
       id: id.onNull(),
-      product: product.onNull(),
+      product: product,
     );
   }
 }
