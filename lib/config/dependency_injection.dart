@@ -9,6 +9,8 @@ Future<void> initModule() async {
   await _initSharedPreferences();
   await _intiInternetChecker();
   await _intiDio();
+  // AppSettingsSharedPreferences s = instance<AppSettingsSharedPreferences>();
+  // s.clear();
 }
 
 Future<void> _initSharedPreferences() async {
