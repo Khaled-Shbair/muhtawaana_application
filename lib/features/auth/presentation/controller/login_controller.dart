@@ -1,12 +1,16 @@
 import '/config/all_imports.dart';
 
-class LoginController extends GetxController {
+class LoginController extends GetxController
+    with ShowLoadingDialog, ShowSnackBar {
   late TextEditingController email;
   late TextEditingController password;
   late TapGestureRecognizer recognizer;
   var formKey = GlobalKey<FormState>();
-  bool obscureText = false;
+  bool obscureText = true;
   bool rememberMe = true;
+  final LoginUseCase _useCase = instance<LoginUseCase>();
+  final AppSettingsSharedPreferences _sharedPreferences =
+      instance<AppSettingsSharedPreferences>();
 
   @override
   void onInit() {
@@ -27,13 +31,38 @@ class LoginController extends GetxController {
     update();
   }
 
-  String? validatorEmail(String? email) {}
+  void performLogin(context) {
+    if (_checkData()) {
+      _login(context);
+    } else {
+      showSnackBar(ManagerStrings.pleaseEnterEmailAndPassword, true);
+    }
+  }
 
-  String? validatorPassword(String? password) {}
+  bool _checkData() => (email.text.isNotEmpty && password.text.isNotEmpty);
 
-  void performLogin() {}
-
-  void _login() {}
+  void _login(context) async {
+    showLoadingDialog(context);
+    (await _useCase.execute(
+      LoginBaseUseCaseInput(
+        email: email.text.toString(),
+        password: password.text.toString(),
+      ),
+    ))
+        .fold(
+      (l) {
+        Get.back();
+        showSnackBar(l.message, true);
+      },
+      (r) async {
+        if (rememberMe) {
+          await _sharedPreferences.setUser(r.data);
+        }
+        Get.back();
+        await Get.offAllNamed(Routes.mainScreen);
+      },
+    );
+  }
 
   void loginByFaceBook() {}
 
