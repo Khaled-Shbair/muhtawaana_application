@@ -96,3 +96,11 @@ TextStyle textStyleInBottomNavBarItem() {
     fontSize: ManagerFontSize.s14,
   );
 }
+
+TextStyle hiUserNameInHomeScreen() {
+  return mediumTextStyle(
+    fontFamily: ManagerFontFamily.roboto,
+    fontSize: ManagerFontSize.s17,
+    color: ManagerColors.blackColor,
+  );
+}
