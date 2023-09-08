@@ -4,7 +4,7 @@ class MainTextField extends StatelessWidget {
   const MainTextField({
     required this.controller,
     required this.hintText,
-    required this.validator,
+    this.validator,
     this.prefixIcon,
     this.prefixImageIcon,
     this.changeObscureText,
@@ -16,7 +16,7 @@ class MainTextField extends StatelessWidget {
 
   final TextInputType keyboardType;
   final TextEditingController controller;
-  final String? Function(String? value) validator;
+  final String? Function(String? value)? validator;
   final IconData? prefixIcon;
   final String? prefixImageIcon;
   final String hintText;
