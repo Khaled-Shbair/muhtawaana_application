@@ -15,16 +15,32 @@ class SignUpRepositoryImplementation extends SignUpRepository {
   Future<Either<Failure, SignUpModel>> signUp(SignUpRequest request) async {
     if (await _networkInfo.isConnected) {
       try {
-        final response = await _dataSource.signUp(request);
-        return Right(response.toDomain());
+        SignUpResponse response = await _dataSource.signUp(request);
+        if (response.status == true) {
+          return Right(response.toDomain());
+        } else {
+          return Left(
+            ErrorHandler.handle(
+              status: response.status,
+              message: response.message,
+              data: response.data,
+            ).failure,
+          );
+        }
       } catch (e) {
-        return Left(ErrorHandler.handle(e).failure);
+        return Left(
+          ErrorHandler.handle(
+            status: false,
+            message: null,
+            data: null,
+          ).failure,
+        );
       }
     } else {
       return Left(
         Failure(
           message: ManagerStrings.noInternetConnection,
-          code: ResponseCode.NO_INTERNET_CONNECTION.value,
+          status: false,
         ),
       );
     }
