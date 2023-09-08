@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-
 import '/config/all_imports.dart';
 
 final instance = GetIt.instance;
@@ -9,7 +8,7 @@ Future<void> initModule() async {
   await _initSharedPreferences();
   await _intiInternetChecker();
   await _intiDio();
-  // AppSettingsSharedPreferences s = instance<AppSettingsSharedPreferences>();
+   // AppSettingsSharedPreferences s = instance<AppSettingsSharedPreferences>();
   // s.clear();
 }
 
@@ -141,3 +140,38 @@ initChangePassword() {
 }
 
 _disposeChangePassword() => Get.delete<ChangePasswordController>();
+
+initHome() {
+  if (!GetIt.I.isRegistered<RemoteHomeDataSource>()) {
+    instance.registerLazySingleton<RemoteHomeDataSource>(
+      () => RemoteHomeDataSourceImplementation(instance<AppApi>()),
+    );
+  }
+  if (!GetIt.I.isRegistered<HomeRepository>()) {
+    instance.registerLazySingleton<HomeRepository>(
+      () => HomeRepositoryImplementation(
+        instance<NetworkInfo>(),
+        instance<RemoteHomeDataSource>(),
+      ),
+    );
+  }
+  if (!GetIt.I.isRegistered<HomeUseCase>()) {
+    instance.registerLazySingleton<HomeUseCase>(
+      () => HomeUseCase(instance<HomeRepository>()),
+    );
+  }
+  Get.put<HomeController>(HomeController());
+}
+
+_disposeHome() async {
+  if (GetIt.I.isRegistered<RemoteHomeDataSource>()) {
+    await instance.unregister<RemoteHomeDataSource>();
+  }
+  if (GetIt.I.isRegistered<HomeRepository>()) {
+    await instance.unregister<HomeRepository>();
+  }
+  if (GetIt.I.isRegistered<HomeUseCase>()) {
+    await instance.unregister<HomeUseCase>();
+  }
+  await Get.delete<HomeController>();
+}
