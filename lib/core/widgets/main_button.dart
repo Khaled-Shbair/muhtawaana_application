@@ -6,6 +6,8 @@ class MainButton extends StatelessWidget {
     required this.onPressed,
     this.color = ManagerColors.primaryColor,
     this.height,
+    this.radius,
+    this.width,
     this.child,
     this.colorText,
     this.start = 0.0,
@@ -19,6 +21,8 @@ class MainButton extends StatelessWidget {
   final Function() onPressed;
   final Color color;
   final double? height;
+  final double? width;
+  final double? radius;
   final double start;
   final double end;
   final double top;
@@ -40,11 +44,15 @@ class MainButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: color,
           elevation: 0,
-          minimumSize: Size(double.infinity, height ?? ManagerHeight.h48),
+          padding: EdgeInsetsDirectional.zero,
+          minimumSize: Size(
+            width ?? double.infinity,
+            height ?? ManagerHeight.h48,
+          ),
           shadowColor: ManagerColors.transparentColor,
           disabledForegroundColor: ManagerColors.transparentColor,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(ManagerRadius.r5),
+            borderRadius: BorderRadius.circular(radius ?? ManagerRadius.r5),
           ),
         ),
         child: child ?? Text(text, style: textStyleOfMainButton(colorText)),
