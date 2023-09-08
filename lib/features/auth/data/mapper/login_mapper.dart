@@ -5,7 +5,7 @@ extension LoginMapper on LoginResponse {
     return LoginModel(
       status: status.onNull(),
       message: message.onNull(),
-      data: data!.map<DataLoginModel>((e) => e.toDomain()).toList(),
+      data: data?.toDomain(),
     );
   }
 }

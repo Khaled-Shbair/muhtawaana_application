@@ -3,7 +3,7 @@ import '/config/all_imports.dart';
 class LoginModel {
   bool status;
   String message;
-  List<DataLoginModel> data;
+  DataLoginModel data;
 
   LoginModel({
     required this.status,

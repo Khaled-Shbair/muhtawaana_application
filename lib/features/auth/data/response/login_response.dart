@@ -9,7 +9,7 @@ class LoginResponse {
   @JsonKey(name: ApiConstants.message)
   String? message;
   @JsonKey(name: ApiConstants.data)
-  List<DataLoginResponse>? data;
+  DataLoginResponse? data;
 
   LoginResponse({
     this.status,
