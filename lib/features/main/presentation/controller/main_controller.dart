@@ -3,7 +3,7 @@ import '/config/all_imports.dart';
 class MainController extends GetxController {
   late PersistentTabController controller;
   List<Widget> screens = [
-    Container(color: Colors.red),
+    const HomeScreen(),
     Container(color: Colors.blue),
     Container(color: Colors.green),
     Container(color: Colors.yellow),
@@ -22,5 +22,6 @@ class MainController extends GetxController {
   void onInit() {
     super.onInit();
     controller = PersistentTabController();
+    initHome();
   }
 }
