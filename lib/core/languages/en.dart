@@ -42,4 +42,8 @@ const Map<String, String> en = {
   'submit': 'submit',
   'change_password': 'Change Password',
   'please_accept_terms_and_conditions': 'Please accept terms and conditions',
+  'please_enter_required_data': 'Please enter required data',
+  'passwords_do_not_match': 'Passwords don\'t match',
+  'phone_number_must_be_numbers': 'phone number must be 10 numbers',
+  'please_enter_email_and_password': 'Please enter email and password',
 };
