@@ -43,6 +43,11 @@ class ManagerStrings {
   static String pleaseEnterRequiredData = 'please_enter_required_data'.tr;
   static String passwordsDoNotMatch = 'passwords_do_not_match'.tr;
   static String phoneNumberMustBeNumbers = 'phone_number_must_be_numbers'.tr;
-  static String pleaseEnterEmailAndPassword = 'please_enter_email_and_password'.tr;
-
+  static String pleaseEnterEmailAndPassword =
+      'please_enter_email_and_password'.tr;
+  static String home = 'home'.tr;
+  static String profile = 'profile'.tr;
+  static String settings = 'settings'.tr;
+  static String favorites = 'favorites'.tr;
+  static String cart = 'cart'.tr;
 }

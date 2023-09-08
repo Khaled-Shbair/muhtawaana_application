@@ -50,6 +50,17 @@ initOnBoarding() {
 
 _disposeOnBoarding() => Get.delete<OnBoardingController>();
 
+initMainController() {
+  _disposeSplash();
+  _disposeOnBoarding();
+  _disposeSignUp();
+  _disposeChangePassword();
+  _disposeLogin();
+  Get.put<MainController>(MainController());
+}
+
+_disposeMainController() => Get.delete<MainController>();
+
 initLogin() {
   _disposeSplash();
   _disposeOnBoarding();

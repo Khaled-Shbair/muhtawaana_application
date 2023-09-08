@@ -88,3 +88,11 @@ TextStyle titleAppBarInAuthScreen() {
     fontFamily: ManagerFontFamily.inter,
   );
 }
+
+TextStyle textStyleInBottomNavBarItem() {
+  return mediumTextStyle(
+    fontFamily: ManagerFontFamily.roboto,
+    color: ManagerColors.whiteColor,
+    fontSize: ManagerFontSize.s14,
+  );
+}

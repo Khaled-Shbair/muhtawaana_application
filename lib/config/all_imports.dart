@@ -80,6 +80,9 @@ export '/features/auth/domain/use_case/login_use_case.dart';
 export '/features/auth/domain/use_case/sign_up_use_case.dart';
 export '/features/auth/data/repository_implementation/login_repository_implementation.dart';
 export '/features/auth/data/repository_implementation/sign_up_repository_implementation.dart';
+export '/features/main/presentation/controller/main_controller.dart';
+export '/features/main/presentation/view/widgets/bottom_nav_bar_item.dart';
+export '/features/main/presentation/view/main_screen.dart';
 
 // routes file
 export '/routes/route_generator.dart';
@@ -97,3 +100,4 @@ export 'package:json_annotation/json_annotation.dart';
 export 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 export 'package:carousel_slider/carousel_slider.dart';
 export 'package:fluttertoast/fluttertoast.dart';
+export 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';

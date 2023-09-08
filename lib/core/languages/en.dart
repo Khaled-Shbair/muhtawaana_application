@@ -46,4 +46,9 @@ const Map<String, String> en = {
   'passwords_do_not_match': 'Passwords don\'t match',
   'phone_number_must_be_numbers': 'phone number must be 10 numbers',
   'please_enter_email_and_password': 'Please enter email and password',
+  'home':'Home',
+  'profile':'Profile',
+  'settings':'Settings',
+  'favorites':'Favorites',
+  'cart':'Cart',
 };
