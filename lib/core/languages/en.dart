@@ -41,5 +41,5 @@ const Map<String, String> en = {
   'enter_new_password': 'Enter New Password',
   'submit': 'submit',
   'change_password': 'Change Password',
-
+  'please_accept_terms_and_conditions': 'Please accept terms and conditions',
 };

@@ -38,4 +38,5 @@ class ManagerStrings {
   static String enterNewPassword = 'enter_new_password'.tr;
   static String submit = 'submit'.tr;
   static String changePassword = 'change_password'.tr;
+  static String pleaseAcceptTermsAndConditions = 'please_accept_terms_and_conditions'.tr;
 }
