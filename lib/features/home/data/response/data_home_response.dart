@@ -9,9 +9,6 @@ class DataHomeResponse {
   @JsonKey(name: ApiConstants.products)
   List<ProductDataHomeResponse>? products;
 
-  // @JsonKey(name: 'ad')
-  // String? ad;
-
   DataHomeResponse({
     this.banners,
     this.products,

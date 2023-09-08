@@ -6,7 +6,6 @@ extension DataHomeMapper on DataHomeResponse {
       banners: banners!.map<BannerDataHomeModel>((e) => e.toDomain()).toList(),
       products:
           products!.map<ProductDataHomeModel>((e) => e.toDomain()).toList(),
-      // ad :ad.onNull(),
     );
   }
 }
