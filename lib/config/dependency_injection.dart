@@ -1,3 +1,5 @@
+import 'package:dio/dio.dart';
+
 import '/config/all_imports.dart';
 
 final instance = GetIt.instance;
@@ -5,6 +7,8 @@ final instance = GetIt.instance;
 Future<void> initModule() async {
   WidgetsFlutterBinding.ensureInitialized();
   await _initSharedPreferences();
+  await _intiInternetChecker();
+  await _intiDio();
 }
 
 Future<void> _initSharedPreferences() async {
@@ -12,6 +16,24 @@ Future<void> _initSharedPreferences() async {
     final SharedPreferences sharedPref = await SharedPreferences.getInstance();
     instance.registerLazySingleton<AppSettingsSharedPreferences>(
         () => AppSettingsSharedPreferences(sharedPref));
+  }
+}
+
+Future<void> _intiInternetChecker() async {
+  if (!GetIt.I.isRegistered<NetworkInfo>()) {
+    InternetConnection internetConnection = InternetConnection();
+    instance.registerLazySingleton<NetworkInfo>(
+        () => NetworkInfoImplementation(internetConnection));
+  }
+}
+
+Future<void> _intiDio() async {
+  if (!GetIt.I.isRegistered<DioFactory>()) {
+    instance.registerLazySingleton<DioFactory>(() => DioFactory());
+  }
+  if (!GetIt.I.isRegistered<AppApi>()) {
+    Dio dio = await instance<DioFactory>().getDio();
+    instance.registerLazySingleton<AppApi>(() => AppApi(dio));
   }
 }
 
