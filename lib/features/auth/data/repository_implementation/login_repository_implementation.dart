@@ -18,15 +18,31 @@ class LoginRepositoryImplementation extends LoginRepository {
     if (await _networkInfo.isConnected) {
       try {
         final response = await _dataSource.login(request);
-        return Right(response.toDomain());
+        if (response.status == true) {
+          return Right(response.toDomain());
+        } else {
+          return Left(
+            ErrorHandler.handle(
+              data: response.data,
+              message: response.message,
+              status: response.status,
+            ).failure,
+          );
+        }
       } catch (e) {
-        return Left(ErrorHandler.handle(e).failure);
+        return Left(
+          ErrorHandler.handle(
+            data: null,
+            message: null,
+            status: false,
+          ).failure,
+        );
       }
     } else {
       return Left(
         Failure(
           message: ManagerStrings.noInternetConnection,
-          code: ResponseCode.NO_INTERNET_CONNECTION.value,
+          status: false,
         ),
       );
     }
