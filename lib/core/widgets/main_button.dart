@@ -2,10 +2,11 @@ import '/config/all_imports.dart';
 
 class MainButton extends StatelessWidget {
   const MainButton({
-    required this.text,
+    this.text = '',
     required this.onPressed,
     this.color = ManagerColors.primaryColor,
     this.height,
+    this.child,
     this.colorText,
     this.start = 0.0,
     this.end = 0.0,
@@ -23,6 +24,7 @@ class MainButton extends StatelessWidget {
   final double top;
   final double bottom;
   final Color? colorText;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
@@ -45,10 +47,7 @@ class MainButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(ManagerRadius.r5),
           ),
         ),
-        child: Text(
-          text,
-          style: textStyleOfMainButton(colorText),
-        ),
+        child: child ?? Text(text, style: textStyleOfMainButton(colorText)),
       ),
     );
   }

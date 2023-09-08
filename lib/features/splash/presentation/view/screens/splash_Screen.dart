@@ -17,7 +17,6 @@ class SplashScreen extends StatelessWidget {
               fit: BoxFit.fill,
               filterQuality: FilterQuality.high,
             ),
-            // const LogoApp(),
             const LogoApp(),
           ],
         ),
