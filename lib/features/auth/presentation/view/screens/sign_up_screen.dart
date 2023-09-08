@@ -21,7 +21,6 @@ class SignUpScreen extends StatelessWidget {
               controller: controller.name,
               prefixIcon: Icons.person,
               hintText: ManagerStrings.fullName,
-              validator: (value) => controller.validatorName(value),
             ),
             SizedBox(height: ManagerHeight.h14),
             MainTextField(
@@ -29,16 +28,13 @@ class SignUpScreen extends StatelessWidget {
               prefixIcon: Icons.phone,
               hintText: ManagerStrings.phone,
               keyboardType: TextInputType.phone,
-              validator: (value) => controller.validatorPhone(value),
             ),
-
             SizedBox(height: ManagerHeight.h14),
             MainTextField(
               controller: controller.email,
               prefixIcon: Icons.mail,
               hintText: ManagerStrings.email,
               keyboardType: TextInputType.emailAddress,
-              validator: (value) => controller.validatorEmail(value),
             ),
             SizedBox(height: ManagerHeight.h14),
             MainTextField(
@@ -49,7 +45,6 @@ class SignUpScreen extends StatelessWidget {
               obscureText: controller.obscureTextPassword,
               isPassword: true,
               changeObscureText: controller.changeObscureTextPassword,
-              validator: (value) => controller.validatorPassword(value),
             ),
             SizedBox(height: ManagerHeight.h20),
             MainTextField(
@@ -60,7 +55,6 @@ class SignUpScreen extends StatelessWidget {
               obscureText: controller.obscureTextConfirmPassword,
               isPassword: true,
               changeObscureText: controller.changeObscureTextConfirmPassword,
-              validator: (value) => controller.validatorConfirmPassword(value),
             ),
             SizedBox(height: ManagerHeight.h10),
             MyCheckBox(
