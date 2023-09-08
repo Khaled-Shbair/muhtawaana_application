@@ -100,7 +100,8 @@ export '/features/home/data/mapper/product_data_home_mapper.dart';
 export '/features/home/presentation/view/screens/home_screen.dart';
 export '/features/home/presentation/controller/home_controller.dart';
 export '/features/home/domain/use_case/home_use_case.dart';
-export '../features/home/data/repository_implementation/home_repository_implementation.dart';
+export '/features/home/data/repository_implementation/home_repository_implementation.dart';
+export '/features/home/presentation/view/widgets/home_slider.dart';
 
 // routes file
 export '/routes/route_generator.dart';
