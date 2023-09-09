@@ -8,7 +8,7 @@ Future<void> initModule() async {
   await _initSharedPreferences();
   await _intiInternetChecker();
   await _intiDio();
-   // AppSettingsSharedPreferences s = instance<AppSettingsSharedPreferences>();
+  // AppSettingsSharedPreferences s = instance<AppSettingsSharedPreferences>();
   // s.clear();
 }
 
@@ -50,6 +50,7 @@ initOnBoarding() {
 _disposeOnBoarding() => Get.delete<OnBoardingController>();
 
 initMainController() {
+  initHome();
   _disposeSplash();
   _disposeOnBoarding();
   _disposeSignUp();

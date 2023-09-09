@@ -22,6 +22,5 @@ class MainController extends GetxController {
   void onInit() {
     super.onInit();
     controller = PersistentTabController();
-    initHome();
   }
 }
