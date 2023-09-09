@@ -54,4 +54,6 @@ class ManagerStrings {
   static String sections = 'sections'.tr;
   static String more = 'more'.tr;
   static String products = 'products'.tr;
+  static String showDetails = 'show_details'.tr;
+  static String discount = 'discount'.tr;
 }
