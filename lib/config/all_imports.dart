@@ -102,6 +102,9 @@ export '/features/home/presentation/controller/home_controller.dart';
 export '/features/home/domain/use_case/home_use_case.dart';
 export '/features/home/data/repository_implementation/home_repository_implementation.dart';
 export '/features/home/presentation/view/widgets/home_slider.dart';
+export '/features/home/presentation/view/widgets/home_category.dart';
+export '/features/home/presentation/view/widgets/home_app_bar.dart';
+export '/features/home/presentation/view/widgets/home_product.dart';
 
 // routes file
 export '/routes/route_generator.dart';
