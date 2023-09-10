@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(height: ManagerHeight.h10),
                     HomeSlider(sliders: controller.banners),
                     TitleOfDepartment(
-                      name: ManagerStrings.sections,
+                      name: ManagerStrings.categories,
                       onTap: controller.buttonMoreSections,
                     ),
                     const HomeCategory(),
