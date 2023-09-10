@@ -21,7 +21,8 @@ class ManagerColors {
   static const Color c17 = Color(0XFFFFDC26);
   static const Color c18 = Color(0XFF3E3E3E);
   static const Color shadow_09 = Color.fromRGBO(0, 0, 0, 0.09);
-  static const Color shadow_15 = Color.fromRGBO(0, 0, 0, 0.15) ;
+  static const Color shadow_15 = Color.fromRGBO(0, 0, 0, 0.15);
+
   static const Color shadow_1 = Color.fromRGBO(0, 0, 0, 0.1);
   static const Color whiteColor = Colors.white;
   static const Color blackColor = Colors.black;
@@ -29,4 +30,7 @@ class ManagerColors {
   static const Color textGeryColor = Color(0XFF6A6A6A);
   static const Color redColor = Color(0XFFFF0000);
   static const Color successColor = Colors.green;
+  static Color highlightColorShimmer = Colors.white.withOpacity(0.6);
+  static Color baseColorShimmer = Colors.grey.withOpacity(0.25);
+  static Color containerColorOfShimmer = Colors.grey.withOpacity(0.9);
 }
