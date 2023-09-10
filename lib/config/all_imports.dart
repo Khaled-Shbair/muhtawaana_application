@@ -42,6 +42,7 @@ export '/core/widgets/main_button.dart';
 export '/core/widgets/main_text_field.dart';
 export '/core/widgets/my_back_icon.dart';
 export '/core/helpers/show_snack_bar.dart';
+export '/core/widgets/main_shimmer.dart';
 
 // features file
 export '/features/splash/presentation/controller/splash_controller.dart';
@@ -117,6 +118,11 @@ export '/features/categories/data/mapper/current_page_of_category_mapper.dart';
 export '/features/categories/data/data_source/remote_categories_data_source.dart';
 export '/features/categories/domain/repository/categories_repository.dart';
 export '/features/categories/data/mapper/categories_mapper.dart';
+export '/features/categories/data/repository_implementation/categories_repository_implementation.dart';
+export '/features/categories/domain/use_case/categories_use_case.dart';
+export '/features/auth/presentation/view/screens/forget_password_screen.dart';
+export '/features/categories/presentation/view/screens/categories_screen.dart';
+export '/features/categories/presentation/controller/categories_controller.dart';
 
 // routes file
 export '/routes/route_generator.dart';
@@ -135,3 +141,4 @@ export 'package:internet_connection_checker_plus/internet_connection_checker_plu
 export 'package:carousel_slider/carousel_slider.dart';
 export 'package:fluttertoast/fluttertoast.dart';
 export 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+export 'package:shimmer/shimmer.dart';
