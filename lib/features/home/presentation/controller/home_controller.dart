@@ -34,7 +34,10 @@ class HomeController extends GetxController {
 
   void buttonShopInAppBar() {}
 
-  void buttonMoreSections() {}
+  void buttonMoreCategories() async {
+    await Get.toNamed(Routes.categoriesScreen);
+  }
+
   void buttonMoreProducts() {}
 
   void favoriteButton() {}
