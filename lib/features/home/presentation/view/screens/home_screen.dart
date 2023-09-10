@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
                     HomeSlider(sliders: controller.banners),
                     TitleOfDepartment(
                       name: ManagerStrings.categories,
-                      onTap: controller.buttonMoreSections,
+                      onTap: controller.buttonMoreCategories,
                     ),
                     const HomeCategory(),
                     TitleOfDepartment(
