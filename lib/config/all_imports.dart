@@ -109,6 +109,14 @@ export '/features/home/presentation/view/widgets/title_of_department.dart';
 export '/features/categories/data/response/current_page_of_category_response.dart';
 export '/features/categories/data/response/data_category_response.dart';
 export '/features/categories/data/response/categories_response.dart';
+export '/features/categories/domain/model/data_category_model.dart';
+export '/features/categories/domain/model/current_page_of_category_model.dart';
+export '/features/categories/domain/model/categories_model.dart';
+export '/features/categories/data/mapper/data_category_mapper.dart';
+export '/features/categories/data/mapper/current_page_of_category_mapper.dart';
+export '/features/categories/data/data_source/remote_categories_data_source.dart';
+export '/features/categories/domain/repository/categories_repository.dart';
+export '/features/categories/data/mapper/categories_mapper.dart';
 
 // routes file
 export '/routes/route_generator.dart';
