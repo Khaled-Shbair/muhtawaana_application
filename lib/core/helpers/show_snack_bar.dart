@@ -5,7 +5,7 @@ mixin ShowSnackBar {
     Fluttertoast.showToast(
       msg: message,
       backgroundColor:
-          error ? ManagerColors.errorColor : ManagerColors.successColor,
+          error ? ManagerColors.redColor : ManagerColors.successColor,
     );
   }
 }

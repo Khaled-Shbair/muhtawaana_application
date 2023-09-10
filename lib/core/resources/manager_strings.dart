@@ -50,4 +50,10 @@ class ManagerStrings {
   static String settings = 'settings'.tr;
   static String favorites = 'favorites'.tr;
   static String cart = 'cart'.tr;
+  static String shop = 'shop'.tr;
+  static String sections = 'sections'.tr;
+  static String more = 'more'.tr;
+  static String products = 'products'.tr;
+  static String showDetails = 'show_details'.tr;
+  static String discount = 'discount'.tr;
 }

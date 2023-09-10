@@ -96,3 +96,76 @@ TextStyle textStyleInBottomNavBarItem() {
     fontSize: ManagerFontSize.s14,
   );
 }
+
+TextStyle hiUserNameInHomeScreen() {
+  return mediumTextStyle(
+    fontFamily: ManagerFontFamily.roboto,
+    fontSize: ManagerFontSize.s17,
+    color: ManagerColors.blackColor,
+  );
+}
+
+TextStyle styleOfTitleOfDepartmentInHomeScreen() {
+  return mediumTextStyle(
+    color: ManagerColors.blackColor,
+    fontFamily: ManagerFontFamily.roboto,
+    fontSize: ManagerFontSize.s17,
+  );
+}
+
+TextStyle buttonMoreSectionsInTitleOfDepartmentOfHomeScreen() {
+  return mediumTextStyle(
+    color: ManagerColors.c14,
+    fontFamily: ManagerFontFamily.roboto,
+    fontSize: ManagerFontSize.s13,
+  );
+}
+
+TextStyle nameOfCategoryInHomeCategoryOfHomeScreen() {
+  return regularTextStyle(
+    fontFamily: ManagerFontFamily.roboto,
+    fontSize: ManagerFontSize.s12,
+    color: ManagerColors.c5,
+  );
+}
+
+TextStyle nameOfProductInHomeProductOfHomeScreen() {
+  return mediumTextStyle(
+    color: ManagerColors.c16,
+    fontSize: ManagerFontSize.s15,
+    fontFamily: ManagerFontFamily.roboto,
+  );
+}
+
+TextStyle priceOfProductInHomeProductOfHomeScreen() {
+  return mediumTextStyle(
+    color: ManagerColors.blackColor,
+    fontSize: ManagerFontSize.s14,
+    fontFamily: ManagerFontFamily.roboto,
+  );
+}
+
+TextStyle oldPriceOfProductInHomeProductOfHomeScreen() {
+  return mediumTextStyle(
+    color: ManagerColors.blackColor,
+    fontSize: ManagerFontSize.s10,
+    fontFamily: ManagerFontFamily.roboto,
+    decoration: TextDecoration.lineThrough,
+  );
+}
+
+TextStyle showDetailsButtonInHomeProductOfHomeScreen() {
+  return mediumTextStyle(
+    fontSize: ManagerFontSize.s12,
+    color: ManagerColors.whiteColor,
+    fontFamily: ManagerFontFamily.roboto,
+  );
+}
+
+TextStyle discountOfProductInHomeProductOfHomeScreen() {
+  return mediumTextStyle(
+    color: ManagerColors.whiteColor,
+    fontFamily: ManagerFontFamily.roboto,
+    fontSize: ManagerFontSize.s10,
+  );
+}

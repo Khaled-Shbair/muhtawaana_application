@@ -83,6 +83,29 @@ export '/features/auth/data/repository_implementation/sign_up_repository_impleme
 export '/features/main/presentation/controller/main_controller.dart';
 export '/features/main/presentation/view/widgets/bottom_nav_bar_item.dart';
 export '/features/main/presentation/view/main_screen.dart';
+export '/features/home/data/data_source/remote_home_data_source.dart';
+export '/features/home/domain/model/data_home_model.dart';
+export '/features/home/domain/model/home_model.dart';
+export '/features/home/domain/repository/home_repository.dart';
+export '/features/home/data/response/data_home_response.dart';
+export '/features/home/data/response/home_response.dart';
+export '/features/home/data/mapper/home_mapper.dart';
+export '/features/home/data/mapper/data_home_mapper.dart';
+export '/features/home/data/response/banner_data_home_response.dart';
+export '/features/home/data/response/product_data_home_response.dart';
+export '/features/home/domain/model/product_data_home_model.dart';
+export '/features/home/domain/model/banner_data_home_model.dart';
+export '/features/home/data/mapper/banner_data_home_mapper.dart';
+export '/features/home/data/mapper/product_data_home_mapper.dart';
+export '/features/home/presentation/view/screens/home_screen.dart';
+export '/features/home/presentation/controller/home_controller.dart';
+export '/features/home/domain/use_case/home_use_case.dart';
+export '/features/home/data/repository_implementation/home_repository_implementation.dart';
+export '/features/home/presentation/view/widgets/home_slider.dart';
+export '/features/home/presentation/view/widgets/home_category.dart';
+export '/features/home/presentation/view/widgets/home_app_bar.dart';
+export '/features/home/presentation/view/widgets/home_product.dart';
+export '/features/home/presentation/view/widgets/title_of_department.dart';
 
 // routes file
 export '/routes/route_generator.dart';

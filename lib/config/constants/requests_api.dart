@@ -4,4 +4,5 @@ class RequestsApi {
   static const String register = '${baseUrl}register';
   static const String changePassword = '${baseUrl}change-password';
   static const String logout = '${baseUrl}logout';
+  static const String home = '${baseUrl}home';
 }

@@ -21,4 +21,7 @@ abstract class AppApi {
     @Field(ApiConstants.email) email,
     @Field(ApiConstants.password) password,
   );
+
+  @GET(RequestsApi.home)
+  Future<HomeResponse> getHomeData();
 }

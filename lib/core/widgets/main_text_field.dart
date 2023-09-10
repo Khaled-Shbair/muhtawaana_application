@@ -68,7 +68,7 @@ class MainTextField extends StatelessWidget {
         hintText: hintText,
         hintStyle: textStyleOfMainTextField(),
         enabledBorder: _outlineInputBorder(),
-        errorBorder: _outlineInputBorder(ManagerColors.errorColor),
+        errorBorder: _outlineInputBorder(ManagerColors.redColor),
         border: _outlineInputBorder(),
         focusedBorder: _outlineInputBorder(),
       ),
