@@ -105,7 +105,7 @@ TextStyle hiUserNameInHomeScreen() {
   );
 }
 
-TextStyle styleOfSectionsInHomeScreen() {
+TextStyle styleOfTitleOfDepartmentInHomeScreen() {
   return mediumTextStyle(
     color: ManagerColors.blackColor,
     fontFamily: ManagerFontFamily.roboto,
@@ -113,7 +113,7 @@ TextStyle styleOfSectionsInHomeScreen() {
   );
 }
 
-TextStyle buttonMoreSectionsInHomeScreen() {
+TextStyle buttonMoreSectionsInTitleOfDepartmentOfHomeScreen() {
   return mediumTextStyle(
     color: ManagerColors.c14,
     fontFamily: ManagerFontFamily.roboto,
