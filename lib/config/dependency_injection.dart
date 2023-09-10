@@ -48,6 +48,7 @@ initOnBoarding() {
 
 initMainController() {
   initHome();
+  initCategories();
   _finishSplash();
   _finishOnBoarding();
   _finishSignUp();
