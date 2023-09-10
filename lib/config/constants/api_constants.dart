@@ -21,8 +21,20 @@ class ApiConstants {
   static const String description = 'description';
   static const String inFavorites = 'in_favorites';
   static const String inCart = 'in_cart';
+  static const String currentPage = 'current_page';
+  static const String total = 'total';
 
   static const String data = 'data';
+  static const String firstPageUrl = 'first_page_url';
+  static const String from = 'from';
+  static const String to = 'to';
+  static const String lastPage = 'last_page';
+  static const String perPage = 'per_page';
+  static const String lastPageUrl = 'last_page_url';
+  static const String nextPageUrl = 'next_page_url';
+  static const String prevPageUrl = 'prev_page_url';
+  static const String path = 'path';
+
   static const String name = 'name';
   static const String image = 'image';
   static const String points = 'points';
