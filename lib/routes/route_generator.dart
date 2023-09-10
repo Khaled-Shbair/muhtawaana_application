@@ -23,6 +23,19 @@ class RouteGenerator {
       case Routes.mainScreen:
         initMainController();
         return MaterialPageRoute(builder: (_) => const MainScreen());
+      case Routes.categoriesScreen:
+        initCategories();
+        return MaterialPageRoute(builder: (_) => const CategoriesScreen());
+      case Routes.forgetPasswordScreen:
+        initCategories();
+        return MaterialPageRoute(builder: (_) => const ForgetPasswordScreen());
+      case Routes.homeScreen:
+        initCategories();
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
+      // case Routes.productDetailsScreen:
+      // initCategories();
+      // return MaterialPageRoute(builder: (_) => const ProductDetailsScreen());
+
       default:
         return unDefinedRoute();
     }
