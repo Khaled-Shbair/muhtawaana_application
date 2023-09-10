@@ -106,6 +106,9 @@ export '/features/home/presentation/view/widgets/home_category.dart';
 export '/features/home/presentation/view/widgets/home_app_bar.dart';
 export '/features/home/presentation/view/widgets/home_product.dart';
 export '/features/home/presentation/view/widgets/title_of_department.dart';
+export '/features/categories/data/response/current_page_of_category_response.dart';
+export '/features/categories/data/response/data_category_response.dart';
+export '/features/categories/data/response/categories_response.dart';
 
 // routes file
 export '/routes/route_generator.dart';
