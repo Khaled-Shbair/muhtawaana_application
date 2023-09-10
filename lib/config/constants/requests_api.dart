@@ -5,4 +5,5 @@ class RequestsApi {
   static const String changePassword = '${baseUrl}change-password';
   static const String logout = '${baseUrl}logout';
   static const String home = '${baseUrl}home';
+  static const String categories = '${baseUrl}categories';
 }
