@@ -84,6 +84,7 @@ initLogin() {
 }
 
 initCategories() {
+  _finishCategoryDetails();
   if (!GetIt.I.isRegistered<RemoteCategoriesDataSource>()) {
     instance.registerLazySingleton<RemoteCategoriesDataSource>(
       () => RemoteCategoriesDataSourceImplementation(instance<AppApi>()),
@@ -154,6 +155,27 @@ initHome() {
   Get.put<HomeController>(HomeController());
 }
 
+initCategoryDetails() {
+  if (!GetIt.I.isRegistered<RemoteCategoryDetailsDataSource>()) {
+    instance.registerLazySingleton<RemoteCategoryDetailsDataSource>(
+      () => RemoteCategoryDetailsDataSourceImplementation(instance<AppApi>()),
+    );
+  }
+  if (!GetIt.I.isRegistered<CategoryDetailsRepository>()) {
+    instance.registerLazySingleton<CategoryDetailsRepository>(
+      () => CategoryDetailsRepositoryImplementation(
+        instance<NetworkInfo>(),
+        instance<RemoteCategoryDetailsDataSource>(),
+      ),
+    );
+  }
+  if (!GetIt.I.isRegistered<CategoryDetailsUseCase>()) {
+    instance.registerLazySingleton<CategoryDetailsUseCase>(
+      () => CategoryDetailsUseCase(instance<CategoryDetailsRepository>()),
+    );
+  }
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 /* Finish or dispose Controller and remove from memory */
 _finishChangePassword() async => await Get.delete<ChangePasswordController>();
@@ -183,6 +205,18 @@ _finishCategories() async {
     await instance.unregister<CategoriesUseCase>();
   }
   Get.delete<CategoriesController>();
+}
+
+_finishCategoryDetails() async {
+  if (GetIt.I.isRegistered<RemoteCategoryDetailsDataSource>()) {
+    await instance.unregister<RemoteCategoryDetailsDataSource>();
+  }
+  if (GetIt.I.isRegistered<CategoryDetailsRepository>()) {
+    await instance.unregister<CategoryDetailsRepository>();
+  }
+  if (GetIt.I.isRegistered<CategoryDetailsUseCase>()) {
+    await instance.unregister<CategoryDetailsUseCase>();
+  }
 }
 
 _finishLogin() async {
