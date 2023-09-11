@@ -1,14 +1,14 @@
 import '/config/all_imports.dart';
 
-class HomeProduct extends StatelessWidget {
-  const HomeProduct({
+class StructureOfViewProduct extends StatelessWidget {
+  const StructureOfViewProduct({
     required this.products,
     required this.favoriteButton,
     this.loading = false,
     super.key,
   });
 
-  final List<ProductDataHomeModel> products;
+  final List products;
   final Function() favoriteButton;
   final bool loading;
 
