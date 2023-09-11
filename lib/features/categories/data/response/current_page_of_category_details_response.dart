@@ -7,7 +7,7 @@ class CurrentPageOfCategoryDetailsResponse {
   @JsonKey(name: ApiConstants.currentPage)
   int? currentPage;
   @JsonKey(name: ApiConstants.data)
-  List<DataCategoryResponse>? data;
+  List<ProductCurrentPageOfCategoryDetailsResponse>? data;
   @JsonKey(name: ApiConstants.firstPageUrl)
   String? firstPageUrl;
   @JsonKey(name: ApiConstants.from)

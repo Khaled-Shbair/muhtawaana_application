@@ -11,8 +11,8 @@ CurrentPageOfCategoryDetailsResponse
         CurrentPageOfCategoryDetailsResponse(
           currentPage: json['current_page'] as int?,
           data: (json['data'] as List<dynamic>?)
-              ?.map((e) =>
-                  DataCategoryResponse.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => ProductCurrentPageOfCategoryDetailsResponse.fromJson(
+                  e as Map<String, dynamic>))
               .toList(),
           perPage: json['per_page'] as int?,
           lastPage: json['last_page'] as int?,
