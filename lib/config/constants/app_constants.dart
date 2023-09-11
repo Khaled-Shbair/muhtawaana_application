@@ -13,4 +13,7 @@ class AppConstants {
   static const double blurRadiusOfHomeProductInHomeScreen = 4;
   static const double xOffsetOfHomeProductInHomeScreen = 0;
   static const double yOffsetOfHomeProductInHomeScreen = 0;
+  static const double blurRadiusOfContainerInCategoriesScreen = 10;
+  static const double xOffsetOfContainerInCategoriesScreen = 0;
+  static const double yOffsetOfContainerInCategoriesScreen = 10;
 }
