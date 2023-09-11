@@ -57,4 +57,5 @@ const Map<String, String> en = {
   'products': 'Products',
   'show_details': 'Show details',
   'discount': 'Discount',
+  'category_products': 'Category products',
 };
