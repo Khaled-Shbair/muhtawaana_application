@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                         name: ManagerStrings.products,
                         onTap: controller.buttonMoreProducts,
                       ),
-                      HomeProduct(
+                      StructureOfViewProduct(
                         products: controller.products,
                         favoriteButton: controller.favoriteButton,
                         loading: controller.loading,
