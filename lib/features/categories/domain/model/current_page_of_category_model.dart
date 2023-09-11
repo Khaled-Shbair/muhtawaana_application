@@ -11,8 +11,8 @@ class CurrentPageOfCategoryModel {
   int total;
   String lastPageUrl;
   String path;
-  dynamic nextPageUrl;
-  dynamic prevPageUrl;
+  String nextPageUrl;
+  String prevPageUrl;
 
   CurrentPageOfCategoryModel({
     required this.currentPage,

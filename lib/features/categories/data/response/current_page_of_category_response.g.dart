@@ -20,8 +20,8 @@ CurrentPageOfCategoryResponse _$CurrentPageOfCategoryResponseFromJson(
       from: json['from'] as int?,
       path: json['path'] as String?,
       lastPageUrl: json['last_page_url'] as String?,
-      nextPageUrl: json['next_page_url'],
-      prevPageUrl: json['prev_page_url'],
+      nextPageUrl: json['next_page_url'] as String?,
+      prevPageUrl: json['prev_page_url'] as String?,
       total: json['total'] as int?,
     );
 

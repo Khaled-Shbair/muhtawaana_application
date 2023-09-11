@@ -25,9 +25,9 @@ class CurrentPageOfCategoryResponse {
   @JsonKey(name: ApiConstants.path)
   String? path;
   @JsonKey(name: ApiConstants.nextPageUrl)
-  dynamic nextPageUrl;
+  String? nextPageUrl;
   @JsonKey(name: ApiConstants.prevPageUrl)
-  dynamic prevPageUrl;
+  String? prevPageUrl;
 
   CurrentPageOfCategoryResponse({
     this.currentPage,

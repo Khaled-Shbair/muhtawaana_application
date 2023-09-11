@@ -12,8 +12,8 @@ extension CurrentPageOfCategoryMapper on CurrentPageOfCategoryResponse {
       lastPageUrl: lastPageUrl.onNull(),
       to: to.onNull(),
       total: total.onNull(),
-      nextPageUrl: nextPageUrl,
-      prevPageUrl: prevPageUrl,
+      nextPageUrl: nextPageUrl.onNull(),
+      prevPageUrl: prevPageUrl.onNull(),
       data: data!.map<DataCategoryModel>((e) => e.toDomain()).toList(),
     );
   }
