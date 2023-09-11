@@ -1,3 +1,4 @@
+
 import '/config/all_imports.dart';
 
 class CategoriesScreen extends StatelessWidget {
@@ -7,15 +8,7 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ManagerColors.whiteColor,
-      appBar: AppBar(
-        leading: const MyBackIcon(),
-        backgroundColor: ManagerColors.whiteColor,
-        elevation: AppConstants.elevationAppBar,
-        title: Text(
-          ManagerStrings.categories,
-          style: titleAppBarInCategoriesScreen(),
-        ),
-      ),
+      appBar: categoriesAppBar(ManagerStrings.categories),
       body: GetBuilder<CategoriesController>(
         builder: (controller) {
           return GridView.builder(
