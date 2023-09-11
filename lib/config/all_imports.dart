@@ -105,7 +105,7 @@ export '/features/home/data/repository_implementation/home_repository_implementa
 export '/features/home/presentation/view/widgets/home_slider.dart';
 export '/features/home/presentation/view/widgets/home_category.dart';
 export '/features/home/presentation/view/widgets/home_app_bar.dart';
-export '/features/home/presentation/view/widgets/home_product.dart';
+export '/core/widgets/structure_of_view_product.dart';
 export '/features/home/presentation/view/widgets/title_of_department.dart';
 export '/features/categories/data/response/current_page_of_category_response.dart';
 export '/features/categories/data/response/data_category_response.dart';
@@ -123,6 +123,22 @@ export '/features/categories/domain/use_case/categories_use_case.dart';
 export '/features/auth/presentation/view/screens/forget_password_screen.dart';
 export '/features/categories/presentation/view/screens/categories_screen.dart';
 export '/features/categories/presentation/controller/categories_controller.dart';
+export '/features/categories/data/response/current_page_of_category_details_response.dart';
+export '/features/categories/data/response/product_current_page_of_category_details_response.dart';
+export '/features/categories/domain/model/current_page_of_category_details_model.dart';
+export '/features/categories/domain/model/product_current_page_of_category_details_model.dart';
+export '/features/categories/data/response/category_details_response.dart';
+export '/features/categories/domain/model/category_details_model.dart';
+export '/features/categories/data/mapper/current_page_of_category_details_mapper.dart';
+export '/features/categories/data/mapper/product_current_page_of_category_details_mapper.dart';
+export '/features/categories/data/request/category_details_request.dart';
+export '/features/categories/data/data_source/remote_category_details_data_source.dart';
+export '/features/categories/data/mapper/category_details_mapper.dart';
+export '/features/categories/domain/repository/category_details_repository.dart';
+export '/features/categories/data/repository_implementation/category_details_repository_implementation.dart';
+export '/features/categories/domain/use_case/category_details_use_case.dart';
+export '/features/categories/presentation/view/screens/category_details_screen.dart';
+export '/features/categories/presentation/view/widgets/categories_app_bar.dart';
 
 // routes file
 export '/routes/route_generator.dart';
