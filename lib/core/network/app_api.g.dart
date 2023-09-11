@@ -145,13 +145,13 @@ class _AppApi implements AppApi {
   }
 
   @override
-  Future<CategoriesResponse> getCategoryDetails(int id) async {
+  Future<CategoryDetailsResponse> getCategoryDetails(int id) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<CategoriesResponse>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<CategoryDetailsResponse>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -167,7 +167,7 @@ class _AppApi implements AppApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = CategoriesResponse.fromJson(_result.data!);
+    final value = CategoryDetailsResponse.fromJson(_result.data!);
     return value;
   }
 
