@@ -27,4 +27,7 @@ abstract class AppApi {
 
   @GET(RequestsApi.categories)
   Future<CategoriesResponse> getCategories();
+
+  @GET(RequestsApi.categoryDetails)
+  Future<CategoriesResponse> getCategoryDetails(@Path(ApiConstants.id) int id);
 }
