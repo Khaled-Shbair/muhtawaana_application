@@ -1,7 +1,8 @@
 import '/config/all_imports.dart';
 
 abstract class RemoteCategoryDetailsDataSource {
-  Future<CategoryDetailsResponse> getCategoryDetails(int id);
+  Future<CategoryDetailsResponse> getCategoryDetails(
+      CategoryDetailsRequest request);
 }
 
 class RemoteCategoryDetailsDataSourceImplementation
@@ -11,7 +12,8 @@ class RemoteCategoryDetailsDataSourceImplementation
   RemoteCategoryDetailsDataSourceImplementation(this._appApi);
 
   @override
-  Future<CategoryDetailsResponse> getCategoryDetails(int id) async {
-    return await _appApi.getCategoryDetails(id);
+  Future<CategoryDetailsResponse> getCategoryDetails(
+      CategoryDetailsRequest request) async {
+    return await _appApi.getCategoryDetails(request.id);
   }
 }
