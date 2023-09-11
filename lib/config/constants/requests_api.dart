@@ -1,3 +1,5 @@
+import '/config/all_imports.dart';
+
 class RequestsApi {
   static const String baseUrl = 'https://student.valuxapps.com/api/';
   static const String login = '${baseUrl}login';
@@ -6,4 +8,6 @@ class RequestsApi {
   static const String logout = '${baseUrl}logout';
   static const String home = '${baseUrl}home';
   static const String categories = '${baseUrl}categories';
+  static const String categoryDetails =
+      '${baseUrl}categories/{${ApiConstants.id}}';
 }
