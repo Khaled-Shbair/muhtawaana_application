@@ -4,11 +4,13 @@ class HomeProduct extends StatelessWidget {
   const HomeProduct({
     required this.products,
     required this.favoriteButton,
+    this.loading = false,
     super.key,
   });
 
   final List<ProductDataHomeModel> products;
   final Function() favoriteButton;
+  final bool loading;
 
   @override
   Widget build(BuildContext context) {
@@ -24,140 +26,148 @@ class HomeProduct extends StatelessWidget {
         mainAxisSpacing: ManagerHeight.h14,
         childAspectRatio: ManagerWidth.w162 / ManagerHeight.h258,
       ),
-      itemCount: products.length,
+      itemCount: loading == false ? products.length : 10,
       itemBuilder: (context, index) {
-        var data = products[index];
-        return Container(
-          clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(
-            color: ManagerColors.whiteColor,
-            borderRadius: BorderRadius.circular(ManagerRadius.r10),
-            boxShadow: const [
-              BoxShadow(
-                color: ManagerColors.shadow_1,
-                offset: Offset(
-                  AppConstants.xOffsetOfHomeProductInHomeScreen,
-                  AppConstants.yOffsetOfHomeProductInHomeScreen,
+        if (loading == false && products.isNotEmpty) {
+          var data = products[index];
+          return Container(
+            clipBehavior: Clip.antiAlias,
+            decoration: BoxDecoration(
+              color: ManagerColors.whiteColor,
+              borderRadius: BorderRadius.circular(ManagerRadius.r10),
+              boxShadow: const [
+                BoxShadow(
+                  color: ManagerColors.shadow_1,
+                  offset: Offset(
+                    AppConstants.xOffsetOfHomeProductInHomeScreen,
+                    AppConstants.yOffsetOfHomeProductInHomeScreen,
+                  ),
+                  blurRadius: AppConstants.blurRadiusOfHomeProductInHomeScreen,
                 ),
-                blurRadius: AppConstants.blurRadiusOfHomeProductInHomeScreen,
-              ),
-            ],
-          ),
-          child: Stack(
-            alignment: AlignmentDirectional.topCenter,
-            children: [
-              Padding(
-                padding: EdgeInsetsDirectional.symmetric(
-                  horizontal: ManagerWidth.w7,
-                  vertical: ManagerHeight.h7,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(ManagerRadius.r10),
-                      child: Image.network(
-                        data.image,
-                        height: ManagerHeight.h125,
-                        width: ManagerWidth.w148,
-                      ),
-                    ),
-                    SizedBox(height: ManagerHeight.h10),
-                    Text(
-                      data.name,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: nameOfProductInHomeProductOfHomeScreen(),
-                    ),
-                    SizedBox(height: ManagerHeight.h4),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text(
-                          '\$${data.price}',
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: priceOfProductInHomeProductOfHomeScreen(),
+              ],
+            ),
+            child: Stack(
+              alignment: AlignmentDirectional.topCenter,
+              children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.symmetric(
+                    horizontal: ManagerWidth.w7,
+                    vertical: ManagerHeight.h7,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(ManagerRadius.r10),
+                        child: Image.network(
+                          data.image,
+                          height: ManagerHeight.h125,
+                          width: ManagerWidth.w148,
                         ),
-                        SizedBox(width: ManagerWidth.w4),
-                        if (data.discount != 0) ...{
+                      ),
+                      SizedBox(height: ManagerHeight.h10),
+                      Text(
+                        data.name,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: nameOfProductInHomeProductOfHomeScreen(),
+                      ),
+                      SizedBox(height: ManagerHeight.h4),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
                           Text(
-                            '${data.oldPrice}',
+                            '\$${data.price}',
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: oldPriceOfProductInHomeProductOfHomeScreen(),
+                            style: priceOfProductInHomeProductOfHomeScreen(),
                           ),
-                        }
-                      ],
-                    ),
-                    SizedBox(height: ManagerHeight.h4),
-                    Row(
-                      children: [
-                        const Icon(Icons.star, color: ManagerColors.c17),
-                        Text(
-                          ' 4.5 (110)',
-                          style: TextStyle(
-                            fontSize: ManagerFontSize.s13,
-                            fontFamily: ManagerFontFamily.roboto,
-                            fontWeight: ManagerFontWeight.w500,
-                            color: ManagerColors.c18,
+                          SizedBox(width: ManagerWidth.w4),
+                          if (data.discount != 0) ...{
+                            Text(
+                              '${data.oldPrice}',
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style:
+                                  oldPriceOfProductInHomeProductOfHomeScreen(),
+                            ),
+                          }
+                        ],
+                      ),
+                      SizedBox(height: ManagerHeight.h4),
+                      Row(
+                        children: [
+                          const Icon(Icons.star, color: ManagerColors.c17),
+                          Text(
+                            ' 4.5 (110)',
+                            style: TextStyle(
+                              fontSize: ManagerFontSize.s13,
+                              fontFamily: ManagerFontFamily.roboto,
+                              fontWeight: ManagerFontWeight.w500,
+                              color: ManagerColors.c18,
+                            ),
                           ),
+                        ],
+                      ),
+                      MainButton(
+                        onPressed: () async {
+                          await Get.toNamed(
+                            Routes.productDetailsScreen,
+                            arguments: data,
+                          );
+                        },
+                        start: ManagerWidth.w3,
+                        end: ManagerWidth.w3,
+                        height: ManagerHeight.h26,
+                        radius: ManagerRadius.r10,
+                        child: Text(
+                          ManagerStrings.showDetails,
+                          style: showDetailsButtonInHomeProductOfHomeScreen(),
                         ),
-                      ],
-                    ),
-                    MainButton(
-                      onPressed: () async {
-                        await Get.toNamed(
-                          Routes.productDetailsScreen,
-                          arguments: data,
-                        );
-                      },
-                      start: ManagerWidth.w3,
-                      end: ManagerWidth.w3,
-                      height: ManagerHeight.h26,
-                      radius: ManagerRadius.r10,
+                      ),
+                    ],
+                  ),
+                ),
+                if (data.discount != 0) ...{
+                  Align(
+                    alignment: AlignmentDirectional.topStart,
+                    child: Container(
+                      padding: EdgeInsetsDirectional.symmetric(
+                        horizontal: ManagerWidth.w2,
+                        vertical: ManagerHeight.h2,
+                      ),
+                      decoration: const BoxDecoration(
+                        color: ManagerColors.redColor,
+                      ),
                       child: Text(
-                        ManagerStrings.showDetails,
-                        style: showDetailsButtonInHomeProductOfHomeScreen(),
+                        ManagerStrings.discount,
+                        style: discountOfProductInHomeProductOfHomeScreen(),
                       ),
                     ),
-                  ],
-                ),
-              ),
-              if (data.discount != 0) ...{
+                  ),
+                },
                 Align(
-                  alignment: AlignmentDirectional.topStart,
-                  child: Container(
-                    padding: EdgeInsetsDirectional.symmetric(
-                      horizontal: ManagerWidth.w2,
-                      vertical: ManagerHeight.h2,
-                    ),
-                    decoration: const BoxDecoration(
-                      color: ManagerColors.redColor,
-                    ),
-                    child: Text(
-                      ManagerStrings.discount,
-                      style: discountOfProductInHomeProductOfHomeScreen(),
+                  alignment: AlignmentDirectional.topEnd,
+                  child: IconButton(
+                    onPressed: favoriteButton,
+                    padding: EdgeInsetsDirectional.zero,
+                    icon: Icon(
+                      Icons.favorite,
+                      color: data.inFavorites
+                          ? ManagerColors.redColor
+                          : ManagerColors.c16,
                     ),
                   ),
                 ),
-              },
-              Align(
-                alignment: AlignmentDirectional.topEnd,
-                child: IconButton(
-                  onPressed: favoriteButton,
-                  padding: EdgeInsetsDirectional.zero,
-                  icon: Icon(
-                    Icons.favorite,
-                    color: data.inFavorites
-                        ? ManagerColors.redColor
-                        : ManagerColors.c16,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
+              ],
+            ),
+          );
+        } else {
+          return MainShimmer(
+            height: ManagerHeight.h258,
+            width: ManagerWidth.w162,
+          );
+        }
       },
     );
   }
