@@ -52,9 +52,10 @@ const Map<String, String> en = {
   'favorites': 'Favorites',
   'cart': 'Cart',
   'shop': 'Shop',
-  'sections': 'Sections',
+  'categories': 'Categories',
   'more': 'More',
   'products': 'Products',
   'show_details': 'Show details',
   'discount': 'Discount',
+  'category_products': 'Category products',
 };

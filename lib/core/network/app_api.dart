@@ -24,4 +24,10 @@ abstract class AppApi {
 
   @GET(RequestsApi.home)
   Future<HomeResponse> getHomeData();
+
+  @GET(RequestsApi.categories)
+  Future<CategoriesResponse> getCategories();
+
+  @GET(RequestsApi.category)
+  Future<CategoryResponse> getCategory(@Path(ApiConstants.id) int id);
 }

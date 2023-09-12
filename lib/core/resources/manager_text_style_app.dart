@@ -169,3 +169,11 @@ TextStyle discountOfProductInHomeProductOfHomeScreen() {
     fontSize: ManagerFontSize.s10,
   );
 }
+
+TextStyle titleAppBarInCategoriesScreen() {
+  return mediumTextStyle(
+    color: ManagerColors.blackColor,
+    fontFamily: ManagerFontFamily.roboto,
+    fontSize: ManagerFontSize.s17,
+  );
+}

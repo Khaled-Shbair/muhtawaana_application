@@ -42,6 +42,7 @@ export '/core/widgets/main_button.dart';
 export '/core/widgets/main_text_field.dart';
 export '/core/widgets/my_back_icon.dart';
 export '/core/helpers/show_snack_bar.dart';
+export '/core/widgets/main_shimmer.dart';
 
 // features file
 export '/features/splash/presentation/controller/splash_controller.dart';
@@ -104,8 +105,40 @@ export '/features/home/data/repository_implementation/home_repository_implementa
 export '/features/home/presentation/view/widgets/home_slider.dart';
 export '/features/home/presentation/view/widgets/home_category.dart';
 export '/features/home/presentation/view/widgets/home_app_bar.dart';
-export '/features/home/presentation/view/widgets/home_product.dart';
+export '/core/widgets/structure_of_view_product.dart';
 export '/features/home/presentation/view/widgets/title_of_department.dart';
+export '../features/categories/data/response/categories/list_of_categories_response.dart';
+export '../features/categories/data/response/categories/data_of_category_response.dart';
+export '../features/categories/data/response/categories/categories_response.dart';
+export '../features/categories/domain/model/categories/data_of_category_model.dart';
+export '../features/categories/domain/model/categories/list_of_categories_model.dart';
+export '../features/categories/domain/model/categories/categories_model.dart';
+export '../features/categories/data/mapper/categories/data_of_category_mapper.dart';
+export '../features/categories/data/mapper/categories/list_of_categories_mapper.dart';
+export '/features/categories/data/data_source/remote_categories_data_source.dart';
+export '/features/categories/domain/repository/categories_repository.dart';
+export '../features/categories/data/mapper/categories/categories_mapper.dart';
+export '/features/categories/data/repository_implementation/categories_repository_implementation.dart';
+export '/features/categories/domain/use_case/categories_use_case.dart';
+export '/features/auth/presentation/view/screens/forget_password_screen.dart';
+export '/features/categories/presentation/view/screens/categories_screen.dart';
+export '/features/categories/presentation/controller/categories_controller.dart';
+export '../features/categories/data/response/category/list_of_products_of_category_response.dart';
+export '../features/categories/data/response/category/data_of_product_of_category_response.dart';
+export '../features/categories/domain/model/category/list_of_products_of_category_model.dart';
+export '../features/categories/domain/model/category/data_of_product_of_category_model.dart';
+export '../features/categories/data/response/category/category_response.dart';
+export '../features/categories/domain/model/category/category_model.dart';
+export '../features/categories/data/mapper/category/list_of_products_of_category_mapper.dart';
+export '../features/categories/data/mapper/category/data_of_product_of_category_mapper.dart';
+export '/features/categories/data/request/category_request.dart';
+export '/features/categories/data/data_source/remote_category_data_source.dart';
+export '../features/categories/data/mapper/category/category_mapper.dart';
+export '/features/categories/domain/repository/category_repository.dart';
+export '/features/categories/data/repository_implementation/category_repository_implementation.dart';
+export '/features/categories/domain/use_case/category_use_case.dart';
+export '/features/categories/presentation/view/screens/products_of_category_screen.dart';
+export '/features/categories/presentation/view/widgets/categories_app_bar.dart';
 
 // routes file
 export '/routes/route_generator.dart';
@@ -124,3 +157,4 @@ export 'package:internet_connection_checker_plus/internet_connection_checker_plu
 export 'package:carousel_slider/carousel_slider.dart';
 export 'package:fluttertoast/fluttertoast.dart';
 export 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+export 'package:shimmer/shimmer.dart';

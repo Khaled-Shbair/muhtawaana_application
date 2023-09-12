@@ -23,6 +23,23 @@ class RouteGenerator {
       case Routes.mainScreen:
         initMainController();
         return MaterialPageRoute(builder: (_) => const MainScreen());
+      case Routes.categoriesScreen:
+        initCategories();
+        return MaterialPageRoute(builder: (_) => const CategoriesScreen());
+      case Routes.forgetPasswordScreen:
+        initCategories();
+        return MaterialPageRoute(builder: (_) => const ForgetPasswordScreen());
+      case Routes.homeScreen:
+        initCategories();
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
+      case Routes.categoryDetailsScreen:
+        initCategoryDetails();
+        var id = settings.arguments as int;
+        return MaterialPageRoute(builder: (_) => ProductsOfCategoryScreen(id));
+      // case Routes.productDetailsScreen:
+      // initCategories();
+      // return MaterialPageRoute(builder: (_) => const ProductDetailsScreen());
+
       default:
         return unDefinedRoute();
     }
