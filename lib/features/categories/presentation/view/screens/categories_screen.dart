@@ -8,7 +8,7 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ManagerColors.whiteColor,
-      appBar: categoriesAppBar(ManagerStrings.categories),
+      appBar: myAppBar(ManagerStrings.categories),
       body: GetBuilder<CategoriesController>(
         builder: (controller) {
           return GridView.builder(
