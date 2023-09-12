@@ -10,7 +10,7 @@ class ProductsOfCategoryScreen extends StatelessWidget {
     return GetBuilder<CategoriesController>(
       builder: (controller) {
         return Scaffold(
-          appBar: categoriesAppBar(ManagerStrings.categoryProducts),
+          appBar: myAppBar(ManagerStrings.categoryProducts),
           body: StructureOfViewProduct(
             favoriteButton: controller.favoriteButton,
             loading: controller.loading,
