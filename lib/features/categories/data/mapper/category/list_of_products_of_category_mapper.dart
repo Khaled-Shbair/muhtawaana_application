@@ -1,8 +1,9 @@
 import '/config/all_imports.dart';
 
-extension CurrentPageOfCategoryMapper on CurrentPageOfCategoryResponse {
+extension ListOfProductsOfCategoryMapper
+    on ListOfProductsOfCategoryResponse {
   toDomain() {
-    return CurrentPageOfCategoryModel(
+    return ListOfProductsOfCategoryModel(
       currentPage: currentPage.onNull(),
       firstPageUrl: firstPageUrl.onNull(),
       from: from.onNull(),
@@ -14,7 +15,9 @@ extension CurrentPageOfCategoryMapper on CurrentPageOfCategoryResponse {
       total: total.onNull(),
       nextPageUrl: nextPageUrl.onNull(),
       prevPageUrl: prevPageUrl.onNull(),
-      data: data!.map<DataCategoryModel>((e) => e.toDomain()).toList(),
+      data: data!
+          .map<DataOfProductOfCategoryModel>((e) => e.toDomain())
+          .toList(),
     );
   }
 }

@@ -8,6 +8,6 @@ class RequestsApi {
   static const String logout = '${baseUrl}logout';
   static const String home = '${baseUrl}home';
   static const String categories = '${baseUrl}categories';
-  static const String categoryDetails =
+  static const String category =
       '${baseUrl}categories/{${ApiConstants.id}}';
 }

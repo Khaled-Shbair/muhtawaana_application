@@ -1,8 +1,8 @@
 import '/config/all_imports.dart';
 
-extension CategoryDetailsMapper on CategoryDetailsResponse {
+extension CategoryMapper on CategoryResponse {
   toDomain() {
-    return CategoryDetailsModel(
+    return CategoryModel(
       status: status.onNull(),
       message: message.onNull(),
       data: data!.toDomain(),

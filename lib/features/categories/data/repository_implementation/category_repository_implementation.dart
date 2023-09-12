@@ -1,22 +1,22 @@
 import 'package:dartz/dartz.dart';
 import '/config/all_imports.dart';
 
-class CategoryDetailsRepositoryImplementation
-    extends CategoryDetailsRepository {
-  final RemoteCategoryDetailsDataSource _dataSource;
+class CategoryRepositoryImplementation
+    extends CategoryRepository {
+  final RemoteCategoryDataSource _dataSource;
   final NetworkInfo _networkInfo;
 
-  CategoryDetailsRepositoryImplementation(
+  CategoryRepositoryImplementation(
     this._networkInfo,
     this._dataSource,
   );
 
   @override
-  Future<Either<Failure, CategoryDetailsModel>> getCategoryDetails(
-      CategoryDetailsRequest request) async {
+  Future<Either<Failure, CategoryModel>> getCategory(
+      CategoryRequest request) async {
     if (await _networkInfo.isConnected) {
       try {
-        final response = await _dataSource.getCategoryDetails(request);
+        final response = await _dataSource.getCategory(request);
         if (response.status == true) {
           return Right(response.toDomain());
         } else {

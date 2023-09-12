@@ -1,11 +1,11 @@
 import '/config/all_imports.dart';
 
-class CategoryDetailsModel {
+class CategoryModel {
   bool status;
   String message;
-  CurrentPageOfCategoryDetailsModel data;
+  ListOfProductsOfCategoryModel data;
 
-  CategoryDetailsModel({
+  CategoryModel({
     required this.status,
     required this.message,
     required this.data,

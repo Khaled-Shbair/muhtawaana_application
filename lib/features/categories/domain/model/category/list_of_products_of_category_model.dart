@@ -1,8 +1,8 @@
 import '/config/all_imports.dart';
 
-class CurrentPageOfCategoryDetailsModel {
+class ListOfProductsOfCategoryModel {
   int currentPage;
-  List<ProductCurrentPageOfCategoryDetailsModel> data;
+  List<DataOfProductOfCategoryModel> data;
   String firstPageUrl;
   int from;
   int to;
@@ -14,7 +14,7 @@ class CurrentPageOfCategoryDetailsModel {
   String nextPageUrl;
   String prevPageUrl;
 
-  CurrentPageOfCategoryDetailsModel({
+  ListOfProductsOfCategoryModel({
     required this.currentPage,
     required this.data,
     required this.perPage,

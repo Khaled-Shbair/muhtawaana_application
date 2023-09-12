@@ -1,9 +1,9 @@
-class DataCategoryModel {
+class DataOfCategoryModel {
   int id;
   String name;
   String image;
 
-  DataCategoryModel({
+  DataOfCategoryModel({
     required this.id,
     required this.name,
     required this.image,

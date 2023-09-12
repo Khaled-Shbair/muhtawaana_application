@@ -1,9 +1,9 @@
 import '/config/all_imports.dart';
 
-part 'product_current_page_of_category_details_response.g.dart';
+part 'data_of_product_of_category_response.g.dart';
 
 @JsonSerializable()
-class ProductCurrentPageOfCategoryDetailsResponse {
+class DataOfProductOfCategoryResponse {
   @JsonKey(name: ApiConstants.id)
   int? id;
   @JsonKey(name: ApiConstants.name)
@@ -25,7 +25,7 @@ class ProductCurrentPageOfCategoryDetailsResponse {
   @JsonKey(name: ApiConstants.inCart)
   bool? inCart;
 
-  ProductCurrentPageOfCategoryDetailsResponse({
+  DataOfProductOfCategoryResponse({
     this.id,
     this.price,
     this.oldPrice,
@@ -38,10 +38,9 @@ class ProductCurrentPageOfCategoryDetailsResponse {
     this.images,
   });
 
-  factory ProductCurrentPageOfCategoryDetailsResponse.fromJson(
-          Map<String, dynamic> json) =>
-      _$ProductCurrentPageOfCategoryDetailsResponseFromJson(json);
+  factory DataOfProductOfCategoryResponse.fromJson(Map<String, dynamic> json) =>
+      _$DataOfProductOfCategoryResponseFromJson(json);
 
   Map<String, dynamic> toJson() =>
-      _$ProductCurrentPageOfCategoryDetailsResponseToJson(this);
+      _$DataOfProductOfCategoryResponseToJson(this);
 }

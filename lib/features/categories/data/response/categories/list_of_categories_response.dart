@@ -1,13 +1,13 @@
 import '/config/all_imports.dart';
 
-part 'current_page_of_category_response.g.dart';
+part 'list_of_categories_response.g.dart';
 
 @JsonSerializable()
-class CurrentPageOfCategoryResponse {
+class ListOfCategoriesResponse {
   @JsonKey(name: ApiConstants.currentPage)
   int? currentPage;
   @JsonKey(name: ApiConstants.data)
-  List<DataCategoryResponse>? data;
+  List<DataOfCategoryResponse>? data;
   @JsonKey(name: ApiConstants.firstPageUrl)
   String? firstPageUrl;
   @JsonKey(name: ApiConstants.from)
@@ -29,7 +29,7 @@ class CurrentPageOfCategoryResponse {
   @JsonKey(name: ApiConstants.prevPageUrl)
   String? prevPageUrl;
 
-  CurrentPageOfCategoryResponse({
+  ListOfCategoriesResponse({
     this.currentPage,
     this.data,
     this.perPage,
@@ -44,8 +44,8 @@ class CurrentPageOfCategoryResponse {
     this.total,
   });
 
-  factory CurrentPageOfCategoryResponse.fromJson(Map<String, dynamic> json) =>
-      _$CurrentPageOfCategoryResponseFromJson(json);
+  factory ListOfCategoriesResponse.fromJson(Map<String, dynamic> json) =>
+      _$ListOfCategoriesResponseFromJson(json);
 
-  Map<String, dynamic> toJson() => _$CurrentPageOfCategoryResponseToJson(this);
+  Map<String, dynamic> toJson() => _$ListOfCategoriesResponseToJson(this);
 }

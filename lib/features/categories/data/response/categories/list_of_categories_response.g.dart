@@ -1,17 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'current_page_of_category_response.dart';
+part of 'list_of_categories_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-CurrentPageOfCategoryResponse _$CurrentPageOfCategoryResponseFromJson(
+ListOfCategoriesResponse _$ListOfCategoriesResponseFromJson(
         Map<String, dynamic> json) =>
-    CurrentPageOfCategoryResponse(
+    ListOfCategoriesResponse(
       currentPage: json['current_page'] as int?,
       data: (json['data'] as List<dynamic>?)
-          ?.map((e) => DataCategoryResponse.fromJson(e as Map<String, dynamic>))
+          ?.map(
+              (e) => DataOfCategoryResponse.fromJson(e as Map<String, dynamic>))
           .toList(),
       perPage: json['per_page'] as int?,
       lastPage: json['last_page'] as int?,
@@ -25,8 +26,8 @@ CurrentPageOfCategoryResponse _$CurrentPageOfCategoryResponseFromJson(
       total: json['total'] as int?,
     );
 
-Map<String, dynamic> _$CurrentPageOfCategoryResponseToJson(
-        CurrentPageOfCategoryResponse instance) =>
+Map<String, dynamic> _$ListOfCategoriesResponseToJson(
+        ListOfCategoriesResponse instance) =>
     <String, dynamic>{
       'current_page': instance.currentPage,
       'data': instance.data,

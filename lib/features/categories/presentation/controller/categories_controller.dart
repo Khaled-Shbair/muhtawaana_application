@@ -2,7 +2,7 @@ import '/config/all_imports.dart';
 
 class CategoriesController extends GetxController {
   final CategoriesUseCase _useCase = instance<CategoriesUseCase>();
-  List<DataCategoryModel> categories = [];
+  List<DataOfCategoryModel> categories = [];
   bool loading = false;
 
   @override
@@ -31,14 +31,14 @@ class CategoriesController extends GetxController {
   }
 
   ///////////////////////////////////////////
-  List<ProductCurrentPageOfCategoryDetailsModel> categoryDetails = [];
+  List<DataOfProductOfCategoryModel> categoryDetails = [];
 
   Future<void> getCategoryDetails(int id) async {
     categoryDetails = [];
-    final CategoryDetailsUseCase useCaseCategoryDetails =
-        instance<CategoryDetailsUseCase>();
+    final CategoryUseCase useCaseCategoryDetails =
+        instance<CategoryUseCase>();
     loading = true;
-    (await useCaseCategoryDetails.execute(CategoryDetailsBaseUseCaseInput(id)))
+    (await useCaseCategoryDetails.execute(CategoryBaseUseCaseInput(id)))
         .fold(
       (l) {},
       (r) {

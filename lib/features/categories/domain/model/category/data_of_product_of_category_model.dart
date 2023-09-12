@@ -1,4 +1,4 @@
-class ProductCurrentPageOfCategoryDetailsModel {
+class DataOfProductOfCategoryModel {
   int id;
   String name;
   String image;
@@ -10,7 +10,7 @@ class ProductCurrentPageOfCategoryDetailsModel {
   bool inFavorites;
   bool inCart;
 
-  ProductCurrentPageOfCategoryDetailsModel({
+  DataOfProductOfCategoryModel({
     required this.id,
     required this.price,
     required this.oldPrice,

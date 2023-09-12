@@ -156,22 +156,22 @@ initHome() {
 }
 
 initCategoryDetails() {
-  if (!GetIt.I.isRegistered<RemoteCategoryDetailsDataSource>()) {
-    instance.registerLazySingleton<RemoteCategoryDetailsDataSource>(
-      () => RemoteCategoryDetailsDataSourceImplementation(instance<AppApi>()),
+  if (!GetIt.I.isRegistered<RemoteCategoryDataSource>()) {
+    instance.registerLazySingleton<RemoteCategoryDataSource>(
+      () => RemoteCategoryDataSourceImplementation(instance<AppApi>()),
     );
   }
-  if (!GetIt.I.isRegistered<CategoryDetailsRepository>()) {
-    instance.registerLazySingleton<CategoryDetailsRepository>(
-      () => CategoryDetailsRepositoryImplementation(
+  if (!GetIt.I.isRegistered<CategoryRepository>()) {
+    instance.registerLazySingleton<CategoryRepository>(
+      () => CategoryRepositoryImplementation(
         instance<NetworkInfo>(),
-        instance<RemoteCategoryDetailsDataSource>(),
+        instance<RemoteCategoryDataSource>(),
       ),
     );
   }
-  if (!GetIt.I.isRegistered<CategoryDetailsUseCase>()) {
-    instance.registerLazySingleton<CategoryDetailsUseCase>(
-      () => CategoryDetailsUseCase(instance<CategoryDetailsRepository>()),
+  if (!GetIt.I.isRegistered<CategoryUseCase>()) {
+    instance.registerLazySingleton<CategoryUseCase>(
+      () => CategoryUseCase(instance<CategoryRepository>()),
     );
   }
 }
@@ -208,14 +208,14 @@ _finishCategories() async {
 }
 
 _finishCategoryDetails() async {
-  if (GetIt.I.isRegistered<RemoteCategoryDetailsDataSource>()) {
-    await instance.unregister<RemoteCategoryDetailsDataSource>();
+  if (GetIt.I.isRegistered<RemoteCategoryDataSource>()) {
+    await instance.unregister<RemoteCategoryDataSource>();
   }
-  if (GetIt.I.isRegistered<CategoryDetailsRepository>()) {
-    await instance.unregister<CategoryDetailsRepository>();
+  if (GetIt.I.isRegistered<CategoryRepository>()) {
+    await instance.unregister<CategoryRepository>();
   }
-  if (GetIt.I.isRegistered<CategoryDetailsUseCase>()) {
-    await instance.unregister<CategoryDetailsUseCase>();
+  if (GetIt.I.isRegistered<CategoryUseCase>()) {
+    await instance.unregister<CategoryUseCase>();
   }
 }
 

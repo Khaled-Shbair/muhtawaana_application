@@ -9,7 +9,7 @@ class CategoriesResponse {
   @JsonKey(name: ApiConstants.message)
   String? message;
   @JsonKey(name: ApiConstants.data)
-  CurrentPageOfCategoryResponse? data;
+  ListOfCategoriesResponse? data;
 
   CategoriesResponse({
     this.status,

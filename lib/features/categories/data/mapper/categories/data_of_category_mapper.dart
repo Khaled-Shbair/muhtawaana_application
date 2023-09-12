@@ -1,8 +1,8 @@
 import '/config/all_imports.dart';
 
-extension DataCategoryMapper on DataCategoryResponse {
+extension DataOfCategoryMapper on DataOfCategoryResponse {
   toDomain() {
-    return DataCategoryModel(
+    return DataOfCategoryModel(
       image: image.onNull(),
       name: name.onNull(),
       id: id.onNull(),

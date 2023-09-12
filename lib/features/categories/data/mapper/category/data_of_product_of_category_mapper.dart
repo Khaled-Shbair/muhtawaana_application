@@ -1,9 +1,8 @@
 import '/config/all_imports.dart';
 
-extension ProductCurrentPageOfCategoryDetailsMapper
-    on ProductCurrentPageOfCategoryDetailsResponse {
+extension DataOfProductOfCategoryMapper on DataOfProductOfCategoryResponse {
   toDomain() {
-    return ProductCurrentPageOfCategoryDetailsModel(
+    return DataOfProductOfCategoryModel(
       image: image.onNull(),
       name: name.onNull(),
       id: id.onNull(),
