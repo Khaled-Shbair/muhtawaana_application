@@ -170,10 +170,61 @@ TextStyle discountOfProductInHomeProductOfHomeScreen() {
   );
 }
 
-TextStyle titleAppBarInCategoriesScreen() {
+// my appBar widget
+TextStyle titleMyAppBarWidget() {
   return mediumTextStyle(
-    color: ManagerColors.blackColor,
+    color: ManagerColors.c5,
     fontFamily: ManagerFontFamily.roboto,
     fontSize: ManagerFontSize.s17,
+  );
+}
+
+// product details screen
+TextStyle nameOfProductInProductDetails() {
+  return mediumTextStyle(
+    fontSize: ManagerFontSize.s22,
+    color: ManagerColors.blackColor,
+    fontFamily: ManagerFontFamily.roboto,
+  );
+}
+
+TextStyle titleDescriptionOfProductInProductDetails() {
+  return regularTextStyle(
+    fontSize: ManagerFontSize.s20,
+    color: ManagerColors.blackColor,
+    fontFamily: ManagerFontFamily.roboto,
+  );
+}
+
+TextStyle descriptionOfProductInProductDetails() {
+  return regularTextStyle(
+    fontSize: ManagerFontSize.s17,
+    color: ManagerColors.c20,
+    fontFamily: ManagerFontFamily.roboto,
+  );
+}
+
+TextStyle titlePriceOfProductInProductDetails() {
+  return mediumTextStyle(
+    fontSize: ManagerFontSize.s17,
+    color: ManagerColors.c21,
+    fontFamily: ManagerFontFamily.roboto,
+  );
+}
+
+TextStyle priceOfProductInProductDetails() {
+  return mediumTextStyle(
+    fontSize: ManagerFontSize.s20,
+    color: ManagerColors.blackColor,
+    fontFamily: ManagerFontFamily.roboto,
+  );
+}
+
+TextStyle oldPriceOfProductInProductDetails() {
+  return mediumTextStyle(
+    fontSize: ManagerFontSize.s15,
+    color: ManagerColors.blackColor,
+    fontFamily: ManagerFontFamily.roboto,
+    decoration: TextDecoration.lineThrough,
   );
 }
