@@ -13,6 +13,7 @@ class CategoriesController extends GetxController {
 
   Future<void> getCategories() async {
     loading = true;
+    categories = [];
     (await _useCase.execute()).fold(
       (l) {},
       (r) {
@@ -22,5 +23,32 @@ class CategoriesController extends GetxController {
     );
     update();
   }
-  void onTapOnCategory(int id){}
+
+  void onTapOnCategory(int id) async {
+    await Get.toNamed(Routes.categoryDetailsScreen, arguments: id);
+    initCategoryDetails();
+    await getCategoryDetails(id);
+  }
+
+  ///////////////////////////////////////////
+  List<ProductCurrentPageOfCategoryDetailsModel> categoryDetails = [];
+
+  Future<void> getCategoryDetails(int id) async {
+    categoryDetails = [];
+    final CategoryDetailsUseCase useCaseCategoryDetails =
+        instance<CategoryDetailsUseCase>();
+    loading = true;
+    (await useCaseCategoryDetails.execute(CategoryDetailsBaseUseCaseInput(id)))
+        .fold(
+      (l) {},
+      (r) {
+        categoryDetails = r.data.data;
+        loading = false;
+      },
+    );
+    update();
+  }
+
+  void favoriteButton() {}
+///////////////////////////////////////////
 }
