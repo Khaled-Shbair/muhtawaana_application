@@ -4,6 +4,10 @@ AppBar myAppBar(String text) {
   return AppBar(
     leading: const MyBackIcon(),
     backgroundColor: ManagerColors.whiteColor,
+    shadowColor: ManagerColors.whiteColor,
+    foregroundColor: ManagerColors.whiteColor,
+    surfaceTintColor: ManagerColors.whiteColor,
+    scrolledUnderElevation: AppConstants.scrolledUnderElevationAppBar,
     elevation: AppConstants.elevationAppBar,
     title: Text(
       text,
