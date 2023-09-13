@@ -4,6 +4,7 @@ class AppConstants {
   static const int durationSplashScreen = 3;
   static const int durationOnBoarding = 1;
   static const double elevationAppBar = 0;
+  static const double scrolledUnderElevationAppBar = 0;
   static const double heightOfDividerInLoginScreen = 1;
   static const double blurRadiusOfBottomNavBarInMainScreen = 20;
   static const double xOffsetOfBottomNavBarInMainScreen = 0;
