@@ -30,9 +30,4 @@ abstract class AppApi {
 
   @GET(RequestsApi.category)
   Future<CategoryResponse> getCategory(@Path(ApiConstants.id) int id);
-
-  @GET(RequestsApi.productDetails)
-  Future<ProductDetailsResponse> getProductDetails(
-    @Path(ApiConstants.id) int id,
-  );
 }

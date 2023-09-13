@@ -139,19 +139,7 @@ export '/features/categories/data/repository_implementation/category_repository_
 export '/features/categories/domain/use_case/category_use_case.dart';
 export '/features/categories/presentation/view/screens/products_of_category_screen.dart';
 export '../core/widgets/my_app_bar.dart';
-export '/features/products/data/response/data_of_product_details_response.dart';
-export '/features/products/data/response/product_details_response.dart';
-export '/features/products/data/request/product_details_request.dart';
-export '/features/products/domain/model/data_of_product_details_model.dart';
-export '/features/products/domain/model/product_details_model.dart';
-export '/features/products/domain/repository/product_details_repository.dart';
-export '/features/products/data/data_source/remote_product_details_data_source.dart';
-export '/features/products/data/mapper/data_of_product_details_mapper.dart';
-export '/features/products/data/mapper/product_details_mapper.dart';
-export '/features/products/domain/use_case/product_details_use_case.dart';
-export '/features/products/data/repository_implementation/product_details_repository_implementation.dart';
-export '/features/products/presentation/controller/product_details_controller.dart';
-export '/features/products/presentation/view/screens/product_details_screen.dart';
+export '../features/home/presentation/view/screens/product_details_screen.dart';
 
 // routes file
 export '/routes/route_generator.dart';
