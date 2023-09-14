@@ -182,7 +182,7 @@ TextStyle titleMyAppBarWidget() {
 // product details screen
 TextStyle nameOfProductInProductDetails() {
   return mediumTextStyle(
-    fontSize: ManagerFontSize.s22,
+    fontSize: ManagerFontSize.s17,
     color: ManagerColors.blackColor,
     fontFamily: ManagerFontFamily.roboto,
   );
@@ -190,7 +190,7 @@ TextStyle nameOfProductInProductDetails() {
 
 TextStyle titleDescriptionOfProductInProductDetails() {
   return regularTextStyle(
-    fontSize: ManagerFontSize.s20,
+    fontSize: ManagerFontSize.s15,
     color: ManagerColors.blackColor,
     fontFamily: ManagerFontFamily.roboto,
   );
@@ -198,7 +198,7 @@ TextStyle titleDescriptionOfProductInProductDetails() {
 
 TextStyle descriptionOfProductInProductDetails() {
   return regularTextStyle(
-    fontSize: ManagerFontSize.s17,
+    fontSize: ManagerFontSize.s12,
     color: ManagerColors.c20,
     fontFamily: ManagerFontFamily.roboto,
   );
@@ -214,7 +214,7 @@ TextStyle titlePriceOfProductInProductDetails() {
 
 TextStyle priceOfProductInProductDetails() {
   return mediumTextStyle(
-    fontSize: ManagerFontSize.s20,
+    fontSize: ManagerFontSize.s18,
     color: ManagerColors.blackColor,
     fontFamily: ManagerFontFamily.roboto,
   );
@@ -223,8 +223,18 @@ TextStyle priceOfProductInProductDetails() {
 TextStyle oldPriceOfProductInProductDetails() {
   return mediumTextStyle(
     fontSize: ManagerFontSize.s15,
-    color: ManagerColors.blackColor,
+    color: ManagerColors.c10,
     fontFamily: ManagerFontFamily.roboto,
     decoration: TextDecoration.lineThrough,
+    decorationColor: ManagerColors.c10,
+    decorationThickness: 1.5,
+  );
+}
+
+TextStyle addToCartInProductDetails() {
+  return mediumTextStyle(
+    fontSize: ManagerFontSize.s15,
+    color: ManagerColors.whiteColor,
+    fontFamily: ManagerFontFamily.roboto,
   );
 }
