@@ -37,7 +37,6 @@ class RouteGenerator {
         initCategoryDetails();
         return MaterialPageRoute(builder: (_) => ProductsOfCategoryScreen(id));
       case Routes.productDetailsScreen:
-        initProductDetails();
         var data = settings.arguments as ProductDataHomeModel;
         return MaterialPageRoute(builder: (_) => ProductDetailsScreen(data));
 
