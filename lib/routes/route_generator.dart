@@ -39,6 +39,8 @@ class RouteGenerator {
       case Routes.productDetailsScreen:
         var data = settings.arguments as ProductDataHomeModel;
         return MaterialPageRoute(builder: (_) => ProductDetailsScreen(data));
+      case Routes.searchProductScreen:
+        return MaterialPageRoute(builder: (_) => const SearchProductScreen());
 
       default:
         return unDefinedRoute();
