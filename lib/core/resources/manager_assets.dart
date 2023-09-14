@@ -29,6 +29,7 @@ class ManagerAssets {
 
   //Icons images
   static const String arrowBackIcon = '${_imagePath}icon/arrow_back_icon.svg';
+  static const String searchIcon = '${_imagePath}icon/search_icon.svg';
 }
 
 class ManagerJson {}
