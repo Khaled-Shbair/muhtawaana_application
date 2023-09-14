@@ -141,6 +141,8 @@ export '/features/categories/presentation/view/screens/products_of_category_scre
 export '/core/widgets/my_app_bar.dart';
 export '/features/home/presentation/view/screens/product_details_screen.dart';
 export '/features/home/presentation/view/widgets/move_button_between_images.dart';
+export '/features/home/presentation/view/screens/search_product_screen.dart';
+export '/features/home/presentation/view/widgets/my_search.dart';
 
 // routes file
 export '/routes/route_generator.dart';
