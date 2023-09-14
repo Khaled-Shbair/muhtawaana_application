@@ -17,34 +17,46 @@ class HomeScreen extends StatelessWidget {
               onPressed: controller.buttonShopInAppBar,
             ),
             body: SafeArea(
-              child: RefreshIndicator(
-                onRefresh: () => controller.getHomeData(),
-                color: ManagerColors.primaryColor,
-                child: SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Column(
-                    children: [
-                      SizedBox(height: ManagerHeight.h10),
-                      HomeSlider(
-                        sliders: controller.banners,
-                        loading: controller.loading,
+              child: SingleChildScrollView(
+                physics: const NeverScrollableScrollPhysics(),
+                child: Column(
+                  children: [
+                    SizedBox(height: ManagerHeight.h7),
+                    MySearch(
+                      selectCategory: controller.selectCategoryToSearch,
+                      isHome: true,
+                    ),
+                    RefreshIndicator(
+                      onRefresh: () => controller.getHomeData(),
+                      color: ManagerColors.primaryColor,
+                      child: SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        child: Column(
+                          children: [
+                            SizedBox(height: ManagerHeight.h10),
+                            HomeSlider(
+                              sliders: controller.banners,
+                              loading: controller.loading,
+                            ),
+                            TitleOfDepartment(
+                              name: ManagerStrings.categories,
+                              onTap: controller.buttonMoreCategories,
+                            ),
+                            const HomeCategory(),
+                            TitleOfDepartment(
+                              name: ManagerStrings.products,
+                              onTap: controller.buttonMoreProducts,
+                            ),
+                            StructureOfViewProduct(
+                              products: controller.products,
+                              favoriteButton: controller.addToFavorites,
+                              loading: controller.loading,
+                            ),
+                          ],
+                        ),
                       ),
-                      TitleOfDepartment(
-                        name: ManagerStrings.categories,
-                        onTap: controller.buttonMoreCategories,
-                      ),
-                      const HomeCategory(),
-                      TitleOfDepartment(
-                        name: ManagerStrings.products,
-                        onTap: controller.buttonMoreProducts,
-                      ),
-                      StructureOfViewProduct(
-                        products: controller.products,
-                        favoriteButton: controller.addToFavorites,
-                        loading: controller.loading,
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),
