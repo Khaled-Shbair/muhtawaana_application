@@ -238,3 +238,11 @@ TextStyle addToCartInProductDetails() {
     fontFamily: ManagerFontFamily.roboto,
   );
 }
+
+TextStyle styleOfSearchInMySearch() {
+  return mediumTextStyle(
+    fontFamily: ManagerFontFamily.inter,
+    fontSize: ManagerFontSize.s13,
+    color: ManagerColors.c4,
+  );
+}
