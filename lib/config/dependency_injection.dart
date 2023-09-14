@@ -204,7 +204,7 @@ _finishCategories() async {
   if (GetIt.I.isRegistered<CategoriesUseCase>()) {
     await instance.unregister<CategoriesUseCase>();
   }
-  Get.delete<CategoriesController>();
+  await Get.delete<CategoriesController>();
 }
 
 _finishCategoryDetails() async {
