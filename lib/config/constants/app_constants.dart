@@ -20,4 +20,7 @@ class AppConstants {
   static const double blurRadiusOfContainerInProductDetails = 10;
   static const double xOffsetOfContainerInProductDetails = 0;
   static const double yOffsetOfContainerInProductDetails = -1;
+  static const double xOffsetOfPopupMenuButtonInMySearchWidget = -10;
+  static const double yOffsetOfPopupMenuButtonInMySearchWidget = 30;
+
 }
