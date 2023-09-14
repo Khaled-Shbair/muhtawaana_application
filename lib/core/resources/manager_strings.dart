@@ -61,4 +61,6 @@ class ManagerStrings {
   static String addToCart = 'add_to_cart'.tr;
   static String addToFavorites = 'add_to_favorites'.tr;
   static String price = 'price'.tr;
+  static String search = 'search'.tr;
+  static String allCategories = 'all_categories'.tr;
 }
