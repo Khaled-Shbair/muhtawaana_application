@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       StructureOfViewProduct(
                         products: controller.products,
-                        favoriteButton: controller.favoriteButton,
+                        favoriteButton: controller.addToFavorites,
                         loading: controller.loading,
                       ),
                     ],
