@@ -246,3 +246,35 @@ TextStyle styleOfSearchInMySearch() {
     color: ManagerColors.c4,
   );
 }
+
+// MyCardProduct widget
+TextStyle nameOfProductInMyCardProduct() {
+  return mediumTextStyle(
+    color: ManagerColors.blackColor,
+    fontFamily: ManagerFontFamily.roboto,
+    fontSize: ManagerFontSize.s12,
+  );
+}
+
+TextStyle priceOfProductInMyCardProduct() {
+  return regularTextStyle(
+    color: ManagerColors.c5,
+    fontFamily: ManagerFontFamily.roboto,
+    fontSize: ManagerFontSize.s12,
+  );
+}
+TextStyle oldPriceOfProductInMyCardProduct() {
+  return regularTextStyle(
+    color: ManagerColors.blackColor,
+    fontFamily: ManagerFontFamily.roboto,
+    fontSize: ManagerFontSize.s10,
+    decoration: TextDecoration.lineThrough,
+  );
+}
+TextStyle showDetailsButtonInMyCardProduct() {
+  return mediumTextStyle(
+      color: ManagerColors.whiteColor,
+      fontSize: ManagerFontSize.s10,
+      fontFamily: ManagerFontFamily.roboto,
+  );
+}
