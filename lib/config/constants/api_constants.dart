@@ -25,6 +25,7 @@ class ApiConstants {
   static const String total = 'total';
 
   static const String data = 'data';
+  static const String productId = 'product_id';
   static const String firstPageUrl = 'first_page_url';
   static const String from = 'from';
   static const String to = 'to';
