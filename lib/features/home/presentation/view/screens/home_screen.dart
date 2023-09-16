@@ -17,20 +17,15 @@ class HomeScreen extends StatelessWidget {
               onPressed: controller.buttonShopInAppBar,
             ),
             body: SafeArea(
-              child: SingleChildScrollView(
-                physics: const NeverScrollableScrollPhysics(),
-                child: Column(
-                  children: [
-                    SizedBox(height: ManagerHeight.h7),
-                    MySearch(
-                      selectCategory: controller.selectCategoryToSearch,
-                      isHome: true,
-                    ),
-                    RefreshIndicator(
+              child: Column(
+                children: [
+                  SizedBox(height: ManagerHeight.h7),
+                  const MySearch(isHome: true),
+                  Expanded(
+                    child: RefreshIndicator(
                       onRefresh: () => controller.getHomeData(),
                       color: ManagerColors.primaryColor,
                       child: SingleChildScrollView(
-                        physics: const BouncingScrollPhysics(),
                         child: Column(
                           children: [
                             SizedBox(height: ManagerHeight.h10),
@@ -56,8 +51,8 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           );
