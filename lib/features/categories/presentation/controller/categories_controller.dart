@@ -1,7 +1,9 @@
 import '/config/all_imports.dart';
 
 class CategoriesController extends GetxController {
-  final CategoriesUseCase _useCase = instance<CategoriesUseCase>();
+  static CategoriesController get to => Get.find();
+  final CategoriesUseCase _categoriesUseCase = instance<CategoriesUseCase>();
+  List<DataOfProductOfCategoryModel> categoryDetails = [];
   List<DataOfCategoryModel> categories = [];
   bool loading = false;
 
@@ -12,9 +14,9 @@ class CategoriesController extends GetxController {
   }
 
   Future<void> getCategories() async {
-    loading = true;
     categories = [];
-    (await _useCase.execute()).fold(
+    loading = true;
+    (await _categoriesUseCase.execute()).fold(
       (l) {},
       (r) {
         categories = r.data.data;
@@ -30,16 +32,11 @@ class CategoriesController extends GetxController {
     await getCategoryDetails(id);
   }
 
-  ///////////////////////////////////////////
-  List<DataOfProductOfCategoryModel> categoryDetails = [];
-
   Future<void> getCategoryDetails(int id) async {
+    final CategoryUseCase categoryDetailsUseCase = instance<CategoryUseCase>();
     categoryDetails = [];
-    final CategoryUseCase useCaseCategoryDetails =
-        instance<CategoryUseCase>();
     loading = true;
-    (await useCaseCategoryDetails.execute(CategoryBaseUseCaseInput(id)))
-        .fold(
+    (await categoryDetailsUseCase.execute(CategoryBaseUseCaseInput(id))).fold(
       (l) {},
       (r) {
         categoryDetails = r.data.data;
@@ -50,5 +47,4 @@ class CategoriesController extends GetxController {
   }
 
   void favoriteButton() {}
-///////////////////////////////////////////
 }
