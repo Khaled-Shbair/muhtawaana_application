@@ -2,17 +2,17 @@ import '/config/all_imports.dart';
 
 class MySearch extends StatelessWidget {
   const MySearch({
-    required this.selectCategory,
     this.formKey,
     this.controller,
+    this.onChanged,
     this.isHome = false,
     super.key,
   });
 
-  final String selectCategory;
   final TextEditingController? controller;
   final Key? formKey;
   final bool isHome;
+  final void Function(String value)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -57,8 +57,11 @@ class MySearch extends StatelessWidget {
               Expanded(
                 child: TextFormField(
                   enabled: !isHome,
+                  autofocus: !isHome,
+                  onChanged: onChanged,
                   keyboardType: TextInputType.text,
                   controller: controller,
+                  style: styleOfSearchInMySearch(ManagerColors.blackColor),
                   decoration: InputDecoration(
                     hintText: ManagerStrings.search,
                     hintStyle: styleOfSearchInMySearch(),
@@ -77,41 +80,6 @@ class MySearch extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                height: double.infinity,
-                width: ManagerWidth.w1,
-                color: Colors.black,
-              ),
-              SizedBox(width: ManagerWidth.w10),
-              PopupMenuButton<String>(
-                enabled: !isHome,
-                padding: EdgeInsetsDirectional.zero,
-                surfaceTintColor: ManagerColors.whiteColor,
-                offset: const Offset(
-                  AppConstants.xOffsetOfPopupMenuButtonInMySearchWidget,
-                  AppConstants.yOffsetOfPopupMenuButtonInMySearchWidget,
-                ),
-                child: Row(
-                  children: [
-                    Text(
-                      selectCategory,
-                      style: styleOfSearchInMySearch(),
-                    ),
-                    const Icon(
-                      Icons.keyboard_arrow_down,
-                      color: ManagerColors.c23,
-                      size: ManagerIconSize.s30,
-                    )
-                  ],
-                ),
-                itemBuilder: (context) {
-                  return [
-                    PopupMenuItem(
-                      child: Text('sss'),
-                    ),
-                  ];
-                },
-              )
             ],
           ),
         ),
