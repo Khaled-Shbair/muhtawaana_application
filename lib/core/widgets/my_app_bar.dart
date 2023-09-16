@@ -3,9 +3,10 @@ import 'package:muhtawaana_app/config/all_imports.dart';
 AppBar myAppBar({
   String? text,
   List<Widget>? actions,
+  Function()? onPressed,
 }) {
   return AppBar(
-    leading: const MyBackIcon(),
+    leading: MyBackIcon(onPressed: onPressed),
     backgroundColor: ManagerColors.whiteColor,
     shadowColor: ManagerColors.whiteColor,
     foregroundColor: ManagerColors.whiteColor,
