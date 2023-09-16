@@ -107,6 +107,7 @@ initMainController() {
   initCategories();
   initHome();
   initCategoryDetails();
+  initFavorites();
   _finishSplash();
   _finishOnBoarding();
   _finishSignUp();
@@ -135,6 +136,28 @@ initCategories() {
     );
   }
   Get.put<CategoriesController>(CategoriesController());
+}
+
+initFavorites() {
+  if (!GetIt.I.isRegistered<RemoteFavoritesDataSource>()) {
+    instance.registerLazySingleton<RemoteFavoritesDataSource>(
+      () => RemoteFavoritesDataSourceImplementation(instance<AppApi>()),
+    );
+  }
+  if (!GetIt.I.isRegistered<FavoritesRepository>()) {
+    instance.registerLazySingleton<FavoritesRepository>(
+      () => FavoritesRepositoryImplementation(
+        instance<NetworkInfo>(),
+        instance<RemoteFavoritesDataSource>(),
+      ),
+    );
+  }
+  if (!GetIt.I.isRegistered<FavoritesUseCase>()) {
+    instance.registerLazySingleton<FavoritesUseCase>(
+      () => FavoritesUseCase(instance<FavoritesRepository>()),
+    );
+  }
+  Get.put<FavoritesController>(FavoritesController());
 }
 
 initHome() {
@@ -195,6 +218,8 @@ _finishOnBoarding() async {
 _finishMainController() async {
   _finishHome();
   _finishCategories();
+  _finishFavorites();
+  _finishCategoryDetails();
   await Get.delete<MainController>();
 }
 
@@ -209,6 +234,19 @@ _finishCategories() async {
     await instance.unregister<CategoriesUseCase>();
   }
   await Get.delete<CategoriesController>();
+}
+
+_finishFavorites() async {
+  if (GetIt.I.isRegistered<RemoteFavoritesDataSource>()) {
+    await instance.unregister<RemoteFavoritesDataSource>();
+  }
+  if (GetIt.I.isRegistered<FavoritesRepository>()) {
+    await instance.unregister<FavoritesRepository>();
+  }
+  if (GetIt.I.isRegistered<FavoritesUseCase>()) {
+    await instance.unregister<FavoritesUseCase>();
+  }
+  await Get.delete<FavoritesController>();
 }
 
 _finishCategoryDetails() async {
