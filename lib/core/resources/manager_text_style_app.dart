@@ -239,11 +239,11 @@ TextStyle addToCartInProductDetails() {
   );
 }
 
-TextStyle styleOfSearchInMySearch() {
+TextStyle styleOfSearchInMySearch([Color? color]) {
   return mediumTextStyle(
     fontFamily: ManagerFontFamily.inter,
-    fontSize: ManagerFontSize.s13,
-    color: ManagerColors.c4,
+    fontSize: ManagerFontSize.s15,
+    color: color ?? ManagerColors.c4,
   );
 }
 
@@ -263,6 +263,7 @@ TextStyle priceOfProductInMyCardProduct() {
     fontSize: ManagerFontSize.s12,
   );
 }
+
 TextStyle oldPriceOfProductInMyCardProduct() {
   return regularTextStyle(
     color: ManagerColors.blackColor,
@@ -271,10 +272,11 @@ TextStyle oldPriceOfProductInMyCardProduct() {
     decoration: TextDecoration.lineThrough,
   );
 }
+
 TextStyle showDetailsButtonInMyCardProduct() {
   return mediumTextStyle(
-      color: ManagerColors.whiteColor,
-      fontSize: ManagerFontSize.s10,
-      fontFamily: ManagerFontFamily.roboto,
+    color: ManagerColors.whiteColor,
+    fontSize: ManagerFontSize.s10,
+    fontFamily: ManagerFontFamily.roboto,
   );
 }
