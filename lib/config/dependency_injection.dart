@@ -46,15 +46,34 @@ initOnBoarding() {
   Get.put<OnBoardingController>(OnBoardingController());
 }
 
-initMainController() {
-  initHome();
-  initCategories();
-  _finishSplash();
-  _finishOnBoarding();
-  _finishSignUp();
-  _finishChangePassword();
+///////////////////////////////////////////////////////////////////////////////
+// Auth controllers
+initSignUp() {
   _finishLogin();
-  Get.put<MainController>(MainController());
+  _finishChangePassword();
+  if (!GetIt.I.isRegistered<RemoteSignUpDataSource>()) {
+    instance.registerLazySingleton<RemoteSignUpDataSource>(
+      () => RemoteSignUpDataSourceImplementation(instance<AppApi>()),
+    );
+  }
+  if (!GetIt.I.isRegistered<SignUpRepository>()) {
+    instance.registerLazySingleton<SignUpRepository>(
+      () => SignUpRepositoryImplementation(
+        instance<NetworkInfo>(),
+        instance<RemoteSignUpDataSource>(),
+      ),
+    );
+  }
+  if (!GetIt.I.isRegistered<SignUpUseCase>()) {
+    instance.registerFactory<SignUpUseCase>(
+      () => SignUpUseCase(instance<SignUpRepository>()),
+    );
+  }
+  Get.put<SignUpController>(SignUpController());
+}
+
+initChangePassword() {
+  Get.put<ChangePasswordController>(ChangePasswordController());
 }
 
 initLogin() {
@@ -83,8 +102,20 @@ initLogin() {
   Get.put<LoginController>(LoginController());
 }
 
+///////////////////////////////////////////////////////////////////////////////
+initMainController() {
+  initCategories();
+  initHome();
+  initCategoryDetails();
+  _finishSplash();
+  _finishOnBoarding();
+  _finishSignUp();
+  _finishChangePassword();
+  _finishLogin();
+  Get.put<MainController>(MainController());
+}
+
 initCategories() {
-  _finishCategoryDetails();
   if (!GetIt.I.isRegistered<RemoteCategoriesDataSource>()) {
     instance.registerLazySingleton<RemoteCategoriesDataSource>(
       () => RemoteCategoriesDataSourceImplementation(instance<AppApi>()),
@@ -104,33 +135,6 @@ initCategories() {
     );
   }
   Get.put<CategoriesController>(CategoriesController());
-}
-
-initSignUp() {
-  _finishLogin();
-  if (!GetIt.I.isRegistered<RemoteSignUpDataSource>()) {
-    instance.registerLazySingleton<RemoteSignUpDataSource>(
-      () => RemoteSignUpDataSourceImplementation(instance<AppApi>()),
-    );
-  }
-  if (!GetIt.I.isRegistered<SignUpRepository>()) {
-    instance.registerLazySingleton<SignUpRepository>(
-      () => SignUpRepositoryImplementation(
-        instance<NetworkInfo>(),
-        instance<RemoteSignUpDataSource>(),
-      ),
-    );
-  }
-  if (!GetIt.I.isRegistered<SignUpUseCase>()) {
-    instance.registerFactory<SignUpUseCase>(
-      () => SignUpUseCase(instance<SignUpRepository>()),
-    );
-  }
-  Get.put<SignUpController>(SignUpController());
-}
-
-initChangePassword() {
-  Get.put<ChangePasswordController>(ChangePasswordController());
 }
 
 initHome() {
