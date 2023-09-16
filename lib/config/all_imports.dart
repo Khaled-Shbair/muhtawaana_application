@@ -43,6 +43,7 @@ export '/core/widgets/main_text_field.dart';
 export '/core/widgets/my_back_icon.dart';
 export '/core/helpers/show_snack_bar.dart';
 export '/core/widgets/main_shimmer.dart';
+export '/core/widgets/my_card_product.dart';
 
 // features file
 export '/features/splash/presentation/controller/splash_controller.dart';
