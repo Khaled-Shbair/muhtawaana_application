@@ -157,6 +157,26 @@ initFavorites() {
       () => FavoritesUseCase(instance<FavoritesRepository>()),
     );
   }
+  if (!GetIt.I.isRegistered<RemoteAllProductsFavoritesDataSource>()) {
+    instance.registerLazySingleton<RemoteAllProductsFavoritesDataSource>(
+      () => RemoteAllProductsFavoritesDataSourceImplementation(
+          instance<AppApi>()),
+    );
+  }
+  if (!GetIt.I.isRegistered<AllProductsFavoritesRepository>()) {
+    instance.registerLazySingleton<AllProductsFavoritesRepository>(
+      () => AllProductsFavoritesRepositoryImplementation(
+        instance<NetworkInfo>(),
+        instance<RemoteAllProductsFavoritesDataSource>(),
+      ),
+    );
+  }
+  if (!GetIt.I.isRegistered<AllProductsFavoritesUseCase>()) {
+    instance.registerLazySingleton<AllProductsFavoritesUseCase>(
+      () => AllProductsFavoritesUseCase(
+          instance<AllProductsFavoritesRepository>()),
+    );
+  }
   Get.put<FavoritesController>(FavoritesController());
 }
 
