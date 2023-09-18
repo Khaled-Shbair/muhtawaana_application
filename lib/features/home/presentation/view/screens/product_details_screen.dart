@@ -13,7 +13,7 @@ class ProductDetailsScreen extends StatelessWidget {
           appBar: myAppBar(
             actions: [
               ElevatedButton(
-                onPressed: controller.addToFavorites,
+                onPressed: () async => controller.buttonFavorites(data.id),
                 style: ElevatedButton.styleFrom(
                     shape: const CircleBorder(),
                     backgroundColor: ManagerColors.primaryColor),
