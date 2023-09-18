@@ -6,12 +6,14 @@ class MySearch extends StatelessWidget {
     this.controller,
     this.onChanged,
     this.isHome = false,
+    this.autofocus = false,
     super.key,
   });
 
   final TextEditingController? controller;
   final Key? formKey;
   final bool isHome;
+  final bool autofocus;
   final void Function(String value)? onChanged;
 
   @override
@@ -57,7 +59,7 @@ class MySearch extends StatelessWidget {
               Expanded(
                 child: TextFormField(
                   enabled: !isHome,
-                  autofocus: !isHome,
+                  autofocus: autofocus,
                   onChanged: onChanged,
                   keyboardType: TextInputType.text,
                   controller: controller,
