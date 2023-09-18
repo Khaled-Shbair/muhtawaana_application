@@ -14,6 +14,7 @@ class SearchProductScreen extends StatelessWidget {
               MySearch(
                 controller: controller.searchController,
                 formKey: controller.formKey,
+                autofocus: true,
                 onChanged: (value) => controller.searchProduct(value),
               ),
               Expanded(
