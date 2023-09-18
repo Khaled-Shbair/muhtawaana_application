@@ -175,7 +175,7 @@ TextStyle titleMyAppBarWidget() {
   return mediumTextStyle(
     color: ManagerColors.c5,
     fontFamily: ManagerFontFamily.roboto,
-    fontSize: ManagerFontSize.s17,
+    fontSize: ManagerFontSize.s20,
   );
 }
 
