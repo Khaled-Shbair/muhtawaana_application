@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
                   const MySearch(isHome: true),
                   Expanded(
                     child: RefreshIndicator(
-                      onRefresh: () async => controller.onRefreshPage,
+                      onRefresh: () async => await controller.onRefreshPage(),
                       color: ManagerColors.primaryColor,
                       child: SingleChildScrollView(
                         child: Column(
@@ -72,8 +72,8 @@ class HomeScreen extends StatelessWidget {
                                     oldPrice: data.oldPrice,
                                     price: data.price,
                                     data: data,
-                                    buttonFavorites: () => controller
-                                        .buttonFavorites(data.id, index),
+                                    buttonFavorites: () =>
+                                        controller.buttonFavorites(data.id),
                                   );
                                 } else {
                                   return MainShimmer(
