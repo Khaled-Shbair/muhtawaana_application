@@ -106,6 +106,7 @@ initLogin() {
 initMainController() {
   initCategories();
   initHome();
+  initProfile();
   initCategoryDetails();
   initFavorites();
   _finishSplash();
@@ -204,6 +205,28 @@ initCategoryDetails() {
   }
 }
 
+initProfile() {
+  if (!GetIt.I.isRegistered<RemoteProfileDataSource>()) {
+    instance.registerLazySingleton<RemoteProfileDataSource>(
+      () => RemoteProfileDataSourceImplementation(instance<AppApi>()),
+    );
+  }
+  if (!GetIt.I.isRegistered<ProfileRepository>()) {
+    instance.registerLazySingleton<ProfileRepository>(
+      () => ProfileRepositoryImplementation(
+        instance<NetworkInfo>(),
+        instance<RemoteProfileDataSource>(),
+      ),
+    );
+  }
+  if (!GetIt.I.isRegistered<ProfileUseCase>()) {
+    instance.registerLazySingleton<ProfileUseCase>(
+      () => ProfileUseCase(instance<ProfileRepository>()),
+    );
+  }
+  Get.put<ProfileController>(ProfileController());
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 /* Finish or dispose Controller and remove from memory */
 _finishChangePassword() async => await Get.delete<ChangePasswordController>();
@@ -221,6 +244,7 @@ _finishMainController() async {
   _finishCategories();
   _finishFavorites();
   _finishCategoryDetails();
+  _finishProfile();
   await Get.delete<MainController>();
 }
 
@@ -273,6 +297,19 @@ _finishLogin() async {
     await instance.unregister<LoginUseCase>();
   }
   await Get.delete<LoginController>();
+}
+
+_finishProfile() async {
+  if (GetIt.I.isRegistered<RemoteProfileDataSource>()) {
+    await instance.unregister<RemoteProfileDataSource>();
+  }
+  if (GetIt.I.isRegistered<ProfileRepository>()) {
+    await instance.unregister<ProfileRepository>();
+  }
+  if (GetIt.I.isRegistered<ProfileUseCase>()) {
+    await instance.unregister<ProfileUseCase>();
+  }
+  await Get.delete<ProfileController>();
 }
 
 _finishHome() async {
