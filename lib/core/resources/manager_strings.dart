@@ -63,4 +63,5 @@ class ManagerStrings {
   static String price = 'price'.tr;
   static String search = 'search'.tr;
   static String allCategories = 'all_categories'.tr;
+  static String noFavoriteProducts = 'no_favorite_products'.tr;
 }

@@ -64,4 +64,5 @@ const Map<String, String> en = {
   'price': 'Price',
   'search': 'Search',
   'all_categories': 'All Categories',
+  'no_favorite_products': 'No favorite products',
 };
