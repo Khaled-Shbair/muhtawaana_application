@@ -4,9 +4,10 @@ AppBar myAppBar({
   String? text,
   List<Widget>? actions,
   Function()? onPressed,
+  bool appearLeading = true,
 }) {
   return AppBar(
-    leading: MyBackIcon(onPressed: onPressed),
+    leading: appearLeading ? MyBackIcon(onPressed: onPressed) : null,
     backgroundColor: ManagerColors.whiteColor,
     shadowColor: ManagerColors.whiteColor,
     foregroundColor: ManagerColors.whiteColor,
