@@ -30,4 +30,9 @@ abstract class AppApi {
 
   @GET(RequestsApi.category)
   Future<CategoryResponse> getCategory(@Path(ApiConstants.id) int id);
+
+  @POST(RequestsApi.favorites)
+  Future<FavoritesResponse> addOrDeleteFavoritesProduct(
+    @Field(ApiConstants.productId) id,
+  );
 }

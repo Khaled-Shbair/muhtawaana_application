@@ -29,6 +29,9 @@ class ManagerAssets {
 
   //Icons images
   static const String arrowBackIcon = '${_imagePath}icon/arrow_back_icon.svg';
+  static const String searchIcon = '${_imagePath}icon/search_icon.svg';
+  static const String nullImageCategory = 'https://student.valuxapps.com/storage/uploads/categories/16893929290QVM1.modern-devices-isometric-icons-collection-with-sixteen-isolated-images-computers-periphereals-variou.jpeg';
+
 }
 
 class ManagerJson {}

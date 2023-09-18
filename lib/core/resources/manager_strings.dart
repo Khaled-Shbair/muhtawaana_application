@@ -57,4 +57,11 @@ class ManagerStrings {
   static String showDetails = 'show_details'.tr;
   static String discount = 'discount'.tr;
   static String categoryProducts = 'category_products'.tr;
+  static String description = 'description'.tr;
+  static String addToCart = 'add_to_cart'.tr;
+  static String addToFavorites = 'add_to_favorites'.tr;
+  static String price = 'price'.tr;
+  static String search = 'search'.tr;
+  static String allCategories = 'all_categories'.tr;
+  static String noFavoriteProducts = 'no_favorite_products'.tr;
 }

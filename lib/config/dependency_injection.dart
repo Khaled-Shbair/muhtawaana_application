@@ -46,15 +46,34 @@ initOnBoarding() {
   Get.put<OnBoardingController>(OnBoardingController());
 }
 
-initMainController() {
-  initHome();
-  initCategories();
-  _finishSplash();
-  _finishOnBoarding();
-  _finishSignUp();
-  _finishChangePassword();
+///////////////////////////////////////////////////////////////////////////////
+// Auth controllers
+initSignUp() {
   _finishLogin();
-  Get.put<MainController>(MainController());
+  _finishChangePassword();
+  if (!GetIt.I.isRegistered<RemoteSignUpDataSource>()) {
+    instance.registerLazySingleton<RemoteSignUpDataSource>(
+      () => RemoteSignUpDataSourceImplementation(instance<AppApi>()),
+    );
+  }
+  if (!GetIt.I.isRegistered<SignUpRepository>()) {
+    instance.registerLazySingleton<SignUpRepository>(
+      () => SignUpRepositoryImplementation(
+        instance<NetworkInfo>(),
+        instance<RemoteSignUpDataSource>(),
+      ),
+    );
+  }
+  if (!GetIt.I.isRegistered<SignUpUseCase>()) {
+    instance.registerFactory<SignUpUseCase>(
+      () => SignUpUseCase(instance<SignUpRepository>()),
+    );
+  }
+  Get.put<SignUpController>(SignUpController());
+}
+
+initChangePassword() {
+  Get.put<ChangePasswordController>(ChangePasswordController());
 }
 
 initLogin() {
@@ -83,8 +102,21 @@ initLogin() {
   Get.put<LoginController>(LoginController());
 }
 
+///////////////////////////////////////////////////////////////////////////////
+initMainController() {
+  initCategories();
+  initHome();
+  initCategoryDetails();
+  initFavorites();
+  _finishSplash();
+  _finishOnBoarding();
+  _finishSignUp();
+  _finishChangePassword();
+  _finishLogin();
+  Get.put<MainController>(MainController());
+}
+
 initCategories() {
-  _finishCategoryDetails();
   if (!GetIt.I.isRegistered<RemoteCategoriesDataSource>()) {
     instance.registerLazySingleton<RemoteCategoriesDataSource>(
       () => RemoteCategoriesDataSourceImplementation(instance<AppApi>()),
@@ -106,31 +138,27 @@ initCategories() {
   Get.put<CategoriesController>(CategoriesController());
 }
 
-initSignUp() {
-  _finishLogin();
-  if (!GetIt.I.isRegistered<RemoteSignUpDataSource>()) {
-    instance.registerLazySingleton<RemoteSignUpDataSource>(
-      () => RemoteSignUpDataSourceImplementation(instance<AppApi>()),
+initFavorites() {
+  if (!GetIt.I.isRegistered<RemoteFavoritesDataSource>()) {
+    instance.registerLazySingleton<RemoteFavoritesDataSource>(
+      () => RemoteFavoritesDataSourceImplementation(instance<AppApi>()),
     );
   }
-  if (!GetIt.I.isRegistered<SignUpRepository>()) {
-    instance.registerLazySingleton<SignUpRepository>(
-      () => SignUpRepositoryImplementation(
+  if (!GetIt.I.isRegistered<FavoritesRepository>()) {
+    instance.registerLazySingleton<FavoritesRepository>(
+      () => FavoritesRepositoryImplementation(
         instance<NetworkInfo>(),
-        instance<RemoteSignUpDataSource>(),
+        instance<RemoteFavoritesDataSource>(),
       ),
     );
   }
-  if (!GetIt.I.isRegistered<SignUpUseCase>()) {
-    instance.registerFactory<SignUpUseCase>(
-      () => SignUpUseCase(instance<SignUpRepository>()),
+  if (!GetIt.I.isRegistered<FavoritesUseCase>()) {
+    instance.registerLazySingleton<FavoritesUseCase>(
+      () => FavoritesUseCase(instance<FavoritesRepository>()),
     );
   }
-  Get.put<SignUpController>(SignUpController());
-}
 
-initChangePassword() {
-  Get.put<ChangePasswordController>(ChangePasswordController());
+  Get.put<FavoritesController>(FavoritesController());
 }
 
 initHome() {
@@ -191,6 +219,8 @@ _finishOnBoarding() async {
 _finishMainController() async {
   _finishHome();
   _finishCategories();
+  _finishFavorites();
+  _finishCategoryDetails();
   await Get.delete<MainController>();
 }
 
@@ -204,7 +234,20 @@ _finishCategories() async {
   if (GetIt.I.isRegistered<CategoriesUseCase>()) {
     await instance.unregister<CategoriesUseCase>();
   }
-  Get.delete<CategoriesController>();
+  await Get.delete<CategoriesController>();
+}
+
+_finishFavorites() async {
+  if (GetIt.I.isRegistered<RemoteFavoritesDataSource>()) {
+    await instance.unregister<RemoteFavoritesDataSource>();
+  }
+  if (GetIt.I.isRegistered<FavoritesRepository>()) {
+    await instance.unregister<FavoritesRepository>();
+  }
+  if (GetIt.I.isRegistered<FavoritesUseCase>()) {
+    await instance.unregister<FavoritesUseCase>();
+  }
+  await Get.delete<FavoritesController>();
 }
 
 _finishCategoryDetails() async {

@@ -4,6 +4,7 @@ class AppConstants {
   static const int durationSplashScreen = 3;
   static const int durationOnBoarding = 1;
   static const double elevationAppBar = 0;
+  static const double scrolledUnderElevationAppBar = 0;
   static const double heightOfDividerInLoginScreen = 1;
   static const double blurRadiusOfBottomNavBarInMainScreen = 20;
   static const double xOffsetOfBottomNavBarInMainScreen = 0;
@@ -16,4 +17,10 @@ class AppConstants {
   static const double blurRadiusOfContainerInCategoriesScreen = 10;
   static const double xOffsetOfContainerInCategoriesScreen = 0;
   static const double yOffsetOfContainerInCategoriesScreen = 10;
+  static const double blurRadiusOfContainerInProductDetails = 10;
+  static const double xOffsetOfContainerInProductDetails = 0;
+  static const double yOffsetOfContainerInProductDetails = -1;
+  static const double xOffsetOfPopupMenuButtonInMySearchWidget = -10;
+  static const double yOffsetOfPopupMenuButtonInMySearchWidget = 30;
+
 }

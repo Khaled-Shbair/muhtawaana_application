@@ -58,4 +58,11 @@ const Map<String, String> en = {
   'show_details': 'Show details',
   'discount': 'Discount',
   'category_products': 'Category products',
+  'description': 'Description',
+  'add_to_favorites': 'Add To Favorites',
+  'add_to_cart': 'Add To Cart',
+  'price': 'Price',
+  'search': 'Search',
+  'all_categories': 'All Categories',
+  'no_favorite_products': 'No favorite products',
 };

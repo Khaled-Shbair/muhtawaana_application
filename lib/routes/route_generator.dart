@@ -33,12 +33,14 @@ class RouteGenerator {
         initCategories();
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       case Routes.categoryDetailsScreen:
-        initCategoryDetails();
         var id = settings.arguments as int;
+        initCategoryDetails();
         return MaterialPageRoute(builder: (_) => ProductsOfCategoryScreen(id));
-      // case Routes.productDetailsScreen:
-      // initCategories();
-      // return MaterialPageRoute(builder: (_) => const ProductDetailsScreen());
+      case Routes.productDetailsScreen:
+        var data = settings.arguments as dynamic;
+        return MaterialPageRoute(builder: (_) => ProductDetailsScreen(data));
+      case Routes.searchProductScreen:
+        return MaterialPageRoute(builder: (_) => const SearchProductScreen());
 
       default:
         return unDefinedRoute();
