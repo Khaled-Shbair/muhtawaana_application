@@ -3,7 +3,7 @@ import '/config/all_imports.dart';
 class ProductDetailsScreen extends StatelessWidget {
   const ProductDetailsScreen(this.data, {super.key});
 
-  final ProductDataHomeModel data;
+  final dynamic data;
 
   @override
   Widget build(BuildContext context) {
