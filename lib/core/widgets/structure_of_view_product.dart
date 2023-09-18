@@ -21,7 +21,7 @@ class StructureOfViewProduct extends StatelessWidget {
   final double oldPrice;
   final int id;
   final bool inFavorites;
-  final ProductDataHomeModel data;
+  final dynamic data;
   final Function() buttonFavorites;
 
   @override
