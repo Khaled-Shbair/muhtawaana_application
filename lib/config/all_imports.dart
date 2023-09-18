@@ -184,6 +184,19 @@ export '/features/favorites/presentation/controller/favorites_controller.dart';
 export '/features/favorites/presentation/view/screens/favorites_screen.dart';
 export '/features/favorites/presentation/view/widgets/my_body_of_favorites_screen.dart';
 
+// profile feature
+export '/features/profile/data/response/profile_response.dart';
+export '/features/profile/data/response/data_profile_response.dart';
+export '/features/profile/domain/model/data_profile_model.dart';
+export '/features/profile/domain/model/profile_model.dart';
+export '/features/profile/data/mapper/data_profile_mapper.dart';
+export '/features/profile/data/mapper/profile_mapper.dart';
+export '/features/profile/data/data_source/remote_profile_data_source.dart';
+export '/features/profile/data/repository_implementation/profile_repository_implementation.dart';
+export '/features/profile/domain/repository/profile_repository.dart';
+export '/features/profile/domain/use_case/profile_use_case.dart';
+export '/features/profile/presentation/controller/profile_controller.dart';
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 /** external libraries **/
