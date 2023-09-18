@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
                   const MySearch(isHome: true),
                   Expanded(
                     child: RefreshIndicator(
-                      onRefresh: () => controller.getHomeData(),
+                      onRefresh: () async => controller.onRefreshPage,
                       color: ManagerColors.primaryColor,
                       child: SingleChildScrollView(
                         child: Column(
@@ -42,10 +42,46 @@ class HomeScreen extends StatelessWidget {
                               name: ManagerStrings.products,
                               onTap: controller.buttonMoreProducts,
                             ),
-                            StructureOfViewProduct(
-                              products: controller.products,
-                              favoriteButton: controller.addToFavorites,
-                              loading: controller.loading,
+                            GridView.builder(
+                              shrinkWrap: true,
+                              padding: EdgeInsetsDirectional.symmetric(
+                                horizontal: ManagerWidth.w16,
+                              ),
+                              physics: const NeverScrollableScrollPhysics(),
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                crossAxisSpacing: ManagerWidth.w10,
+                                mainAxisSpacing: ManagerHeight.h14,
+                                childAspectRatio:
+                                    ManagerWidth.w162 / ManagerHeight.h258,
+                              ),
+                              itemCount: controller.loading == false
+                                  ? controller.products.length
+                                  : 10,
+                              itemBuilder: (context, index) {
+                                if (controller.loading == false &&
+                                    controller.products.isNotEmpty) {
+                                  var data = controller.products[index];
+                                  return StructureOfViewProduct(
+                                    image: data.image,
+                                    discount: data.discount,
+                                    id: data.id,
+                                    inFavorites: data.inFavorites,
+                                    name: data.name,
+                                    oldPrice: data.oldPrice,
+                                    price: data.price,
+                                    data: data,
+                                    buttonFavorites: () => controller
+                                        .buttonFavorites(data.id, index),
+                                  );
+                                } else {
+                                  return MainShimmer(
+                                    height: ManagerHeight.h258,
+                                    width: ManagerWidth.w162,
+                                  );
+                                }
+                              },
                             ),
                           ],
                         ),
