@@ -35,4 +35,7 @@ abstract class AppApi {
   Future<FavoritesResponse> addOrDeleteFavoritesProduct(
     @Field(ApiConstants.productId) id,
   );
+
+  @GET(RequestsApi.profile)
+  Future<ProfileResponse> getProfileData();
 }
