@@ -58,6 +58,7 @@ export '/core/widgets/main_shimmer.dart';
 export '/core/widgets/my_card_product.dart';
 export '/core/widgets/structure_of_view_product.dart';
 export '/core/widgets/my_app_bar.dart';
+export '/core/widgets/no_data.dart';
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -171,31 +172,17 @@ export '/features/categories/domain/use_case/category_use_case.dart';
 export '/features/categories/presentation/view/screens/products_of_category_screen.dart';
 
 // favorites feature
-export '/features/favorites/domain/model/add_or_delete_product_favorites/favorites_model.dart';
-export '/features/favorites/domain/model/get_all_products_favorites/data_of_product_favorites_model.dart';
-export '/features/favorites/domain/model/get_all_products_favorites/product_favorites_model.dart';
-export '/features/favorites/domain/model/get_all_products_favorites/list_of_products_favorites_model.dart';
-export '/features/favorites/domain/model/get_all_products_favorites/all_products_favorites_model.dart';
+export '/features/favorites/domain/model/favorites_model.dart';
 export '/features/favorites/domain/use_case/favorites_use_case.dart';
-export '/features/favorites/domain/use_case/all_products_favorites_use_case.dart';
 export '/features/favorites/domain/repository/favorites_repository.dart';
-export '/features/favorites/domain/repository/get_all_products_favorites_repository.dart';
 export '/features/favorites/data/repository_implementation/favorites_repository_implementation.dart';
-export '/features/favorites/data/repository_implementation/all_products_favorites_repository_implementation.dart';
-export '/features/favorites/data/mapper/add_or_delete_products_favorites/favorites_mapper.dart';
-export '/features/favorites/data/mapper/get_all_products_favorites/list_of_products_favorites_mapper.dart';
-export '/features/favorites/data/mapper/get_all_products_favorites/data_of_product_favorites_mapper.dart';
-export '/features/favorites/data/mapper/get_all_products_favorites/all_products_favorites_mapper.dart';
-export '/features/favorites/data/mapper/get_all_products_favorites/product_favorites_model.dart';
-export '/features/favorites/data/response/get_all_product_favorites/all_products_favorites_response.dart';
-export '/features/favorites/data/response/get_all_product_favorites/list_of_products_favorites_response.dart';
-export '/features/favorites/data/response/get_all_product_favorites/data_of_product_favorites_response.dart';
-export '/features/favorites/data/response/get_all_product_favorites/product_favorites_response.dart';
-export '/features/favorites/data/response/add_or_delete_product_favorites/favorites_response.dart';
-export '/features/favorites/data/data_source/remote_all_products_favorites_data_source.dart';
+export '/features/favorites/data/mapper/favorites_mapper.dart';
+export '/features/favorites/data/response/favorites_response.dart';
 export '/features/favorites/data/data_source/remote_favorites_data_source.dart';
 export '/features/favorites/data/request/favorites_request.dart';
 export '/features/favorites/presentation/controller/favorites_controller.dart';
+export '/features/favorites/presentation/view/screens/favorites_screen.dart';
+export '/features/favorites/presentation/view/widgets/my_body_of_favorites_screen.dart';
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
