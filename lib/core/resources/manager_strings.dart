@@ -64,4 +64,7 @@ class ManagerStrings {
   static String search = 'search'.tr;
   static String allCategories = 'all_categories'.tr;
   static String noFavoriteProducts = 'no_favorite_products'.tr;
+  static String edit = 'edit'.tr;
+  static String shareApp = 'share_app'.tr;
+  static String logout = 'logout'.tr;
 }
