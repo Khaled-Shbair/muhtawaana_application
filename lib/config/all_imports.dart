@@ -196,6 +196,8 @@ export '/features/profile/data/repository_implementation/profile_repository_impl
 export '/features/profile/domain/repository/profile_repository.dart';
 export '/features/profile/domain/use_case/profile_use_case.dart';
 export '/features/profile/presentation/controller/profile_controller.dart';
+export '/features/profile/presentation/view/screens/profile_screen.dart';
+export '/features/profile/presentation/view/model/profile_card.dart';
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -213,3 +215,4 @@ export 'package:carousel_slider/carousel_slider.dart';
 export 'package:fluttertoast/fluttertoast.dart';
 export 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 export 'package:shimmer/shimmer.dart';
+export 'package:share_plus/share_plus.dart';
