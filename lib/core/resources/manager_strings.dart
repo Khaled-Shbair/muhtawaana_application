@@ -67,4 +67,6 @@ class ManagerStrings {
   static String edit = 'edit'.tr;
   static String shareApp = 'share_app'.tr;
   static String logout = 'logout'.tr;
+  static String address = 'address'.tr;
+  static String notifications = 'notifications'.tr;
 }

@@ -68,4 +68,6 @@ const Map<String, String> en = {
   'edit': 'Edit',
   'share_app': 'Share App',
   'logout': 'Logout',
+  'address': 'Address',
+  'notifications': 'Notifications',
 };
