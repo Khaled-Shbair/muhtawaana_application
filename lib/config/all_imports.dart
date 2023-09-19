@@ -198,6 +198,7 @@ export '/features/profile/domain/use_case/profile_use_case.dart';
 export '/features/profile/presentation/controller/profile_controller.dart';
 export '/features/profile/presentation/view/screens/profile_screen.dart';
 export '/features/profile/presentation/view/model/profile_card.dart';
+export '/features/profile/presentation/view/widgets/my_card_profile.dart';
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
