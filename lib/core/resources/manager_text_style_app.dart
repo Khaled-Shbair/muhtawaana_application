@@ -301,9 +301,9 @@ TextStyle emailInProfileScreen() {
 
 TextStyle nameOfMyCardProfileWidget() {
   return regularTextStyle(
-    fontFamily: ManagerFontFamily.comfortaa,
-    fontSize: ManagerFontSize.s16,
-    color: ManagerColors.c25,
+    fontFamily: ManagerFontFamily.inter,
+    fontSize: ManagerFontSize.s15,
+    color: ManagerColors.blackColor,
   );
 }
 
