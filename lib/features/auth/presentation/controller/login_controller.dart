@@ -56,7 +56,19 @@ class LoginController extends GetxController
       },
       (r) async {
         if (rememberMe) {
-          await _sharedPreferences.setUser(r.data);
+          var dataUser = r.data;
+          _sharedPreferences.setUser(
+            _dataUserModel(
+              points: dataUser.points,
+              id: dataUser.id,
+              phone: dataUser.phone,
+              credit: dataUser.credit,
+              email: dataUser.email,
+              name: dataUser.name,
+              image: dataUser.image,
+              token: dataUser.token,
+            ),
+          );
         }
         Get.back();
         await Get.offAllNamed(Routes.mainScreen);
@@ -67,4 +79,26 @@ class LoginController extends GetxController
   void loginByFaceBook() {}
 
   void loginByGoogle() {}
+
+  DataUserModel _dataUserModel({
+    required String token,
+    required String name,
+    required String image,
+    required String email,
+    required String phone,
+    required int credit,
+    required int id,
+    required int points,
+  }) {
+    return DataUserModel(
+      token: token,
+      name: name,
+      image: image,
+      email: email,
+      credit: credit,
+      phone: phone,
+      id: id,
+      points: points,
+    );
+  }
 }
