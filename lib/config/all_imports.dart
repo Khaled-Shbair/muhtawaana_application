@@ -185,16 +185,17 @@ export '/features/favorites/presentation/view/screens/favorites_screen.dart';
 export '/features/favorites/presentation/view/widgets/my_body_of_favorites_screen.dart';
 
 // profile feature
-export '/features/profile/data/response/profile_response.dart';
-export '/features/profile/data/response/data_profile_response.dart';
-export '/features/profile/domain/model/data_profile_model.dart';
-export '/features/profile/domain/model/profile_model.dart';
-export '/features/profile/data/mapper/data_profile_mapper.dart';
-export '/features/profile/data/mapper/profile_mapper.dart';
-export '/features/profile/data/data_source/remote_profile_data_source.dart';
-export '/features/profile/data/repository_implementation/profile_repository_implementation.dart';
-export '/features/profile/domain/repository/profile_repository.dart';
-export '/features/profile/domain/use_case/profile_use_case.dart';
+export '/features/profile/data/request/data_of_edit_profile_request.dart';
+export '/features/profile/data/response/edit_profile_response.dart';
+export '/features/profile/data/response/data_of_edit_profile_response.dart';
+export '/features/profile/data/mapper/data_of_edit_profile_mapper.dart';
+export '/features/profile/data/mapper/edit_profile_mapper.dart';
+export '/features/profile/data/data_source/remote_edit_profile_data_source.dart';
+export '/features/profile/data/repository_implementation/edit_profile_repository_implementation.dart';
+export '/features/profile/domain/repository/edit_profile_repository.dart';
+export '/features/profile/domain/use_case/edit_profile_use_case.dart';
+export '/features/profile/domain/model/data_of_edit_profile_model.dart';
+export '/features/profile/domain/model/edit_profile_model.dart';
 export '/features/profile/presentation/controller/profile_controller.dart';
 export '/features/profile/presentation/view/screens/profile_screen.dart';
 export '/features/profile/presentation/view/model/profile_card.dart';
