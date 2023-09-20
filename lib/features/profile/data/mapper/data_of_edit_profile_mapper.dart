@@ -1,6 +1,6 @@
 import '/config/all_imports.dart';
 
-extension DataProfileMapper on DataProfileResponse {
+extension DataOfEditProfileMapper on DataOfEditProfileResponse {
   toDomain() {
     return DataProfileModel(
       name: name.onNull(),
