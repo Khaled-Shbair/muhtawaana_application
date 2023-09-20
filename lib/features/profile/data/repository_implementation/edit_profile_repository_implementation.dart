@@ -1,20 +1,21 @@
 import 'package:dartz/dartz.dart';
 import '/config/all_imports.dart';
 
-class ProfileRepositoryImplementation extends ProfileRepository {
-  final RemoteProfileDataSource _dataSource;
+class EditProfileRepositoryImplementation extends EditProfileRepository {
+  final RemoteEditProfileDataSource _dataSource;
   final NetworkInfo _networkInfo;
 
-  ProfileRepositoryImplementation(
+  EditProfileRepositoryImplementation(
     this._networkInfo,
     this._dataSource,
   );
 
   @override
-  Future<Either<Failure, ProfileModel>> getProfileData() async {
+  Future<Either<Failure, EditProfileModel>> editProfile(
+      DataOfEditProfileRequest request) async {
     if (await _networkInfo.isConnected) {
       try {
-        final response = await _dataSource.getProfileData();
+        final response = await _dataSource.editProfile(request);
         if (response.status == true) {
           return Right(response.toDomain());
         } else {
