@@ -1,21 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'profile_response.dart';
+part of 'edit_profile_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-ProfileResponse _$ProfileResponseFromJson(Map<String, dynamic> json) =>
-    ProfileResponse(
+EditProfileResponse _$EditProfileResponseFromJson(Map<String, dynamic> json) =>
+    EditProfileResponse(
       status: json['status'] as bool?,
       message: json['message'] as String?,
       data: json['data'] == null
           ? null
-          : DataProfileResponse.fromJson(json['data'] as Map<String, dynamic>),
+          : DataOfEditProfileResponse.fromJson(
+              json['data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$ProfileResponseToJson(ProfileResponse instance) =>
+Map<String, dynamic> _$EditProfileResponseToJson(
+        EditProfileResponse instance) =>
     <String, dynamic>{
       'status': instance.status,
       'message': instance.message,
