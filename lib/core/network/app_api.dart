@@ -36,6 +36,11 @@ abstract class AppApi {
     @Field(ApiConstants.productId) id,
   );
 
-  @GET(RequestsApi.profile)
-  Future<ProfileResponse> getProfileData();
+  @GET(RequestsApi.updateProfile)
+  Future<EditProfileResponse> editProfile(
+    @Field(ApiConstants.name) name,
+    @Field(ApiConstants.email) email,
+    @Field(ApiConstants.phone) phone,
+    @Field(ApiConstants.image) image,
+  );
 }

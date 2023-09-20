@@ -199,20 +199,30 @@ class _AppApi implements AppApi {
   }
 
   @override
-  Future<ProfileResponse> getProfileData() async {
+  Future<EditProfileResponse> editProfile(
+    dynamic name,
+    dynamic email,
+    dynamic phone,
+    dynamic image,
+  ) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<ProfileResponse>(Options(
+    final _data = {
+      'name': name,
+      'email': email,
+      'phone': phone,
+      'image': image,
+    };
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<EditProfileResponse>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              'https://student.valuxapps.com/api/profile',
+              'https://student.valuxapps.com/api/update-profile',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -221,7 +231,7 @@ class _AppApi implements AppApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = ProfileResponse.fromJson(_result.data!);
+    final value = EditProfileResponse.fromJson(_result.data!);
     return value;
   }
 
