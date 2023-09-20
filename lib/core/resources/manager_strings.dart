@@ -64,9 +64,12 @@ class ManagerStrings {
   static String search = 'search'.tr;
   static String allCategories = 'all_categories'.tr;
   static String noFavoriteProducts = 'no_favorite_products'.tr;
-  static String edit = 'edit'.tr;
+  static String editProfile = 'edit_profile'.tr;
   static String shareApp = 'share_app'.tr;
   static String logout = 'logout'.tr;
   static String address = 'address'.tr;
   static String notifications = 'notifications'.tr;
+  static String chooseTheImageFrom = 'choose_the_image_from'.tr;
+  static String camera = 'camera'.tr;
+  static String gallery = 'gallery'.tr;
 }
