@@ -306,5 +306,11 @@ TextStyle nameOfMyCardProfileWidget() {
     color: ManagerColors.blackColor,
   );
 }
-
+TextStyle titleAlertDialogInEditProfileScreen() {
+  return mediumTextStyle(
+    color: ManagerColors.blackColor,
+    fontSize: ManagerFontSize.s17,
+    fontFamily: ManagerFontFamily.inter,
+  );
+}
 ////////////////////////////////////////////////////////////////////////////////
