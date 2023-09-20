@@ -48,6 +48,7 @@ export '/core/error_handler/error_handler.dart';
 export '/core/helpers/showLoadingDialog.dart';
 export '/core/storage/local/shared_preferences/app_settings_shared_preferences.dart';
 export '/core/use_case/base_use_case.dart';
+export '/core/models/data_user_model.dart';
 export '/core/widgets/will_pop_scope.dart';
 export '/core/widgets/logo_app.dart';
 export '/core/widgets/main_button.dart';
@@ -200,6 +201,9 @@ export '/features/profile/presentation/controller/profile_controller.dart';
 export '/features/profile/presentation/view/screens/profile_screen.dart';
 export '/features/profile/presentation/view/model/profile_card.dart';
 export '/features/profile/presentation/view/widgets/my_card_profile.dart';
+export '/features/profile/presentation/view/screens/edit_profile_screen.dart';
+export '/features/profile/presentation/controller/edit_profile_controller.dart';
+export '/features/profile/presentation/view/widgets/my_button_of_choose_image.dart';
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
