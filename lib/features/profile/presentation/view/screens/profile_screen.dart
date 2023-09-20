@@ -23,7 +23,7 @@ class ProfileScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: ManagerColors.whiteColor,
                         image: DecorationImage(
-                          image: NetworkImage(controller.image),
+                          image: NetworkImage(controller.userImage),
                           filterQuality: FilterQuality.high,
                           fit: BoxFit.fill,
                         ),
@@ -47,7 +47,7 @@ class ProfileScreen extends StatelessWidget {
                           children: [
                             SizedBox(
                               child: Text(
-                                controller.name,
+                                controller.userName,
                                 overflow: TextOverflow.ellipsis,
                                 style: userNameInProfileScreen(),
                               ),
@@ -55,7 +55,7 @@ class ProfileScreen extends StatelessWidget {
                             SizedBox(height: ManagerHeight.h6),
                             SizedBox(
                               child: Text(
-                                controller.email,
+                                controller.userEmail,
                                 overflow: TextOverflow.ellipsis,
                                 style: emailInProfileScreen(),
                               ),
