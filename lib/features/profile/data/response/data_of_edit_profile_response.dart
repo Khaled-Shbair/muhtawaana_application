@@ -1,9 +1,9 @@
 import '/config/all_imports.dart';
 
-part 'data_profile_response.g.dart';
+part 'data_of_edit_profile_response.g.dart';
 
 @JsonSerializable()
-class DataProfileResponse {
+class DataOfEditProfileResponse {
   @JsonKey(name: ApiConstants.id)
   int? id;
   @JsonKey(name: ApiConstants.name)
@@ -21,7 +21,7 @@ class DataProfileResponse {
   @JsonKey(name: ApiConstants.credit)
   int? credit;
 
-  DataProfileResponse({
+  DataOfEditProfileResponse({
     this.id,
     this.name,
     this.image,
@@ -32,8 +32,8 @@ class DataProfileResponse {
     this.token,
   });
 
-  factory DataProfileResponse.fromJson(Map<String, dynamic> json) =>
-      _$DataProfileResponseFromJson(json);
+  factory DataOfEditProfileResponse.fromJson(Map<String, dynamic> json) =>
+      _$DataOfEditProfileResponseFromJson(json);
 
-  Map<String, dynamic> toJson() => _$DataProfileResponseToJson(this);
+  Map<String, dynamic> toJson() => _$DataOfEditProfileResponseToJson(this);
 }

@@ -1,13 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'data_profile_response.dart';
+part of 'data_of_edit_profile_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-DataProfileResponse _$DataProfileResponseFromJson(Map<String, dynamic> json) =>
-    DataProfileResponse(
+DataOfEditProfileResponse _$DataOfEditProfileResponseFromJson(
+        Map<String, dynamic> json) =>
+    DataOfEditProfileResponse(
       id: json['id'] as int?,
       name: json['name'] as String?,
       image: json['image'] as String?,
@@ -18,8 +19,8 @@ DataProfileResponse _$DataProfileResponseFromJson(Map<String, dynamic> json) =>
       token: json['token'] as String?,
     );
 
-Map<String, dynamic> _$DataProfileResponseToJson(
-        DataProfileResponse instance) =>
+Map<String, dynamic> _$DataOfEditProfileResponseToJson(
+        DataOfEditProfileResponse instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
