@@ -1,20 +1,26 @@
 import '/config/all_imports.dart';
 
 class ProfileController extends GetxController {
-  static ProfileController get to => Get.find();
-  final ProfileUseCase _profileUseCase = instance<ProfileUseCase>();
   final AppSettingsSharedPreferences _sharedPref =
       instance<AppSettingsSharedPreferences>();
+
+  String get userName => _sharedPref.getName;
+
+  String get userEmail => _sharedPref.getEmail;
+
+  String get userImage => _sharedPref.getImage;
+
+  String get userPhone => _sharedPref.getPhone;
   List<ProfileCard> profileCard = [
     ProfileCard(
-      name: ManagerStrings.profile,
+      name: ManagerStrings.editProfile,
       icon: Icons.person_outline,
-      onTap: () {},
+      onTap: () => Get.toNamed(Routes.editProfileScreen),
     ),
     ProfileCard(
       name: ManagerStrings.settings,
       icon: Icons.settings_outlined,
-      onTap: () {},
+      onTap: () => Get.toNamed(Routes.settingsScreen),
     ),
     ProfileCard(
       name: ManagerStrings.shareApp,
@@ -27,7 +33,7 @@ class ProfileController extends GetxController {
     ProfileCard(
       name: ManagerStrings.notifications,
       icon: Icons.notifications_outlined,
-      onTap: () {},
+      onTap: () => Get.toNamed(Routes.notificationsScreen),
     ),
     ProfileCard(
       name: ManagerStrings.logout,
@@ -35,12 +41,4 @@ class ProfileController extends GetxController {
       onTap: () {},
     ),
   ];
-
-  String get name => _sharedPref.getName;
-
-  String get email => _sharedPref.getEmail;
-
-  String get image => _sharedPref.getImage;
-
-  String get phone => _sharedPref.getPhone;
 }
