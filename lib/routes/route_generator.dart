@@ -41,6 +41,9 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => ProductDetailsScreen(data));
       case Routes.searchProductScreen:
         return MaterialPageRoute(builder: (_) => const SearchProductScreen());
+      case Routes.editProfileScreen:
+        initEditProfile();
+        return MaterialPageRoute(builder: (_) => const EditProfileScreen());
 
       default:
         return unDefinedRoute();
