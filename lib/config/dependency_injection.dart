@@ -308,7 +308,7 @@ _finishCategoryDetails() async {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-initProfile() {
+initEditProfile() {
   if (!GetIt.I.isRegistered<RemoteEditProfileDataSource>()) {
     instance.registerLazySingleton<RemoteEditProfileDataSource>(
       () => RemoteEditProfileDataSourceImplementation(instance<AppApi>()),
@@ -327,10 +327,10 @@ initProfile() {
       () => EditProfileUseCase(instance<EditProfileRepository>()),
     );
   }
-  Get.put<ProfileController>(ProfileController());
+  Get.put<EditProfileController>(EditProfileController());
 }
 
-_finishProfile() async {
+finishEditProfile() async {
   if (GetIt.I.isRegistered<RemoteEditProfileDataSource>()) {
     await instance.unregister<RemoteEditProfileDataSource>();
   }
@@ -340,7 +340,14 @@ _finishProfile() async {
   if (GetIt.I.isRegistered<EditProfileUseCase>()) {
     await instance.unregister<EditProfileUseCase>();
   }
-  await Get.delete<ProfileController>();
+  await Get.delete<EditProfileController>();
 }
 
+initProfile() async {
+  Get.put<ProfileController>(ProfileController());
+}
+
+_finishProfile() async {
+  await Get.delete<ProfileController>();
+}
 ////////////////////////////////////////////////////////////////////////////////
