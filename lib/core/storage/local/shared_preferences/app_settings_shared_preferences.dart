@@ -21,7 +21,7 @@ class AppSettingsSharedPreferences {
 
   void clear() async => await _shared.clear();
 
-  Future<void> setUser(DataLoginModel model) async {
+  Future<void> setUser(DataUserModel model) async {
     await _shared.setString(PrefKeys.phone.toString(), model.phone);
     await _shared.setString(PrefKeys.name.toString(), model.name);
     await _shared.setString(PrefKeys.email.toString(), model.email);
@@ -33,8 +33,8 @@ class AppSettingsSharedPreferences {
     await _shared.setBool(PrefKeys.loggedIn.toString(), true);
   }
 
-  Future<void> setToken(String token) async =>
-      await _shared.setString(PrefKeys.token.toString(), token);
+  Future<void> setLoggedIn(bool loggedIn) async =>
+      await _shared.setBool(PrefKeys.loggedIn.toString(), loggedIn);
 
   String get getToken => _shared.getString(PrefKeys.token.toString()).onNull();
 
@@ -51,9 +51,6 @@ class AppSettingsSharedPreferences {
   int get getCredit => _shared.getInt(PrefKeys.credit.toString()).onNull();
 
   int get getId => _shared.getInt(PrefKeys.id.toString()).onNull();
-
-  Future<void> setLoggedIn(bool loggedIn) async =>
-      await _shared.setBool(PrefKeys.loggedIn.toString(), loggedIn);
 
   bool get getLoggedIn =>
       _shared.getBool(PrefKeys.loggedIn.toString()).onNull();
