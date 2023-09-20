@@ -309,36 +309,36 @@ _finishCategoryDetails() async {
 
 ////////////////////////////////////////////////////////////////////////////////
 initProfile() {
-  if (!GetIt.I.isRegistered<RemoteProfileDataSource>()) {
-    instance.registerLazySingleton<RemoteProfileDataSource>(
-      () => RemoteProfileDataSourceImplementation(instance<AppApi>()),
+  if (!GetIt.I.isRegistered<RemoteEditProfileDataSource>()) {
+    instance.registerLazySingleton<RemoteEditProfileDataSource>(
+      () => RemoteEditProfileDataSourceImplementation(instance<AppApi>()),
     );
   }
-  if (!GetIt.I.isRegistered<ProfileRepository>()) {
-    instance.registerLazySingleton<ProfileRepository>(
-      () => ProfileRepositoryImplementation(
+  if (!GetIt.I.isRegistered<EditProfileRepository>()) {
+    instance.registerLazySingleton<EditProfileRepository>(
+      () => EditProfileRepositoryImplementation(
         instance<NetworkInfo>(),
-        instance<RemoteProfileDataSource>(),
+        instance<RemoteEditProfileDataSource>(),
       ),
     );
   }
-  if (!GetIt.I.isRegistered<ProfileUseCase>()) {
-    instance.registerLazySingleton<ProfileUseCase>(
-      () => ProfileUseCase(instance<ProfileRepository>()),
+  if (!GetIt.I.isRegistered<EditProfileUseCase>()) {
+    instance.registerLazySingleton<EditProfileUseCase>(
+      () => EditProfileUseCase(instance<EditProfileRepository>()),
     );
   }
   Get.put<ProfileController>(ProfileController());
 }
 
 _finishProfile() async {
-  if (GetIt.I.isRegistered<RemoteProfileDataSource>()) {
-    await instance.unregister<RemoteProfileDataSource>();
+  if (GetIt.I.isRegistered<RemoteEditProfileDataSource>()) {
+    await instance.unregister<RemoteEditProfileDataSource>();
   }
-  if (GetIt.I.isRegistered<ProfileRepository>()) {
-    await instance.unregister<ProfileRepository>();
+  if (GetIt.I.isRegistered<EditProfileRepository>()) {
+    await instance.unregister<EditProfileRepository>();
   }
-  if (GetIt.I.isRegistered<ProfileUseCase>()) {
-    await instance.unregister<ProfileUseCase>();
+  if (GetIt.I.isRegistered<EditProfileUseCase>()) {
+    await instance.unregister<EditProfileUseCase>();
   }
   await Get.delete<ProfileController>();
 }
