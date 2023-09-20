@@ -1,4 +1,4 @@
-class DataProfileModel {
+class DataOfEditProfileModel {
   int id;
   String name;
   String email;
@@ -8,7 +8,7 @@ class DataProfileModel {
   int points;
   int credit;
 
-  DataProfileModel({
+  DataOfEditProfileModel({
     required this.id,
     required this.name,
     required this.image,

@@ -2,7 +2,7 @@ import '/config/all_imports.dart';
 
 extension DataOfEditProfileMapper on DataOfEditProfileResponse {
   toDomain() {
-    return DataProfileModel(
+    return DataOfEditProfileModel(
       name: name.onNull(),
       id: id.onNull(),
       image: image.onNull(),
