@@ -1,11 +1,11 @@
 import '/config/all_imports.dart';
 
-class ProfileModel {
+class EditProfileModel {
   bool status;
   String message;
-  DataProfileModel data;
+  DataOfEditProfileModel data;
 
-  ProfileModel({
+  EditProfileModel({
     required this.status,
     required this.message,
     required this.data,
