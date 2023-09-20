@@ -12,5 +12,5 @@ class RequestsApi {
   static const String productDetails =
       '${baseUrl}products/{${ApiConstants.id}}';
   static const String favorites = '${baseUrl}favorites';
-  static const String profile = '${baseUrl}profile';
+  static const String updateProfile = '${baseUrl}update-profile';
 }
