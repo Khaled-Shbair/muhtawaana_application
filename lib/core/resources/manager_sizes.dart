@@ -1,14 +1,18 @@
 import '/config/all_imports.dart';
 
 class ManagerHeight {
+  static double h35 = SizeUtil.setHeight(35);
+  static double h395 = SizeUtil.setHeight(395);
   static double h2 = SizeUtil.setHeight(2);
   static double h4 = SizeUtil.setHeight(4);
+  static double h6 = SizeUtil.setHeight(6);
   static double h7 = SizeUtil.setHeight(7);
   static double h8 = SizeUtil.setHeight(8);
   static double h10 = SizeUtil.setHeight(10);
   static double h12 = SizeUtil.setHeight(12);
   static double h14 = SizeUtil.setHeight(14);
   static double h16 = SizeUtil.setHeight(16);
+  static double h18 = SizeUtil.setHeight(18);
   static double h20 = SizeUtil.setHeight(20);
   static double h24 = SizeUtil.setHeight(24);
   static double h26 = SizeUtil.setHeight(26);
@@ -42,10 +46,13 @@ class ManagerHeight {
 class ManagerWidth {
   static double w1 = SizeUtil.setWidth(1);
   static double w72 = SizeUtil.setWidth(72);
+  static double w57 = SizeUtil.setWidth(57);
+  static double w35 = SizeUtil.setWidth(35);
   static double w80 = SizeUtil.setWidth(80);
   static double w132 = SizeUtil.setWidth(132);
   static double w84 = SizeUtil.setWidth(84);
   static double w283 = SizeUtil.setWidth(283);
+  static double w238 = SizeUtil.setWidth(238);
   static double w2 = SizeUtil.setWidth(2);
   static double w3 = SizeUtil.setWidth(3);
   static double w4 = SizeUtil.setWidth(4);
@@ -83,11 +90,13 @@ class ManagerRadius {
   static double r20 = SizeUtil.setRadius(20);
   static double r25 = SizeUtil.setRadius(25);
   static double r30 = SizeUtil.setRadius(30);
+  static double r55 = SizeUtil.setRadius(55);
   static double r100 = SizeUtil.setRadius(100);
 }
 
 class ManagerIconSize {
   static const double s16 = 16;
+  static const double s20 = 20;
   static const double s24 = 24;
   static const double s32 = 32;
   static const double s30 = 30;

@@ -35,4 +35,15 @@ abstract class AppApi {
   Future<FavoritesResponse> addOrDeleteFavoritesProduct(
     @Field(ApiConstants.productId) id,
   );
+
+  @PUT(RequestsApi.updateProfile)
+  Future<EditProfileResponse> editProfile(
+    @Field(ApiConstants.name) name,
+    @Field(ApiConstants.email) email,
+    @Field(ApiConstants.phone) phone,
+    @Field(ApiConstants.image) image,
+  );
+
+  @POST(RequestsApi.logout)
+  Future<LogoutResponse> logout();
 }

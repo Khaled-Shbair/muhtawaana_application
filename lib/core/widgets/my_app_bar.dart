@@ -1,4 +1,4 @@
-import 'package:muhtawaana_app/config/all_imports.dart';
+import '/config/all_imports.dart';
 
 AppBar myAppBar({
   String? text,

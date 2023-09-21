@@ -1,7 +1,6 @@
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
 export 'package:flutter/material.dart';
 export 'package:flutter/gestures.dart';
+export 'dart:convert';
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -48,6 +47,7 @@ export '/core/error_handler/error_handler.dart';
 export '/core/helpers/showLoadingDialog.dart';
 export '/core/storage/local/shared_preferences/app_settings_shared_preferences.dart';
 export '/core/use_case/base_use_case.dart';
+export '/core/models/data_user_model.dart';
 export '/core/widgets/will_pop_scope.dart';
 export '/core/widgets/logo_app.dart';
 export '/core/widgets/main_button.dart';
@@ -104,6 +104,14 @@ export '/features/auth/domain/use_case/login_use_case.dart';
 export '/features/auth/domain/use_case/sign_up_use_case.dart';
 export '/features/auth/data/repository_implementation/login_repository_implementation.dart';
 export '/features/auth/data/repository_implementation/sign_up_repository_implementation.dart';
+export '/features/auth/data/response/logout_response.dart';
+export '/features/auth/domain/model/logout_model.dart';
+export '/features/auth/domain/repository/logout_repository.dart';
+export '/features/auth/data/data_source/remote_logout_data_source.dart';
+export '/features/auth/data/mapper/logout_mapper.dart';
+export '/features/auth/domain/use_case/logout_use_case.dart';
+export '/features/auth/data/repository_implementation/logout_repository_implementation.dart';
+export '/features/auth/presentation/controller/logout_controller.dart';
 
 // main feature
 export '/features/main/presentation/controller/main_controller.dart';
@@ -184,6 +192,27 @@ export '/features/favorites/presentation/controller/favorites_controller.dart';
 export '/features/favorites/presentation/view/screens/favorites_screen.dart';
 export '/features/favorites/presentation/view/widgets/my_body_of_favorites_screen.dart';
 
+// profile feature
+export '/features/profile/data/request/edit_profile_request.dart';
+export '/features/profile/data/response/edit_profile_response.dart';
+export '/features/profile/data/response/data_of_edit_profile_response.dart';
+export '/features/profile/data/mapper/data_of_edit_profile_mapper.dart';
+export '/features/profile/data/mapper/edit_profile_mapper.dart';
+export '/features/profile/data/data_source/remote_edit_profile_data_source.dart';
+export '/features/profile/data/repository_implementation/edit_profile_repository_implementation.dart';
+export '/features/profile/domain/repository/edit_profile_repository.dart';
+export '/features/profile/domain/use_case/edit_profile_use_case.dart';
+export '/features/profile/domain/model/data_of_edit_profile_model.dart';
+export '/features/profile/domain/model/edit_profile_model.dart';
+export '/features/profile/presentation/controller/profile_controller.dart';
+export '/features/profile/presentation/view/screens/profile_screen.dart';
+export '/features/profile/presentation/view/model/profile_card.dart';
+export '/features/profile/presentation/view/widgets/my_card_profile.dart';
+export '/features/profile/presentation/view/screens/edit_profile_screen.dart';
+export '/features/profile/presentation/controller/edit_profile_controller.dart';
+export '/features/profile/presentation/view/widgets/my_button_of_choose_image.dart';
+export '/features/profile/presentation/view/widgets/my_image_profile.dart';
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 /** external libraries **/
@@ -200,3 +229,6 @@ export 'package:carousel_slider/carousel_slider.dart';
 export 'package:fluttertoast/fluttertoast.dart';
 export 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 export 'package:shimmer/shimmer.dart';
+export 'package:share_plus/share_plus.dart';
+export 'package:image_cropper/image_cropper.dart';
+export 'package:image_picker/image_picker.dart';

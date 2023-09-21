@@ -280,3 +280,37 @@ TextStyle showDetailsButtonInMyCardProduct() {
     fontFamily: ManagerFontFamily.roboto,
   );
 }
+
+////////////////////////////////////////////////////////////////////////////////
+/// Text style of profile feature
+TextStyle userNameInProfileScreen() {
+  return mediumTextStyle(
+    fontFamily: ManagerFontFamily.inter,
+    fontSize: ManagerFontSize.s20,
+    color: ManagerColors.blackColor,
+  );
+}
+
+TextStyle emailInProfileScreen() {
+  return regularTextStyle(
+    fontFamily: ManagerFontFamily.inter,
+    fontSize: ManagerFontSize.s13,
+    color: ManagerColors.c26,
+  );
+}
+
+TextStyle nameOfMyCardProfileWidget() {
+  return regularTextStyle(
+    fontFamily: ManagerFontFamily.inter,
+    fontSize: ManagerFontSize.s15,
+    color: ManagerColors.blackColor,
+  );
+}
+TextStyle titleAlertDialogInEditProfileScreen() {
+  return mediumTextStyle(
+    color: ManagerColors.blackColor,
+    fontSize: ManagerFontSize.s17,
+    fontFamily: ManagerFontFamily.inter,
+  );
+}
+////////////////////////////////////////////////////////////////////////////////

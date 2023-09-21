@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
-
-import '/config/all_imports.dart';
+import 'all_imports.dart';
 
 final instance = GetIt.instance;
 
@@ -12,6 +11,7 @@ Future<void> initModule() async {
   // only to test
   // instance<AppSettingsSharedPreferences>().clear();
 }
+////////////////////////////////////////////////////////////////////////////////
 
 Future<void> _initSharedPreferences() async {
   if (!GetIt.I.isRegistered<AppSettingsSharedPreferences>()) {
@@ -20,6 +20,7 @@ Future<void> _initSharedPreferences() async {
         () => AppSettingsSharedPreferences(sharedPref));
   }
 }
+////////////////////////////////////////////////////////////////////////////////
 
 Future<void> _intiInternetChecker() async {
   if (!GetIt.I.isRegistered<NetworkInfo>()) {
@@ -28,6 +29,7 @@ Future<void> _intiInternetChecker() async {
         () => NetworkInfoImplementation(internetConnection));
   }
 }
+////////////////////////////////////////////////////////////////////////////////
 
 Future<void> _intiDio() async {
   if (!GetIt.I.isRegistered<DioFactory>()) {
@@ -39,15 +41,19 @@ Future<void> _intiDio() async {
   }
 }
 
+////////////////////////////////////////////////////////////////////////////////
 initSplash() => Get.put<SplashController>(SplashController());
 
+_finishSplash() async => await Get.delete<SplashController>();
+////////////////////////////////////////////////////////////////////////////////
 initOnBoarding() {
   _finishSplash();
   Get.put<OnBoardingController>(OnBoardingController());
 }
 
+_finishOnBoarding() async => await Get.delete<OnBoardingController>();
+
 ///////////////////////////////////////////////////////////////////////////////
-// Auth controllers
 initSignUp() {
   _finishLogin();
   _finishChangePassword();
@@ -72,15 +78,35 @@ initSignUp() {
   Get.put<SignUpController>(SignUpController());
 }
 
+_finishSignUp() async {
+  if (GetIt.I.isRegistered<RemoteSignUpDataSource>()) {
+    await instance.unregister<RemoteSignUpDataSource>();
+  }
+  if (GetIt.I.isRegistered<SignUpRepository>()) {
+    await instance.unregister<SignUpRepository>();
+  }
+  if (GetIt.I.isRegistered<SignUpUseCase>()) {
+    await instance.unregister<SignUpUseCase>();
+  }
+  await Get.delete<SignUpController>();
+}
+
+////////////////////////////////////////////////////////////////////////////////
 initChangePassword() {
   Get.put<ChangePasswordController>(ChangePasswordController());
 }
 
+_finishChangePassword() async {
+  await Get.delete<ChangePasswordController>();
+}
+
+////////////////////////////////////////////////////////////////////////////////
 initLogin() {
   _finishSplash();
   _finishOnBoarding();
   _finishSignUp();
   _finishChangePassword();
+  finishLogout();
   if (!GetIt.I.isRegistered<RemoteLoginDataSource>()) {
     instance.registerLazySingleton<RemoteLoginDataSource>(
       () => RemoteLoginDataSourceImplementation(instance<AppApi>()),
@@ -102,10 +128,60 @@ initLogin() {
   Get.put<LoginController>(LoginController());
 }
 
+_finishLogin() async {
+  if (GetIt.I.isRegistered<RemoteLoginDataSource>()) {
+    await instance.unregister<RemoteLoginDataSource>();
+  }
+  if (GetIt.I.isRegistered<LoginRepository>()) {
+    await instance.unregister<LoginRepository>();
+  }
+  if (GetIt.I.isRegistered<LoginUseCase>()) {
+    await instance.unregister<LoginUseCase>();
+  }
+  await Get.delete<LoginController>();
+}
+
+////////////////////////////////////////////////////////////////////////////////
+initLogout() {
+  if (!GetIt.I.isRegistered<RemoteLogoutDataSource>()) {
+    instance.registerLazySingleton<RemoteLogoutDataSource>(
+      () => RemoteLogoutDataSourceImplementation(instance<AppApi>()),
+    );
+  }
+  if (!GetIt.I.isRegistered<LogoutRepository>()) {
+    instance.registerLazySingleton<LogoutRepository>(
+      () => LogoutRepositoryImplementation(
+        instance<NetworkInfo>(),
+        instance<RemoteLogoutDataSource>(),
+      ),
+    );
+  }
+  if (!GetIt.I.isRegistered<LogoutUseCase>()) {
+    instance.registerLazySingleton<LogoutUseCase>(
+      () => LogoutUseCase(instance<LogoutRepository>()),
+    );
+  }
+  Get.put<LogoutController>(LogoutController());
+}
+
+finishLogout() async {
+  if (GetIt.I.isRegistered<RemoteLogoutDataSource>()) {
+    await instance.unregister<RemoteLogoutDataSource>();
+  }
+  if (GetIt.I.isRegistered<LogoutRepository>()) {
+    await instance.unregister<LogoutRepository>();
+  }
+  if (GetIt.I.isRegistered<LogoutUseCase>()) {
+    await instance.unregister<LogoutUseCase>();
+  }
+  await Get.delete<LogoutController>();
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 initMainController() {
   initCategories();
   initHome();
+  initProfile();
   initCategoryDetails();
   initFavorites();
   _finishSplash();
@@ -116,6 +192,17 @@ initMainController() {
   Get.put<MainController>(MainController());
 }
 
+finishMainController() async {
+  _finishHome();
+  _finishCategories();
+  _finishFavorites();
+  _finishCategoryDetails();
+  _finishProfile();
+  finishEditProfile();
+  await Get.delete<MainController>();
+}
+
+////////////////////////////////////////////////////////////////////////////////
 initCategories() {
   if (!GetIt.I.isRegistered<RemoteCategoriesDataSource>()) {
     instance.registerLazySingleton<RemoteCategoriesDataSource>(
@@ -138,6 +225,20 @@ initCategories() {
   Get.put<CategoriesController>(CategoriesController());
 }
 
+_finishCategories() async {
+  if (GetIt.I.isRegistered<RemoteCategoriesDataSource>()) {
+    await instance.unregister<RemoteCategoriesDataSource>();
+  }
+  if (GetIt.I.isRegistered<CategoriesRepository>()) {
+    await instance.unregister<CategoriesRepository>();
+  }
+  if (GetIt.I.isRegistered<CategoriesUseCase>()) {
+    await instance.unregister<CategoriesUseCase>();
+  }
+  await Get.delete<CategoriesController>();
+}
+
+////////////////////////////////////////////////////////////////////////////////
 initFavorites() {
   if (!GetIt.I.isRegistered<RemoteFavoritesDataSource>()) {
     instance.registerLazySingleton<RemoteFavoritesDataSource>(
@@ -161,6 +262,20 @@ initFavorites() {
   Get.put<FavoritesController>(FavoritesController());
 }
 
+_finishFavorites() async {
+  if (GetIt.I.isRegistered<RemoteFavoritesDataSource>()) {
+    await instance.unregister<RemoteFavoritesDataSource>();
+  }
+  if (GetIt.I.isRegistered<FavoritesRepository>()) {
+    await instance.unregister<FavoritesRepository>();
+  }
+  if (GetIt.I.isRegistered<FavoritesUseCase>()) {
+    await instance.unregister<FavoritesUseCase>();
+  }
+  await Get.delete<FavoritesController>();
+}
+
+////////////////////////////////////////////////////////////////////////////////
 initHome() {
   if (!GetIt.I.isRegistered<RemoteHomeDataSource>()) {
     instance.registerLazySingleton<RemoteHomeDataSource>(
@@ -183,6 +298,20 @@ initHome() {
   Get.put<HomeController>(HomeController());
 }
 
+_finishHome() async {
+  if (GetIt.I.isRegistered<RemoteHomeDataSource>()) {
+    await instance.unregister<RemoteHomeDataSource>();
+  }
+  if (GetIt.I.isRegistered<HomeRepository>()) {
+    await instance.unregister<HomeRepository>();
+  }
+  if (GetIt.I.isRegistered<HomeUseCase>()) {
+    await instance.unregister<HomeUseCase>();
+  }
+  await Get.delete<HomeController>();
+}
+
+////////////////////////////////////////////////////////////////////////////////
 initCategoryDetails() {
   if (!GetIt.I.isRegistered<RemoteCategoryDataSource>()) {
     instance.registerLazySingleton<RemoteCategoryDataSource>(
@@ -204,52 +333,6 @@ initCategoryDetails() {
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////
-/* Finish or dispose Controller and remove from memory */
-_finishChangePassword() async => await Get.delete<ChangePasswordController>();
-
-_finishSplash() async {
-  await Get.delete<SplashController>();
-}
-
-_finishOnBoarding() async {
-  await Get.delete<OnBoardingController>();
-}
-
-_finishMainController() async {
-  _finishHome();
-  _finishCategories();
-  _finishFavorites();
-  _finishCategoryDetails();
-  await Get.delete<MainController>();
-}
-
-_finishCategories() async {
-  if (GetIt.I.isRegistered<RemoteCategoriesDataSource>()) {
-    await instance.unregister<RemoteCategoriesDataSource>();
-  }
-  if (GetIt.I.isRegistered<CategoriesRepository>()) {
-    await instance.unregister<CategoriesRepository>();
-  }
-  if (GetIt.I.isRegistered<CategoriesUseCase>()) {
-    await instance.unregister<CategoriesUseCase>();
-  }
-  await Get.delete<CategoriesController>();
-}
-
-_finishFavorites() async {
-  if (GetIt.I.isRegistered<RemoteFavoritesDataSource>()) {
-    await instance.unregister<RemoteFavoritesDataSource>();
-  }
-  if (GetIt.I.isRegistered<FavoritesRepository>()) {
-    await instance.unregister<FavoritesRepository>();
-  }
-  if (GetIt.I.isRegistered<FavoritesUseCase>()) {
-    await instance.unregister<FavoritesUseCase>();
-  }
-  await Get.delete<FavoritesController>();
-}
-
 _finishCategoryDetails() async {
   if (GetIt.I.isRegistered<RemoteCategoryDataSource>()) {
     await instance.unregister<RemoteCategoryDataSource>();
@@ -262,41 +345,47 @@ _finishCategoryDetails() async {
   }
 }
 
-_finishLogin() async {
-  if (GetIt.I.isRegistered<RemoteLoginDataSource>()) {
-    await instance.unregister<RemoteLoginDataSource>();
+////////////////////////////////////////////////////////////////////////////////
+initEditProfile() {
+  if (!GetIt.I.isRegistered<RemoteEditProfileDataSource>()) {
+    instance.registerLazySingleton<RemoteEditProfileDataSource>(
+      () => RemoteEditProfileDataSourceImplementation(instance<AppApi>()),
+    );
   }
-  if (GetIt.I.isRegistered<LoginRepository>()) {
-    await instance.unregister<LoginRepository>();
+  if (!GetIt.I.isRegistered<EditProfileRepository>()) {
+    instance.registerLazySingleton<EditProfileRepository>(
+      () => EditProfileRepositoryImplementation(
+        instance<NetworkInfo>(),
+        instance<RemoteEditProfileDataSource>(),
+      ),
+    );
   }
-  if (GetIt.I.isRegistered<LoginUseCase>()) {
-    await instance.unregister<LoginUseCase>();
+  if (!GetIt.I.isRegistered<EditProfileUseCase>()) {
+    instance.registerLazySingleton<EditProfileUseCase>(
+      () => EditProfileUseCase(instance<EditProfileRepository>()),
+    );
   }
-  await Get.delete<LoginController>();
+  Get.put<EditProfileController>(EditProfileController());
 }
 
-_finishHome() async {
-  if (GetIt.I.isRegistered<RemoteHomeDataSource>()) {
-    await instance.unregister<RemoteHomeDataSource>();
+finishEditProfile() async {
+  if (GetIt.I.isRegistered<RemoteEditProfileDataSource>()) {
+    await instance.unregister<RemoteEditProfileDataSource>();
   }
-  if (GetIt.I.isRegistered<HomeRepository>()) {
-    await instance.unregister<HomeRepository>();
+  if (GetIt.I.isRegistered<EditProfileRepository>()) {
+    await instance.unregister<EditProfileRepository>();
   }
-  if (GetIt.I.isRegistered<HomeUseCase>()) {
-    await instance.unregister<HomeUseCase>();
+  if (GetIt.I.isRegistered<EditProfileUseCase>()) {
+    await instance.unregister<EditProfileUseCase>();
   }
-  await Get.delete<HomeController>();
+  await Get.delete<EditProfileController>();
 }
 
-_finishSignUp() async {
-  if (GetIt.I.isRegistered<RemoteSignUpDataSource>()) {
-    await instance.unregister<RemoteSignUpDataSource>();
-  }
-  if (GetIt.I.isRegistered<SignUpRepository>()) {
-    await instance.unregister<SignUpRepository>();
-  }
-  if (GetIt.I.isRegistered<SignUpUseCase>()) {
-    await instance.unregister<SignUpUseCase>();
-  }
-  await Get.delete<SignUpController>();
+initProfile() async {
+  Get.put<ProfileController>(ProfileController());
 }
+
+_finishProfile() async {
+  await Get.delete<ProfileController>();
+}
+////////////////////////////////////////////////////////////////////////////////
