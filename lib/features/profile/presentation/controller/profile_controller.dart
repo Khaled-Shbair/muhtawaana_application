@@ -11,6 +11,7 @@ class ProfileController extends GetxController {
   String get userImage => _sharedPref.getImage;
 
   String get userPhone => _sharedPref.getPhone;
+
   List<ProfileCard> profileCard = [
     ProfileCard(
       name: ManagerStrings.editProfile,
@@ -38,7 +39,7 @@ class ProfileController extends GetxController {
     ProfileCard(
       name: ManagerStrings.logout,
       icon: Icons.logout_outlined,
-      onTap: () {},
+      onTap: () => initLogout(),
     ),
   ];
 }
