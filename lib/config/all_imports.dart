@@ -1,6 +1,3 @@
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-
 export 'package:flutter/material.dart';
 export 'package:flutter/gestures.dart';
 export 'dart:convert';
@@ -107,6 +104,14 @@ export '/features/auth/domain/use_case/login_use_case.dart';
 export '/features/auth/domain/use_case/sign_up_use_case.dart';
 export '/features/auth/data/repository_implementation/login_repository_implementation.dart';
 export '/features/auth/data/repository_implementation/sign_up_repository_implementation.dart';
+export '/features/auth/data/response/logout_response.dart';
+export '/features/auth/domain/model/logout_model.dart';
+export '/features/auth/domain/repository/logout_repository.dart';
+export '/features/auth/data/data_source/remote_logout_data_source.dart';
+export '/features/auth/data/mapper/logout_mapper.dart';
+export '/features/auth/domain/use_case/logout_use_case.dart';
+export '/features/auth/data/repository_implementation/logout_repository_implementation.dart';
+export '/features/auth/presentation/controller/logout_controller.dart';
 
 // main feature
 export '/features/main/presentation/controller/main_controller.dart';
