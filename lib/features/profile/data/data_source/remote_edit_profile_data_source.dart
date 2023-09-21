@@ -1,7 +1,7 @@
 import '/config/all_imports.dart';
 
 abstract class RemoteEditProfileDataSource {
-  Future<EditProfileResponse> editProfile(DataOfEditProfileRequest request);
+  Future<EditProfileResponse> editProfile(EditProfileRequest request);
 }
 
 class RemoteEditProfileDataSourceImplementation
@@ -12,7 +12,7 @@ class RemoteEditProfileDataSourceImplementation
 
   @override
   Future<EditProfileResponse> editProfile(
-      DataOfEditProfileRequest request) async {
+      EditProfileRequest request) async {
     return await _appApi.editProfile(
       request.name,
       request.email,
