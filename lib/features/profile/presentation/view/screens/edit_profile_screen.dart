@@ -17,17 +17,9 @@ class EditProfileScreen extends StatelessWidget {
                 child: Stack(
                   alignment: AlignmentDirectional.topCenter,
                   children: [
-                    Container(
-                      width: double.infinity,
-                      height: ManagerHeight.h355,
-                      decoration: BoxDecoration(
-                        color: ManagerColors.whiteColor,
-                        image: DecorationImage(
-                          image: NetworkImage(controller.userImage),
-                          filterQuality: FilterQuality.high,
-                          fit: BoxFit.fill,
-                        ),
-                      ),
+                    MyImageProfile(
+                      image: controller.userImage,
+                      isFileImage: controller.checkFileImage(),
                     ),
                     SafeArea(
                       child: Align(
