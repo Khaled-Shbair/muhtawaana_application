@@ -106,6 +106,7 @@ initLogin() {
   _finishOnBoarding();
   _finishSignUp();
   _finishChangePassword();
+  finishLogout();
   if (!GetIt.I.isRegistered<RemoteLoginDataSource>()) {
     instance.registerLazySingleton<RemoteLoginDataSource>(
       () => RemoteLoginDataSourceImplementation(instance<AppApi>()),
@@ -140,6 +141,42 @@ _finishLogin() async {
   await Get.delete<LoginController>();
 }
 
+////////////////////////////////////////////////////////////////////////////////
+initLogout() {
+  if (!GetIt.I.isRegistered<RemoteLogoutDataSource>()) {
+    instance.registerLazySingleton<RemoteLogoutDataSource>(
+      () => RemoteLogoutDataSourceImplementation(instance<AppApi>()),
+    );
+  }
+  if (!GetIt.I.isRegistered<LogoutRepository>()) {
+    instance.registerLazySingleton<LogoutRepository>(
+      () => LogoutRepositoryImplementation(
+        instance<NetworkInfo>(),
+        instance<RemoteLogoutDataSource>(),
+      ),
+    );
+  }
+  if (!GetIt.I.isRegistered<LogoutUseCase>()) {
+    instance.registerLazySingleton<LogoutUseCase>(
+      () => LogoutUseCase(instance<LogoutRepository>()),
+    );
+  }
+  Get.put<LogoutController>(LogoutController());
+}
+
+finishLogout() async {
+  if (GetIt.I.isRegistered<RemoteLogoutDataSource>()) {
+    await instance.unregister<RemoteLogoutDataSource>();
+  }
+  if (GetIt.I.isRegistered<LogoutRepository>()) {
+    await instance.unregister<LogoutRepository>();
+  }
+  if (GetIt.I.isRegistered<LogoutUseCase>()) {
+    await instance.unregister<LogoutUseCase>();
+  }
+  await Get.delete<LogoutController>();
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 initMainController() {
   initCategories();
@@ -155,12 +192,13 @@ initMainController() {
   Get.put<MainController>(MainController());
 }
 
-_finishMainController() async {
+finishMainController() async {
   _finishHome();
   _finishCategories();
   _finishFavorites();
   _finishCategoryDetails();
   _finishProfile();
+  finishEditProfile();
   await Get.delete<MainController>();
 }
 
