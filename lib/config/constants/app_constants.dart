@@ -22,5 +22,7 @@ class AppConstants {
   static const double yOffsetOfContainerInProductDetails = -1;
   static const double xOffsetOfPopupMenuButtonInMySearchWidget = -10;
   static const double yOffsetOfPopupMenuButtonInMySearchWidget = 30;
-
+  static const int compressQualityOfImageCamera = 100;
+  static const double aspectRatioRatioX = 1;
+  static const double aspectRatioRatioY = 1;
 }
