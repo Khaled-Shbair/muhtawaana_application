@@ -216,7 +216,7 @@ class _AppApi implements AppApi {
     };
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<EditProfileResponse>(Options(
-      method: 'GET',
+      method: 'PUT',
       headers: _headers,
       extra: _extra,
     )

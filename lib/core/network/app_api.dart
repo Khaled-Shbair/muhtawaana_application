@@ -36,7 +36,7 @@ abstract class AppApi {
     @Field(ApiConstants.productId) id,
   );
 
-  @GET(RequestsApi.updateProfile)
+  @PUT(RequestsApi.updateProfile)
   Future<EditProfileResponse> editProfile(
     @Field(ApiConstants.name) name,
     @Field(ApiConstants.email) email,
