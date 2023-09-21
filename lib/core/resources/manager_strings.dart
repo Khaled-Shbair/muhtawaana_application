@@ -72,4 +72,7 @@ class ManagerStrings {
   static String chooseTheImageFrom = 'choose_the_image_from'.tr;
   static String camera = 'camera'.tr;
   static String gallery = 'gallery'.tr;
+  static String areYouSureLogout = 'are_you_sure_logout'.tr;
+  static String yes = 'yes'.tr;
+  static String no = 'no'.tr;
 }

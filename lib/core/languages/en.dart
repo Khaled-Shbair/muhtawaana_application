@@ -73,4 +73,7 @@ const Map<String, String> en = {
   'choose_the_image_from': 'Choose the image from?',
   'camera': 'Camera',
   'gallery': 'Gallery',
+  'are_you_sure_logout': 'Are you sure logout?',
+  'yes': 'Yes',
+  'no': 'No',
 };
