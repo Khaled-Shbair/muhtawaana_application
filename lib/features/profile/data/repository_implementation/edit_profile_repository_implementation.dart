@@ -12,7 +12,7 @@ class EditProfileRepositoryImplementation extends EditProfileRepository {
 
   @override
   Future<Either<Failure, EditProfileModel>> editProfile(
-      DataOfEditProfileRequest request) async {
+      EditProfileRequest request) async {
     if (await _networkInfo.isConnected) {
       try {
         final response = await _dataSource.editProfile(request);
