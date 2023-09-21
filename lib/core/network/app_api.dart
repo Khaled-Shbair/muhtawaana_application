@@ -36,6 +36,12 @@ abstract class AppApi {
     @Field(ApiConstants.productId) id,
   );
 
+  @POST(RequestsApi.changePassword)
+  Future<ChangePasswordResponse> changePassword(
+    @Field(ApiConstants.currentPassword) currentPassword,
+    @Field(ApiConstants.newPassword) newPassword,
+  );
+
   @PUT(RequestsApi.updateProfile)
   Future<EditProfileResponse> editProfile(
     @Field(ApiConstants.name) name,
