@@ -22,14 +22,14 @@ class AppSettingsSharedPreferences {
   void clear() async => await _shared.clear();
 
   Future<void> setUser(DataUserModel model) async {
-    await _shared.setString(PrefKeys.phone.toString(), model.phone);
-    await _shared.setString(PrefKeys.name.toString(), model.name);
-    await _shared.setString(PrefKeys.email.toString(), model.email);
-    await _shared.setString(PrefKeys.image.toString(), model.image);
-    await _shared.setInt(PrefKeys.id.toString(), model.id);
-    await _shared.setString(PrefKeys.token.toString(), model.token);
-    await _shared.setInt(PrefKeys.credit.toString(), model.credit);
-    await _shared.setInt(PrefKeys.points.toString(), model.points);
+    await _shared.setString(PrefKeys.phone.toString(), model.phone.onNull());
+    await _shared.setString(PrefKeys.name.toString(), model.name.onNull());
+    await _shared.setString(PrefKeys.email.toString(), model.email.onNull());
+    await _shared.setString(PrefKeys.image.toString(), model.image.onNull());
+    await _shared.setInt(PrefKeys.id.toString(), model.id.onNull());
+    await _shared.setString(PrefKeys.token.toString(), model.token.onNull());
+    await _shared.setInt(PrefKeys.credit.toString(), model.credit.onNull());
+    await _shared.setInt(PrefKeys.points.toString(), model.points.onNull());
     await _shared.setBool(PrefKeys.loggedIn.toString(), true);
   }
 
