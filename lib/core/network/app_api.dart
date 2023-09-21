@@ -43,4 +43,7 @@ abstract class AppApi {
     @Field(ApiConstants.phone) phone,
     @Field(ApiConstants.image) image,
   );
+
+  @POST(RequestsApi.logout)
+  Future<LogoutResponse> logout();
 }
