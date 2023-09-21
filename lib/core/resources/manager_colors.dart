@@ -38,6 +38,7 @@ class ManagerColors {
   static const Color textGeryColor = Color(0XFF6A6A6A);
   static const Color redColor = Color(0XFFFF0000);
   static const Color successColor = Colors.green;
+  static const Color black87 = Colors.black87;
   static Color highlightColorShimmer = Colors.white.withOpacity(0.6);
   static Color baseColorShimmer = Colors.grey.withOpacity(0.25);
   static Color containerColorOfShimmer = Colors.grey.withOpacity(0.9);
