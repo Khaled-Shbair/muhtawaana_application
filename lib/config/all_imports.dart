@@ -1,7 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+
 export 'package:flutter/material.dart';
 export 'package:flutter/gestures.dart';
+export 'dart:convert';
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -204,6 +206,7 @@ export '/features/profile/presentation/view/widgets/my_card_profile.dart';
 export '/features/profile/presentation/view/screens/edit_profile_screen.dart';
 export '/features/profile/presentation/controller/edit_profile_controller.dart';
 export '/features/profile/presentation/view/widgets/my_button_of_choose_image.dart';
+export '/features/profile/presentation/view/widgets/my_image_profile.dart';
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -222,3 +225,5 @@ export 'package:fluttertoast/fluttertoast.dart';
 export 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 export 'package:shimmer/shimmer.dart';
 export 'package:share_plus/share_plus.dart';
+export 'package:image_cropper/image_cropper.dart';
+export 'package:image_picker/image_picker.dart';
