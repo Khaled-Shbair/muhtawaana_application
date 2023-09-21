@@ -5,13 +5,13 @@ class EditProfileBaseUseCaseInput {
   String name;
   String email;
   String phone;
-  String image;
+  String? image;
 
   EditProfileBaseUseCaseInput({
     required this.email,
     required this.name,
     required this.phone,
-    required this.image,
+    this.image,
   });
 }
 
@@ -25,7 +25,7 @@ class EditProfileUseCase
   Future<Either<Failure, EditProfileModel>> execute(
       EditProfileBaseUseCaseInput input) async {
     return await _repository.editProfile(
-      DataOfEditProfileRequest(
+      EditProfileRequest(
         name: input.name,
         image: input.image,
         phone: input.phone,
