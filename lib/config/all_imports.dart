@@ -186,7 +186,7 @@ export '/features/favorites/presentation/view/screens/favorites_screen.dart';
 export '/features/favorites/presentation/view/widgets/my_body_of_favorites_screen.dart';
 
 // profile feature
-export '/features/profile/data/request/data_of_edit_profile_request.dart';
+export '/features/profile/data/request/edit_profile_request.dart';
 export '/features/profile/data/response/edit_profile_response.dart';
 export '/features/profile/data/response/data_of_edit_profile_response.dart';
 export '/features/profile/data/mapper/data_of_edit_profile_mapper.dart';
