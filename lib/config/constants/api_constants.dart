@@ -6,6 +6,8 @@ class ApiConstants {
   static const String lang = 'lang';
   static const String authorization = 'Authorization';
   static const String contentType = 'Content-Type';
+  static const String currentPassword = 'current_password';
+  static const String newPassword = 'new_password';
 
   // Api keys
   static const String token = 'token';
