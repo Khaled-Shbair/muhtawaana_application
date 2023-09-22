@@ -2,7 +2,7 @@ const String _imagePath = 'assets/images/';
 // const String _jsonPath = 'assets/json/';
 
 class ManagerAssets {
-  static const String logo = '${_imagePath}logo.png';
+  static const String logo = '${_imagePath}logo.jpg';
 
   //Splash images
   static const String backgroundSplash =
@@ -19,6 +19,8 @@ class ManagerAssets {
   //Auth images
   static const String imageAuthScreen =
       '${_imagePath}auth/image_auth_screen.svg';
+  static const String imageSignUpScreen =
+      '${_imagePath}auth/image_sign_up_screen.svg';
   static const String topLeftCorner = '${_imagePath}auth/top_left_corner.svg';
   static const String bottomLeftCorner =
       '${_imagePath}auth/bottom_left_corner.svg';
@@ -30,8 +32,8 @@ class ManagerAssets {
   //Icons images
   static const String arrowBackIcon = '${_imagePath}icon/arrow_back_icon.svg';
   static const String searchIcon = '${_imagePath}icon/search_icon.svg';
-  static const String nullImageCategory = 'https://student.valuxapps.com/storage/uploads/categories/16893929290QVM1.modern-devices-isometric-icons-collection-with-sixteen-isolated-images-computers-periphereals-variou.jpeg';
-
+  static const String nullImageCategory =
+      'https://student.valuxapps.com/storage/uploads/categories/16893929290QVM1.modern-devices-isometric-icons-collection-with-sixteen-isolated-images-computers-periphereals-variou.jpeg';
 }
 
 class ManagerJson {}
