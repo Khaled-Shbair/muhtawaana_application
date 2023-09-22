@@ -2,14 +2,14 @@ class ApiConstants {
   static const int receiveTimeout = 60;
   static const int sendTimeout = 60;
 
-  // Api header key
   static const String lang = 'lang';
   static const String authorization = 'Authorization';
   static const String contentType = 'Content-Type';
   static const String currentPassword = 'current_password';
   static const String newPassword = 'new_password';
-
-  // Api keys
+  static const String userId = 'user_id';
+  static const String updatedAt = 'updated_at';
+  static const String createdAt = 'created_at';
   static const String token = 'token';
   static const String status = 'status';
   static const String message = 'message';
