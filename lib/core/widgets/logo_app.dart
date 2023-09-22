@@ -5,20 +5,12 @@ class LogoApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Image.asset(
+      ManagerAssets.logo,
       height: ManagerHeight.h120,
       width: ManagerWidth.w120,
-      alignment: AlignmentDirectional.center,
-      decoration: const BoxDecoration(
-        color: ManagerColors.primaryColor,
-        shape: BoxShape.circle,
-      ),
-      child: Image.asset(
-        ManagerAssets.logo,
-        height: ManagerHeight.h77,
-        width: ManagerWidth.w102,
-        filterQuality: FilterQuality.high,
-      ),
+      filterQuality: FilterQuality.high,
+
     );
   }
 }
