@@ -240,3 +240,7 @@ export 'package:shimmer/shimmer.dart';
 export 'package:share_plus/share_plus.dart';
 export 'package:image_cropper/image_cropper.dart';
 export 'package:image_picker/image_picker.dart';
+export 'package:firebase_core/firebase_core.dart';
+export '/firebase_options.dart';
+export 'package:google_sign_in/google_sign_in.dart';
+export 'package:firebase_auth/firebase_auth.dart';
