@@ -10,12 +10,13 @@ class SignUpScreen extends StatelessWidget {
         return StructureOfLoginAndSignUp(
           formKey: controller.formKey,
           titleAppBar: ManagerStrings.signUp,
+          onPressed: () => controller.backButton(),
           children: [
-            // SvgPicture.asset(
-            //   ManagerAssets.logo,
-            //   height: ManagerHeight.h120,
-            //   width: ManagerWidth.w120,
-            // ),
+            SvgPicture.asset(
+              ManagerAssets.imageSignUpScreen,
+              height: ManagerHeight.h136,
+              width: ManagerWidth.w141,
+            ),
             SizedBox(height: ManagerHeight.h24),
             MainTextField(
               controller: controller.name,
@@ -26,6 +27,7 @@ class SignUpScreen extends StatelessWidget {
             MainTextField(
               controller: controller.phone,
               prefixIcon: Icons.phone,
+              maxLength: AppConstants.maxLengthOfPhoneNumber,
               hintText: ManagerStrings.phone,
               keyboardType: TextInputType.phone,
             ),
