@@ -10,15 +10,11 @@ class LoginScreen extends StatelessWidget {
         return StructureOfLoginAndSignUp(
           formKey: controller.formKey,
           titleAppBar: ManagerStrings.login,
+          onPressed: () => controller.backButton(),
           children: [
-            SvgPicture.asset(
-              ManagerAssets.logo,
-              height: ManagerHeight.h120,
-              width: ManagerWidth.w120,
-            ),
-            SizedBox(height: ManagerHeight.h16),
-            Text(ManagerStrings.login.toUpperCase(), style: titleLoginScreen()),
-            SizedBox(height: ManagerHeight.h24),
+            SizedBox(height: ManagerHeight.h25),
+            const LogoApp(),
+            SizedBox(height: ManagerHeight.h62),
             MainTextField(
               controller: controller.email,
               prefixIcon: Icons.mail,
@@ -96,6 +92,7 @@ class LoginScreen extends StatelessWidget {
                   Container(
                     margin: EdgeInsetsDirectional.only(
                       end: ManagerWidth.w24,
+                      start: ManagerWidth.w16,
                     ),
                     padding: EdgeInsetsDirectional.symmetric(
                       horizontal: ManagerWidth.w4,
@@ -129,6 +126,7 @@ class LoginScreen extends StatelessWidget {
                   Container(
                     margin: EdgeInsetsDirectional.only(
                       end: ManagerWidth.w24,
+                      start: ManagerWidth.w16,
                     ),
                     height: ManagerHeight.h38,
                     width: ManagerWidth.w38,
