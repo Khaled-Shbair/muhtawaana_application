@@ -25,4 +25,5 @@ class AppConstants {
   static const int compressQualityOfImageCamera = 100;
   static const double aspectRatioRatioX = 1;
   static const double aspectRatioRatioY = 1;
+  static const int maxLengthOfPhoneNumber = 10;
 }
