@@ -36,7 +36,6 @@ dependencies:
   google_sign_in: ^6.1.5
   firebase_messaging: ^14.6.8
   flutter_local_notifications: ^15.1.1
-  firebase_auth: ^4.10.0
 
 
 dev_dependencies:
