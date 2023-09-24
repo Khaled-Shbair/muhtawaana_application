@@ -59,7 +59,7 @@ TextStyle styleOfORTextInLoginScreen() {
 
 TextStyle loginByFacebookOrGoogleInLoginScreen() {
   return regularTextStyle(
-    fontSize: ManagerFontSize.s17,
+    fontSize: ManagerFontSize.s16,
     fontFamily: ManagerFontFamily.inter,
     color: ManagerColors.c5,
   );
@@ -306,6 +306,7 @@ TextStyle nameOfMyCardProfileWidget() {
     color: ManagerColors.blackColor,
   );
 }
+
 TextStyle titleAlertDialogInEditProfileScreen() {
   return mediumTextStyle(
     color: ManagerColors.blackColor,
