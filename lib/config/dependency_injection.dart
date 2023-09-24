@@ -62,8 +62,8 @@ _finishOnBoarding() async => await Get.delete<OnBoardingController>();
 
 ///////////////////////////////////////////////////////////////////////////////
 initSignUp() {
-  _finishLogin();
-  _finishChangePassword();
+  finishLogin();
+  finishChangePassword();
   if (!GetIt.I.isRegistered<RemoteSignUpDataSource>()) {
     instance.registerLazySingleton<RemoteSignUpDataSource>(
       () => RemoteSignUpDataSourceImplementation(instance<AppApi>()),
@@ -85,7 +85,7 @@ initSignUp() {
   Get.put<SignUpController>(SignUpController());
 }
 
-_finishSignUp() async {
+finishSignUp() async {
   if (GetIt.I.isRegistered<RemoteSignUpDataSource>()) {
     await instance.unregister<RemoteSignUpDataSource>();
   }
@@ -103,7 +103,7 @@ initChangePassword() {
   Get.put<ChangePasswordController>(ChangePasswordController());
 }
 
-_finishChangePassword() async {
+finishChangePassword() async {
   await Get.delete<ChangePasswordController>();
 }
 
@@ -111,8 +111,8 @@ _finishChangePassword() async {
 initLogin() {
   _finishSplash();
   _finishOnBoarding();
-  _finishSignUp();
-  _finishChangePassword();
+  finishSignUp();
+  finishChangePassword();
   finishLogout();
   if (!GetIt.I.isRegistered<RemoteLoginDataSource>()) {
     instance.registerLazySingleton<RemoteLoginDataSource>(
@@ -135,7 +135,7 @@ initLogin() {
   Get.put<LoginController>(LoginController());
 }
 
-_finishLogin() async {
+finishLogin() async {
   if (GetIt.I.isRegistered<RemoteLoginDataSource>()) {
     await instance.unregister<RemoteLoginDataSource>();
   }
@@ -193,9 +193,9 @@ initMainController() {
   initFavorites();
   _finishSplash();
   _finishOnBoarding();
-  _finishSignUp();
-  _finishChangePassword();
-  _finishLogin();
+  finishSignUp();
+  finishChangePassword();
+  finishLogin();
   Get.put<MainController>(MainController());
 }
 
