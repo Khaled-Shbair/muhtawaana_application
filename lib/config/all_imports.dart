@@ -112,6 +112,14 @@ export '/features/auth/data/mapper/logout_mapper.dart';
 export '/features/auth/domain/use_case/logout_use_case.dart';
 export '/features/auth/data/repository_implementation/logout_repository_implementation.dart';
 export '/features/auth/presentation/controller/logout_controller.dart';
+export '/features/auth/domain/model/change_password_model.dart';
+export '/features/auth/domain/repository/change_password_repository.dart';
+export '/features/auth/domain/use_case/change_password_use_case.dart';
+export '/features/auth/data/response/change_password_response.dart';
+export '/features/auth/data/data_source/remote_change_password_data_source.dart';
+export '/features/auth/data/mapper/change_password_mapper.dart';
+export '/features/auth/data/repository_implementation/change_password_repository_implementation.dart';
+export '/features/auth/data/request/change_password_request.dart';
 
 // main feature
 export '/features/main/presentation/controller/main_controller.dart';
@@ -232,3 +240,7 @@ export 'package:shimmer/shimmer.dart';
 export 'package:share_plus/share_plus.dart';
 export 'package:image_cropper/image_cropper.dart';
 export 'package:image_picker/image_picker.dart';
+export 'package:firebase_core/firebase_core.dart';
+export '/firebase_options.dart';
+export 'package:google_sign_in/google_sign_in.dart';
+export 'package:firebase_auth/firebase_auth.dart';

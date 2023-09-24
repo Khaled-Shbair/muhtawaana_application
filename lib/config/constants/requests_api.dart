@@ -13,4 +13,5 @@ class RequestsApi {
       '${baseUrl}products/{${ApiConstants.id}}';
   static const String favorites = '${baseUrl}favorites';
   static const String updateProfile = '${baseUrl}update-profile';
+  static const String fcmToken = '${baseUrl}fcm-token';
 }

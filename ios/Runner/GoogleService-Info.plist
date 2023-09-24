@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCtK9y49uLVgtqPavDb5eVAuHGPIzXPM0s</string>
+	<key>GCM_SENDER_ID</key>
+	<string>117964232066</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>muhtawaana.com.muhtawaanaApp</string>
+	<key>PROJECT_ID</key>
+	<string>shop-application-8679d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>shop-application-8679d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:117964232066:ios:368c25504593458ef92b9b</string>
+</dict>
+</plist>

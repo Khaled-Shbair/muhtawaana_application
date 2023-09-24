@@ -199,6 +199,39 @@ class _AppApi implements AppApi {
   }
 
   @override
+  Future<ChangePasswordResponse> changePassword(
+    dynamic currentPassword,
+    dynamic newPassword,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = {
+      'current_password': currentPassword,
+      'new_password': newPassword,
+    };
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ChangePasswordResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'https://student.valuxapps.com/api/change-password',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = ChangePasswordResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<EditProfileResponse> editProfile(
     dynamic name,
     dynamic email,

@@ -5,12 +5,14 @@ class StructureOfLoginAndSignUp extends StatelessWidget {
     required this.formKey,
     required this.titleAppBar,
     required this.children,
+    this.onPressed,
     super.key,
   });
 
   final Key formKey;
   final String titleAppBar;
   final List<Widget> children;
+  final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class StructureOfLoginAndSignUp extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: AppConstants.elevationAppBar,
-        leading: const MyBackIcon(),
+        leading: MyBackIcon(onPressed: onPressed),
         title: Text(
           titleAppBar.toUpperCase(),
           style: titleAppBarInAuthScreen(),

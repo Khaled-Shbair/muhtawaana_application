@@ -92,4 +92,8 @@ class SignUpController extends GetxController
       },
     );
   }
+
+  void backButton() {
+    finishSignUp();
+  }
 }

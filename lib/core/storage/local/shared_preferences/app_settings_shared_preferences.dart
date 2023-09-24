@@ -30,7 +30,6 @@ class AppSettingsSharedPreferences {
     await _shared.setString(PrefKeys.token.toString(), model.token.onNull());
     await _shared.setInt(PrefKeys.credit.toString(), model.credit.onNull());
     await _shared.setInt(PrefKeys.points.toString(), model.points.onNull());
-    await _shared.setBool(PrefKeys.loggedIn.toString(), true);
   }
 
   Future<void> setLoggedIn(bool loggedIn) async =>

@@ -56,7 +56,7 @@ _finishOnBoarding() async => await Get.delete<OnBoardingController>();
 ///////////////////////////////////////////////////////////////////////////////
 initSignUp() {
   _finishLogin();
-  _finishChangePassword();
+  finishChangePassword();
   if (!GetIt.I.isRegistered<RemoteSignUpDataSource>()) {
     instance.registerLazySingleton<RemoteSignUpDataSource>(
       () => RemoteSignUpDataSourceImplementation(instance<AppApi>()),
@@ -93,10 +93,37 @@ _finishSignUp() async {
 
 ////////////////////////////////////////////////////////////////////////////////
 initChangePassword() {
+  if (!GetIt.I.isRegistered<RemoteChangePasswordDataSource>()) {
+    instance.registerLazySingleton<RemoteChangePasswordDataSource>(
+      () => RemoteChangePasswordDataSourceImplementation(instance<AppApi>()),
+    );
+  }
+  if (!GetIt.I.isRegistered<ChangePasswordRepository>()) {
+    instance.registerLazySingleton<ChangePasswordRepository>(
+      () => ChangePasswordRepositoryImplementation(
+        instance<NetworkInfo>(),
+        instance<RemoteChangePasswordDataSource>(),
+      ),
+    );
+  }
+  if (!GetIt.I.isRegistered<ChangePasswordUseCase>()) {
+    instance.registerLazySingleton<ChangePasswordUseCase>(
+      () => ChangePasswordUseCase(instance<ChangePasswordRepository>()),
+    );
+  }
   Get.put<ChangePasswordController>(ChangePasswordController());
 }
 
-_finishChangePassword() async {
+finishChangePassword() async {
+  if (GetIt.I.isRegistered<RemoteChangePasswordDataSource>()) {
+    await instance.unregister<RemoteChangePasswordDataSource>();
+  }
+  if (GetIt.I.isRegistered<ChangePasswordRepository>()) {
+    await instance.unregister<ChangePasswordRepository>();
+  }
+  if (GetIt.I.isRegistered<ChangePasswordUseCase>()) {
+    await instance.unregister<ChangePasswordUseCase>();
+  }
   await Get.delete<ChangePasswordController>();
 }
 
@@ -105,7 +132,7 @@ initLogin() {
   _finishSplash();
   _finishOnBoarding();
   _finishSignUp();
-  _finishChangePassword();
+  finishChangePassword();
   finishLogout();
   if (!GetIt.I.isRegistered<RemoteLoginDataSource>()) {
     instance.registerLazySingleton<RemoteLoginDataSource>(
@@ -187,7 +214,7 @@ initMainController() {
   _finishSplash();
   _finishOnBoarding();
   _finishSignUp();
-  _finishChangePassword();
+  finishChangePassword();
   _finishLogin();
   Get.put<MainController>(MainController());
 }

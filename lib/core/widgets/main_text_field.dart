@@ -8,6 +8,7 @@ class MainTextField extends StatelessWidget {
     this.prefixIcon,
     this.prefixImageIcon,
     this.changeObscureText,
+    this.maxLength,
     this.keyboardType = TextInputType.emailAddress,
     this.obscureText = false,
     this.isPassword = false,
@@ -22,6 +23,7 @@ class MainTextField extends StatelessWidget {
   final String hintText;
   final bool obscureText;
   final bool isPassword;
+  final int? maxLength;
   final Function()? changeObscureText;
 
   @override
@@ -32,6 +34,7 @@ class MainTextField extends StatelessWidget {
       validator: validator,
       keyboardType: keyboardType,
       cursorColor: ManagerColors.primaryColor,
+      maxLength:maxLength ,
       style: textStyleOfMainTextField(ManagerColors.blackColor),
       decoration: InputDecoration(
         filled: true,

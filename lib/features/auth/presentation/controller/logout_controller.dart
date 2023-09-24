@@ -67,18 +67,18 @@ class LogoutController extends GetxController
     showLoadingDialog(Get.context!);
     (await _useCase.execute()).fold(
       (l) async {
-        _sharedPreferences.setUser(DataUserModel());
-        _sharedPreferences.setLoggedIn(false);
         finishMainController();
         Get.back();
-        await Get.offAllNamed(Routes.loginScreen);
+        _sharedPreferences.setUser(DataUserModel());
+        Get.offAllNamed(Routes.loginScreen);
+        await _sharedPreferences.setLoggedIn(false);
       },
       (r) async {
-        _sharedPreferences.setUser(DataUserModel());
-        _sharedPreferences.setLoggedIn(false);
         finishMainController();
         Get.back();
-        await Get.offAllNamed(Routes.loginScreen);
+        _sharedPreferences.setUser(DataUserModel());
+        Get.offAllNamed(Routes.loginScreen);
+        await _sharedPreferences.setLoggedIn(false);
       },
     );
   }
