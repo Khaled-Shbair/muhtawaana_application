@@ -1,6 +1,8 @@
 import '/config/all_imports.dart';
 
-class ChangePasswordController extends GetxController {
+class ChangePasswordController extends GetxController
+    with ShowLoadingDialog, ShowSnackBar {
+  final ChangePasswordUseCase _useCase = instance<ChangePasswordUseCase>();
   late TextEditingController currentPassword;
   late TextEditingController newPassword;
   var formKey = GlobalKey<FormState>();
@@ -14,6 +16,13 @@ class ChangePasswordController extends GetxController {
     newPassword = TextEditingController();
   }
 
+  @override
+  void onClose() {
+    currentPassword.dispose();
+    newPassword.dispose();
+    super.onClose();
+  }
+
   void changeObscureTextCurrentPassword() {
     obscureTextCurrentPassword = !obscureTextCurrentPassword;
     update();
@@ -24,11 +33,32 @@ class ChangePasswordController extends GetxController {
     update();
   }
 
-  String? validatorEmail(String? email) {}
+  void performChangePassword() {
+    if (currentPassword.text.isNotEmpty && newPassword.text.isNotEmpty) {
+      _changePassword();
+    } else {
+      showSnackBar(ManagerStrings.pleaseEnterRequiredData, true);
+    }
+  }
 
-  String? validatorPassword(String? password) {}
-
-  void performChangePassword() {}
-
-  void _changePassword() {}
+  void _changePassword() async {
+    showLoadingDialog(Get.context!);
+    (await _useCase.execute(
+      ChangePasswordBaseUseCaseInput(
+        currentPassword: currentPassword.text.toString(),
+        newPassword: newPassword.text.toString(),
+      ),
+    ))
+        .fold(
+      (l) {
+        Get.back();
+        showSnackBar(l.message, true);
+      },
+      (r) async {
+        Get.back();
+        showSnackBar(r.message);
+        await Get.offAllNamed(Routes.settingsScreen);
+      },
+    );
+  }
 }
