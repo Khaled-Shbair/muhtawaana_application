@@ -13,7 +13,7 @@ class ChangePasswordScreen extends StatelessWidget {
           ManagerStrings.changePassword,
           style: titleAppBarInAuthScreen(),
         ),
-        leading: const MyBackIcon(),
+        leading: MyBackIcon(onPressed: () => finishChangePassword()),
       ),
       body: Stack(
         alignment: AlignmentDirectional.bottomEnd,
@@ -99,7 +99,7 @@ class ChangePasswordScreen extends StatelessWidget {
                           ),
                           SizedBox(height: ManagerHeight.h30),
                           MainButton(
-                            onPressed: controller.performChangePassword,
+                            onPressed: () => controller.performChangePassword(),
                             text: ManagerStrings.submit,
                           ),
                         ],
