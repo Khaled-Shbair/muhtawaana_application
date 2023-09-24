@@ -72,6 +72,7 @@ class LoginController extends GetxController
         }
         Get.back();
         await Get.offAllNamed(Routes.mainScreen);
+        await _sharedPreferences.setLoggedIn(true);
       },
     );
   }
@@ -101,4 +102,12 @@ class LoginController extends GetxController
       points: points,
     );
   }
+
+  void backButton() {
+    finishLogin();
+  }
+
+/////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////
 }
