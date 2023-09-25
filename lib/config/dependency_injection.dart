@@ -16,7 +16,6 @@ Future<void> initModule() async {
 
 Future<void> _initFirebase() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
 }
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -395,4 +394,44 @@ initProfile() async {
 _finishProfile() async {
   await Get.delete<ProfileController>();
 }
+////////////////////////////////////////////////////////////////////////////////
+
+initCart() {
+  if (!GetIt.I.isRegistered<RemoteAddOrDeleteProductCartDataSource>()) {
+    instance.registerLazySingleton<RemoteAddOrDeleteProductCartDataSource>(
+      () => RemoteAddOrDeleteProductCartDataSourceImplementation(
+          instance<AppApi>()),
+    );
+  }
+  if (!GetIt.I.isRegistered<AddOrDeleteProductCartRepository>()) {
+    instance.registerLazySingleton<AddOrDeleteProductCartRepository>(
+      () => AddOrDeleteProductCartRepositoryImplementation(
+        instance<NetworkInfo>(),
+        instance<RemoteAddOrDeleteProductCartDataSource>(),
+      ),
+    );
+  }
+  if (!GetIt.I.isRegistered<AddOrDeleteProductCartUseCase>()) {
+    instance.registerLazySingleton<AddOrDeleteProductCartUseCase>(
+      () => AddOrDeleteProductCartUseCase(
+        instance<AddOrDeleteProductCartRepository>(),
+      ),
+    );
+  }
+  Get.put<CartController>(CartController());
+}
+
+finishCart() async {
+  if (GetIt.I.isRegistered<RemoteAddOrDeleteProductCartDataSource>()) {
+    await instance.unregister<RemoteAddOrDeleteProductCartDataSource>();
+  }
+  if (GetIt.I.isRegistered<AddOrDeleteProductCartRepository>()) {
+    await instance.unregister<AddOrDeleteProductCartRepository>();
+  }
+  if (GetIt.I.isRegistered<AddOrDeleteProductCartUseCase>()) {
+    await instance.unregister<AddOrDeleteProductCartUseCase>();
+  }
+  await Get.delete<CartController>();
+}
+
 ////////////////////////////////////////////////////////////////////////////////
