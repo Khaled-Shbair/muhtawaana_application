@@ -57,4 +57,7 @@ abstract class AppApi {
   Future<AddOrDeleteProductCartResponse> addOrDeleteProductCart(
     @Field(ApiConstants.productId) productId,
   );
+
+  @GET(RequestsApi.carts)
+  Future<GetAllCartProductsResponse> getAllCartProducts();
 }
