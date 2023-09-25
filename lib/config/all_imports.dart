@@ -221,6 +221,17 @@ export '/features/profile/presentation/controller/edit_profile_controller.dart';
 export '/features/profile/presentation/view/widgets/my_button_of_choose_image.dart';
 export '/features/profile/presentation/view/widgets/my_image_profile.dart';
 
+// cart feature
+export '/features/carts/data/response/add_or_delete_product_cart_response.dart';
+export '/features/carts/data/request/add_or_delete_product_cart_request.dart';
+export '/features/carts/data/data_source/remote_add_or_delete_product_cart_data_source.dart';
+export '/features/carts/data/mapper/add_or_delete_product_cart_mapper.dart';
+export '/features/carts/domain/model/add_or_delete_product_cart_model.dart';
+export '/features/carts/domain/repository/add_or_delete_product_cart_repository.dart';
+export '/features/carts/domain/use_case/add_or_delete_product_cart_use_case.dart';
+export '/features/carts/data/repository_implementation/add_or_delete_product_cart_repository_implementation.dart';
+export '/features/carts/presentation/controller/cart_controller.dart';
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 /** external libraries **/
