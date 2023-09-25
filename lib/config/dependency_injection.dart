@@ -418,6 +418,27 @@ initCart() {
       ),
     );
   }
+  if (!GetIt.I.isRegistered<RemoteGetAllCartProductsDataSource>()) {
+    instance.registerLazySingleton<RemoteGetAllCartProductsDataSource>(
+      () =>
+          RemoteGetAllCartProductsDataSourceImplementation(instance<AppApi>()),
+    );
+  }
+  if (!GetIt.I.isRegistered<GetAllCartProductsRepository>()) {
+    instance.registerLazySingleton<GetAllCartProductsRepository>(
+      () => GetAllCartProductsRepositoryImplementation(
+        instance<NetworkInfo>(),
+        instance<RemoteGetAllCartProductsDataSource>(),
+      ),
+    );
+  }
+  if (!GetIt.I.isRegistered<GetAllCartProductsUseCase>()) {
+    instance.registerLazySingleton<GetAllCartProductsUseCase>(
+      () => GetAllCartProductsUseCase(
+        instance<GetAllCartProductsRepository>(),
+      ),
+    );
+  }
   Get.put<CartController>(CartController());
 }
 
@@ -430,6 +451,15 @@ finishCart() async {
   }
   if (GetIt.I.isRegistered<AddOrDeleteProductCartUseCase>()) {
     await instance.unregister<AddOrDeleteProductCartUseCase>();
+  }
+  if (GetIt.I.isRegistered<RemoteGetAllCartProductsDataSource>()) {
+    await instance.unregister<RemoteGetAllCartProductsDataSource>();
+  }
+  if (GetIt.I.isRegistered<GetAllCartProductsRepository>()) {
+    await instance.unregister<GetAllCartProductsRepository>();
+  }
+  if (GetIt.I.isRegistered<GetAllCartProductsUseCase>()) {
+    await instance.unregister<GetAllCartProductsUseCase>();
   }
   await Get.delete<CartController>();
 }
