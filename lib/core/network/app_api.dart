@@ -52,4 +52,9 @@ abstract class AppApi {
 
   @POST(RequestsApi.logout)
   Future<LogoutResponse> logout();
+
+  @POST(RequestsApi.carts)
+  Future<AddOrDeleteProductCartResponse> addOrDeleteProductCart(
+    @Field(ApiConstants.productId) productId,
+  );
 }
