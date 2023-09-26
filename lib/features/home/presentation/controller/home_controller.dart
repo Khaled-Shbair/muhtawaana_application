@@ -72,7 +72,9 @@ class HomeController extends GetxController with ShowSnackBar {
     update();
   }
 
-  void buttonShopInAppBar() {}
+  void buttonShopInAppBar() {
+    Get.toNamed(Routes.cartScreen);
+  }
 
   void buttonMoreCategories() async {
     await Get.toNamed(Routes.categoriesScreen);
