@@ -12,8 +12,9 @@ class UpdateQuantityOfProductCartRepositoryImplementation
   );
 
   @override
-  Future<Either<Failure, UpdateQuantityOfProductCartModel>> updateQuantityOfProductCart(
-      UpdateQuantityOfProductCartRequest request,
+  Future<Either<Failure, UpdateQuantityOfProductCartModel>>
+      updateQuantityOfProductCart(
+    UpdateQuantityOfProductCartRequest request,
   ) async {
     if (await _networkInfo.isConnected) {
       try {
