@@ -10,8 +10,8 @@ Future<void> initModule() async {
   await _intiInternetChecker();
   await _intiDio();
 }
-////////////////////////////////////////////////////////////////////////////////
 
+////////////////////////////////////////////////////////////////////////////////
 Future<void> _initFirebase() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 }
@@ -183,8 +183,9 @@ finishLogout() async {
 
 ///////////////////////////////////////////////////////////////////////////////
 initMainController() {
-  initCategories();
   initHome();
+  initCart();
+  initCategories();
   initProfile();
   initCategoryDetails();
   initFavorites();
