@@ -1,8 +1,12 @@
 import '/config/all_imports.dart';
 
 class ManagerHeight {
+  static double h128 = SizeUtil.setHeight(128);
+  static double h98 = SizeUtil.setHeight(98);
   static double h40 = SizeUtil.setHeight(40);
   static double h136 = SizeUtil.setHeight(136);
+  static double h126 = SizeUtil.setHeight(126);
+  static double h274 = SizeUtil.setHeight(274);
   static double h35 = SizeUtil.setHeight(35);
   static double h395 = SizeUtil.setHeight(395);
   static double h2 = SizeUtil.setHeight(2);
@@ -48,8 +52,15 @@ class ManagerHeight {
 }
 
 class ManagerWidth {
+  static double w163= SizeUtil.setWidth(163);
+  static double w152= SizeUtil.setWidth(152);
+  static double w28 = SizeUtil.setWidth(28);
+  static double w6 = SizeUtil.setWidth(6);
+  static double w248 = SizeUtil.setWidth(248);
   static double w141 = SizeUtil.setWidth(141);
+  static double w14 = SizeUtil.setWidth(14);
   static double w1 = SizeUtil.setWidth(1);
+  static double w30 = SizeUtil.setWidth(30);
   static double w72 = SizeUtil.setWidth(72);
   static double w57 = SizeUtil.setWidth(57);
   static double w35 = SizeUtil.setWidth(35);
@@ -77,6 +88,7 @@ class ManagerWidth {
   static double w74 = SizeUtil.setHeight(74);
   static double w78 = SizeUtil.setHeight(78);
   static double w92 = SizeUtil.setHeight(92);
+  static double w100 = SizeUtil.setWidth(100);
   static double w102 = SizeUtil.setWidth(102);
   static double w120 = SizeUtil.setWidth(120);
   static double w148 = SizeUtil.setWidth(148);
