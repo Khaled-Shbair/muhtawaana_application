@@ -1,7 +1,7 @@
 class AddOrDeleteProductCartRequest {
-  int? productId;
+  int productId;
 
   AddOrDeleteProductCartRequest({
-    this.productId,
+    required this.productId,
   });
 }
