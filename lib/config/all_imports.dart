@@ -253,6 +253,12 @@ export '/features/carts/data/request/update_quantity_of_product_cart_request.dar
 export '/features/carts/data/mapper/update_quantity_of_product_cart_mapper.dart';
 export '/features/carts/domain/repository/update_quantity_of_product_cart_repository.dart';
 export '/features/carts/data/data_source/remote_update_quantity_of_product_cart_data_source.dart';
+export '/features/carts/domain/use_case/update_quantity_of_product_cart_use_case.dart';
+export '/features/carts/presentation/view/screens/cart_screen.dart';
+export '/features/carts/data/repository_implementation/update_quantity_of_product_cart_repository_implementation.dart';
+export '/features/carts/presentation/view/widgets/empty_cart.dart';
+export '/features/carts/presentation/view/widgets/structure_of_view_product_cart.dart';
+export '/features/carts/presentation/view/widgets/body_of_cart_screen.dart';
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
