@@ -152,7 +152,7 @@ class ProductDetailsScreen extends StatelessWidget {
                             width: ManagerWidth.w132,
                             height: ManagerHeight.h43,
                             radius: ManagerRadius.r10,
-                            onPressed: controller.addToCart,
+                            onPressed: () => controller.addToCart(data.id),
                             child: Text(
                               ManagerStrings.addToCart,
                               style: addToCartInProductDetails(),
