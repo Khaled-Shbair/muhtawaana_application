@@ -76,4 +76,8 @@ const Map<String, String> en = {
   'are_you_sure_logout': 'Are you sure logout?',
   'yes': 'Yes',
   'no': 'No',
+  'looks_like_you_have_not_made_your_order_yet':
+      'Looks like you haven\'t made your order yet.',
+  'your_cart_is_empty': 'Your cart is empty',
+  'no_notifications': 'No Notifications',
 };
