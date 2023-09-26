@@ -60,4 +60,10 @@ abstract class AppApi {
 
   @GET(RequestsApi.carts)
   Future<GetAllCartProductsResponse> getAllCartProducts();
+
+  @PUT(RequestsApi.updateProductOfCart)
+  Future<UpdateQuantityOfProductCartResponse> updateProductOfCart(
+    @Path(ApiConstants.id) int id,
+    @Field(ApiConstants.quantity) quantity,
+  );
 }
