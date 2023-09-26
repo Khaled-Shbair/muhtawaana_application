@@ -5,12 +5,10 @@ final instance = GetIt.instance;
 
 Future<void> initModule() async {
   WidgetsFlutterBinding.ensureInitialized();
-  _initFirebase();
+  await _initFirebase();
   await _initSharedPreferences();
   await _intiInternetChecker();
   await _intiDio();
-  // only to test
-  // instance<AppSettingsSharedPreferences>().clear();
 }
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -199,12 +197,13 @@ initMainController() {
 }
 
 finishMainController() async {
-  _finishHome();
-  _finishCategories();
-  _finishFavorites();
-  _finishCategoryDetails();
-  _finishProfile();
+  finishHome();
+  finishCategories();
+  finishFavorites();
+  finishCategoryDetails();
+  finishProfile();
   finishEditProfile();
+  finishCart();
   await Get.delete<MainController>();
 }
 
@@ -231,7 +230,7 @@ initCategories() {
   Get.put<CategoriesController>(CategoriesController());
 }
 
-_finishCategories() async {
+finishCategories() async {
   if (GetIt.I.isRegistered<RemoteCategoriesDataSource>()) {
     await instance.unregister<RemoteCategoriesDataSource>();
   }
@@ -268,7 +267,7 @@ initFavorites() {
   Get.put<FavoritesController>(FavoritesController());
 }
 
-_finishFavorites() async {
+finishFavorites() async {
   if (GetIt.I.isRegistered<RemoteFavoritesDataSource>()) {
     await instance.unregister<RemoteFavoritesDataSource>();
   }
@@ -304,7 +303,7 @@ initHome() {
   Get.put<HomeController>(HomeController());
 }
 
-_finishHome() async {
+finishHome() async {
   if (GetIt.I.isRegistered<RemoteHomeDataSource>()) {
     await instance.unregister<RemoteHomeDataSource>();
   }
@@ -339,7 +338,7 @@ initCategoryDetails() {
   }
 }
 
-_finishCategoryDetails() async {
+finishCategoryDetails() async {
   if (GetIt.I.isRegistered<RemoteCategoryDataSource>()) {
     await instance.unregister<RemoteCategoryDataSource>();
   }
@@ -391,7 +390,7 @@ initProfile() async {
   Get.put<ProfileController>(ProfileController());
 }
 
-_finishProfile() async {
+finishProfile() async {
   await Get.delete<ProfileController>();
 }
 ////////////////////////////////////////////////////////////////////////////////
@@ -439,6 +438,27 @@ initCart() {
       ),
     );
   }
+  if (!GetIt.I.isRegistered<RemoteUpdateQuantityOfProductCartDataSource>()) {
+    instance.registerLazySingleton<RemoteUpdateQuantityOfProductCartDataSource>(
+      () => RemoteUpdateQuantityOfCartDataSourceImplementation(
+          instance<AppApi>()),
+    );
+  }
+  if (!GetIt.I.isRegistered<UpdateQuantityOfProductCartRepository>()) {
+    instance.registerLazySingleton<UpdateQuantityOfProductCartRepository>(
+      () => UpdateQuantityOfProductCartRepositoryImplementation(
+        instance<NetworkInfo>(),
+        instance<RemoteUpdateQuantityOfProductCartDataSource>(),
+      ),
+    );
+  }
+  if (!GetIt.I.isRegistered<UpdateQuantityOfProductCartUseCase>()) {
+    instance.registerLazySingleton<UpdateQuantityOfProductCartUseCase>(
+      () => UpdateQuantityOfProductCartUseCase(
+        instance<UpdateQuantityOfProductCartRepository>(),
+      ),
+    );
+  }
   Get.put<CartController>(CartController());
 }
 
@@ -460,6 +480,15 @@ finishCart() async {
   }
   if (GetIt.I.isRegistered<GetAllCartProductsUseCase>()) {
     await instance.unregister<GetAllCartProductsUseCase>();
+  }
+  if (GetIt.I.isRegistered<RemoteUpdateQuantityOfProductCartDataSource>()) {
+    await instance.unregister<RemoteUpdateQuantityOfProductCartDataSource>();
+  }
+  if (GetIt.I.isRegistered<UpdateQuantityOfProductCartRepository>()) {
+    await instance.unregister<UpdateQuantityOfProductCartRepository>();
+  }
+  if (GetIt.I.isRegistered<UpdateQuantityOfProductCartUseCase>()) {
+    await instance.unregister<UpdateQuantityOfProductCartUseCase>();
   }
   await Get.delete<CartController>();
 }
