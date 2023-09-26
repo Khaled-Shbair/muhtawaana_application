@@ -46,12 +46,13 @@ class StructureOfViewProduct extends StatelessWidget {
         alignment: AlignmentDirectional.topCenter,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.symmetric(
-              horizontal: ManagerWidth.w7,
-              vertical: ManagerHeight.h7,
+            padding: EdgeInsetsDirectional.only(
+              start: ManagerWidth.w7,
+              end: ManagerWidth.w7,
+              top: ManagerHeight.h7,
+              bottom: ManagerHeight.h4,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(ManagerRadius.r10),
@@ -68,7 +69,7 @@ class StructureOfViewProduct extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: nameOfProductInHomeProductOfHomeScreen(),
                 ),
-                SizedBox(height: ManagerHeight.h4),
+                SizedBox(height: ManagerHeight.h2),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -89,14 +90,18 @@ class StructureOfViewProduct extends StatelessWidget {
                     }
                   ],
                 ),
-                SizedBox(height: ManagerHeight.h4),
+                SizedBox(height: ManagerHeight.h2),
                 Row(
                   children: [
-                    const Icon(Icons.star, color: ManagerColors.c17),
+                    const Icon(
+                      Icons.star,
+                      color: ManagerColors.c17,
+                      size: ManagerIconSize.s20,
+                    ),
                     Text(
                       ' 4.5 (110)',
                       style: TextStyle(
-                        fontSize: ManagerFontSize.s13,
+                        fontSize: ManagerFontSize.s10,
                         fontFamily: ManagerFontFamily.roboto,
                         fontWeight: ManagerFontWeight.w500,
                         color: ManagerColors.c18,
@@ -104,6 +109,7 @@ class StructureOfViewProduct extends StatelessWidget {
                     ),
                   ],
                 ),
+                const Spacer(),
                 MainButton(
                   onPressed: () async {
                     await Get.toNamed(
