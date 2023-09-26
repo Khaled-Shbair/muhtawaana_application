@@ -132,7 +132,7 @@ TextStyle nameOfCategoryInHomeCategoryOfHomeScreen() {
 TextStyle nameOfProductInHomeProductOfHomeScreen() {
   return mediumTextStyle(
     color: ManagerColors.c16,
-    fontSize: ManagerFontSize.s15,
+    fontSize: ManagerFontSize.s14,
     fontFamily: ManagerFontFamily.roboto,
   );
 }
@@ -140,7 +140,7 @@ TextStyle nameOfProductInHomeProductOfHomeScreen() {
 TextStyle priceOfProductInHomeProductOfHomeScreen() {
   return mediumTextStyle(
     color: ManagerColors.blackColor,
-    fontSize: ManagerFontSize.s14,
+    fontSize: ManagerFontSize.s12,
     fontFamily: ManagerFontFamily.roboto,
   );
 }
@@ -314,4 +314,45 @@ TextStyle titleAlertDialogInEditProfileScreen() {
     fontFamily: ManagerFontFamily.inter,
   );
 }
+
 ////////////////////////////////////////////////////////////////////////////////
+/// Text style of cart feature
+TextStyle subTitleEmptyInCartScreen() {
+  return lightTextStyle(
+    fontSize: ManagerFontSize.s16,
+    fontFamily: ManagerFontFamily.roboto,
+    color: ManagerColors.c28,
+  );
+}
+
+TextStyle titleEmptyInCartScreen() {
+  return boldTextStyle(
+    fontSize: ManagerFontSize.s16,
+    fontFamily: ManagerFontFamily.inter,
+    color: ManagerColors.c28,
+  );
+}
+
+TextStyle nameOfProductInCartScreen() {
+  return mediumTextStyle(
+    color: ManagerColors.whiteColor,
+    fontFamily: ManagerFontFamily.roboto,
+    fontSize: ManagerFontSize.s17,
+  );
+}
+
+TextStyle priceOfProductInCartScreen() {
+  return mediumTextStyle(
+    color: ManagerColors.blackColor,
+    fontFamily: ManagerFontFamily.roboto,
+    fontSize: ManagerFontSize.s16,
+  );
+}
+TextStyle quantityOfProductInCartScreen() {
+  return mediumTextStyle(
+
+        fontFamily: ManagerFontFamily.inter,
+        fontSize: ManagerFontSize.s18,
+        color: ManagerColors.blackColor,
+  );
+}
