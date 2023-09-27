@@ -348,11 +348,27 @@ TextStyle priceOfProductInCartScreen() {
     fontSize: ManagerFontSize.s16,
   );
 }
+
 TextStyle quantityOfProductInCartScreen() {
   return mediumTextStyle(
-
-        fontFamily: ManagerFontFamily.inter,
-        fontSize: ManagerFontSize.s18,
-        color: ManagerColors.blackColor,
+    fontFamily: ManagerFontFamily.inter,
+    fontSize: ManagerFontSize.s18,
+    color: ManagerColors.blackColor,
   );
+}
+
+TextStyle totalOfProductInCartScreen([bool isTotalPrice = false]) {
+  if (isTotalPrice) {
+    return mediumTextStyle(
+      color: ManagerColors.blackColor,
+      fontSize: ManagerFontSize.s17,
+      fontFamily: ManagerFontFamily.roboto,
+    );
+  } else {
+    return boldTextStyle(
+      color: ManagerColors.blackColor,
+      fontSize: ManagerFontSize.s17,
+      fontFamily: ManagerFontFamily.roboto,
+    );
+  }
 }
