@@ -92,7 +92,7 @@ class StructureOfViewProductCart extends StatelessWidget {
               Row(
                 children: [
                   MainButton(
-                    onPressed: () => increaseButton,
+                    onPressed: increaseButton,
                     color: ManagerColors.whiteColor,
                     height: ManagerHeight.h30,
                     width: ManagerWidth.w30,
@@ -111,7 +111,7 @@ class StructureOfViewProductCart extends StatelessWidget {
                     ),
                   ),
                   MainButton(
-                    onPressed: () => decreaseButton,
+                    onPressed: decreaseButton,
                     color: ManagerColors.whiteColor,
                     height: ManagerHeight.h30,
                     width: ManagerWidth.w30,
