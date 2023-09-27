@@ -8,7 +8,10 @@ class CartScreen extends StatelessWidget {
     return GetBuilder<CartController>(
       builder: (controller) {
         return Scaffold(
-          appBar: myAppBar(text: ManagerStrings.cart),
+          appBar: myAppBar(
+            text: ManagerStrings.cart,
+            onPressed: () => controller.backButton(),
+          ),
           body: Column(
             children: [
               Expanded(child: BodyOfCartScreen(controller: controller)),
