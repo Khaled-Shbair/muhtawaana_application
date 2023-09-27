@@ -1,6 +1,7 @@
 import '/config/all_imports.dart';
 
 class RequestsApi {
+  static const String paymentUrl = 'https://api.stripe.com/v1/payment_intents';
   static const String baseUrl = 'https://student.valuxapps.com/api/';
   static const String login = '${baseUrl}login';
   static const String register = '${baseUrl}register';
