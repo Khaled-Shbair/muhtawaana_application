@@ -260,6 +260,9 @@ export '/features/carts/presentation/view/widgets/empty_cart.dart';
 export '/features/carts/presentation/view/widgets/structure_of_view_product_cart.dart';
 export '/features/carts/presentation/view/widgets/body_of_cart_screen.dart';
 
+//payment feature
+export '/features/payment/presentation/controller/payment_controller.dart';
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 /** external libraries **/

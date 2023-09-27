@@ -14,12 +14,13 @@ class DioFactory {
       headers: {
         ApiConstants.authorization: _sharedPreferences.getToken,
         ApiConstants.lang: _sharedPreferences.getLanguage,
-        ApiConstants.contentType: 'application/json',
+        Headers.contentTypeHeader: Headers.jsonContentType,
       },
     );
     InterceptorsWrapper interceptor = InterceptorsWrapper(
       onRequest: (RequestOptions options, RequestInterceptorHandler handler) {
-        options.headers[ApiConstants.authorization] = _sharedPreferences.getToken;
+        options.headers[ApiConstants.authorization] =
+            _sharedPreferences.getToken;
         return handler.next(options);
       },
     );

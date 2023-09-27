@@ -101,5 +101,11 @@ class CartController extends GetxController with ShowSnackBar {
     update();
   }
 
-  void buyButton() {}
+  void backButton() async {
+    finishPayment();
+  }
+
+  void buyButton() async {
+    await PaymentController.to.makePayment(totalPrice);
+  }
 }
