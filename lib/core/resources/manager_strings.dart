@@ -79,4 +79,6 @@ class ManagerStrings {
       'looks_like_you_have_not_made_your_order_yet'.tr;
   static String yourCartIsEmpty = 'your_cart_is_empty'.tr;
   static String noNotifications = 'no_notifications'.tr;
+  static String total = 'total'.tr;
+  static String buy = 'buy'.tr;
 }

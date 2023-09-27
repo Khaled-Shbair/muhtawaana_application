@@ -62,6 +62,8 @@ const Map<String, String> en = {
   'add_to_favorites': 'Add To Favorites',
   'add_to_cart': 'Add To Cart',
   'price': 'Price',
+  'total': 'Total',
+  'buy': 'Buy',
   'search': 'Search',
   'all_categories': 'All Categories',
   'no_favorite_products': 'No favorite products',
