@@ -2,12 +2,15 @@ class ApiConstants {
   static const int receiveTimeout = 60;
   static const int sendTimeout = 60;
 
+  static const String bearer = 'Bearer';
+  static const String amount = 'amount';
+  static const String clientSecret = 'client_secret';
+  static const String currency = 'currency';
   static const String lang = 'lang';
   static const String cartItems = 'cart_items';
   static const String subTotal = 'sub_total';
   static const String total = 'total';
   static const String authorization = 'Authorization';
-  static const String contentType = 'Content-Type';
   static const String currentPassword = 'current_password';
   static const String newPassword = 'new_password';
   static const String userId = 'user_id';
@@ -54,4 +57,8 @@ class ApiConstants {
   static const String errors = 'errors';
   static const String badRequest = 'bad request';
   static const String error = 'error';
+  static const String secretKey =
+      'sk_test_51NuzxmIXh8V04Ufr1qyOYJ9haGcNMSLUNOpOciaU1p2P5S7XOG2Gy8Q668O1hAWFPKP71bOHJ7jQd4yBV35IXXzR00mKCiEy0G';
+  static const String publishableKey =
+      'pk_test_51NuzxmIXh8V04UfrZgzjbw01V6YGWFjliDCosLpX7SEprgKiIVm3tKECJQv9xOsECFE7UnWzE0cSh5W4pvKmxB6e002eDANMIW';
 }
