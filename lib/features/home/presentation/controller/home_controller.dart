@@ -42,6 +42,7 @@ class HomeController extends GetxController with ShowSnackBar {
         products = r.data.products;
         banners = r.data.banners;
         CategoriesController.to.getCategories();
+        CartController.to.getAllCartProducts();
         loading = false;
         FavoritesController.to.getAllProductsFavorites();
       },
