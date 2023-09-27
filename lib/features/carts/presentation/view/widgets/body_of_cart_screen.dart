@@ -32,8 +32,8 @@ class BodyOfCartScreen extends StatelessWidget {
           } else {
             return StructureOfViewProductCart(
               deleteButton: () => controller.deleteButton(data.product.id),
-              decreaseButton: () => controller.decreaseButton(),
-              increaseButton: () => controller.increaseButton(),
+              decreaseButton: () => controller.decreaseButton(data.id),
+              increaseButton: () => controller.increaseButton(data.id),
               data: data.product,
               quantity: data.quantity,
             );
