@@ -3,6 +3,9 @@ class ApiConstants {
   static const int sendTimeout = 60;
 
   static const String lang = 'lang';
+  static const String cartItems = 'cart_items';
+  static const String subTotal = 'sub_total';
+  static const String total = 'total';
   static const String authorization = 'Authorization';
   static const String contentType = 'Content-Type';
   static const String currentPassword = 'current_password';
@@ -24,7 +27,6 @@ class ApiConstants {
   static const String inFavorites = 'in_favorites';
   static const String inCart = 'in_cart';
   static const String currentPage = 'current_page';
-  static const String total = 'total';
 
   static const String data = 'data';
   static const String productId = 'product_id';
@@ -46,6 +48,7 @@ class ApiConstants {
   static const String products = 'products';
   static const String category = 'category';
   static const String product = 'product';
+  static const String quantity = 'quantity';
   static const String images = 'images';
 
   static const String errors = 'errors';

@@ -221,6 +221,45 @@ export '/features/profile/presentation/controller/edit_profile_controller.dart';
 export '/features/profile/presentation/view/widgets/my_button_of_choose_image.dart';
 export '/features/profile/presentation/view/widgets/my_image_profile.dart';
 
+// cart feature
+export '/features/carts/data/response/add_or_delete_product_cart_response.dart';
+export '/features/carts/data/request/add_or_delete_product_cart_request.dart';
+export '/features/carts/data/data_source/remote_add_or_delete_product_cart_data_source.dart';
+export '/features/carts/data/mapper/add_or_delete_product_cart_mapper.dart';
+export '/features/carts/domain/model/add_or_delete_product_cart_model.dart';
+export '/features/carts/domain/repository/add_or_delete_product_cart_repository.dart';
+export '/features/carts/domain/use_case/add_or_delete_product_cart_use_case.dart';
+export '/features/carts/data/repository_implementation/add_or_delete_product_cart_repository_implementation.dart';
+export '/features/carts/presentation/controller/cart_controller.dart';
+export '/features/carts/data/response/data_of_cart_products_response.dart';
+export '/features/carts/data/response/data_of_product_of_cart_response.dart';
+export '/features/carts/data/response/list_of_products_of_cart_response.dart';
+export '/features/carts/domain/model/data_of_product_of_cart_model.dart';
+export '/features/carts/domain/model/list_of_products_of_cart_model.dart';
+export '/features/carts/domain/model/data_of_cart_products_model.dart';
+export '/features/carts/domain/model/get_all_cart_products_model.dart';
+export '/features/carts/data/response/get_all_cart_products_response.dart';
+export '/features/carts/domain/repository/get_all_cart_products_repository.dart';
+export '/features/carts/data/data_source/remote_get_all_cart_products_data_source.dart';
+export '/features/carts/data/mapper/get_all_cart_products_mapper.dart';
+export '/features/carts/data/mapper/data_of_product_of_cart_mapper.dart';
+export '/features/carts/data/mapper/list_of_products_of_cart_mapper.dart';
+export '/features/carts/data/mapper/data_of_cart_products_mapper.dart';
+export '/features/carts/data/repository_implementation/get_all_cart_products_repository_implementation.dart';
+export '/features/carts/domain/use_case/get_all_cart_products_use_case.dart';
+export '/features/carts/data/response/update_quantity_product_of_cart_response.dart';
+export '/features/carts/domain/model/update_quantity_of_product_cart_model.dart';
+export '/features/carts/data/request/update_quantity_of_product_cart_request.dart';
+export '/features/carts/data/mapper/update_quantity_of_product_cart_mapper.dart';
+export '/features/carts/domain/repository/update_quantity_of_product_cart_repository.dart';
+export '/features/carts/data/data_source/remote_update_quantity_of_product_cart_data_source.dart';
+export '/features/carts/domain/use_case/update_quantity_of_product_cart_use_case.dart';
+export '/features/carts/presentation/view/screens/cart_screen.dart';
+export '/features/carts/data/repository_implementation/update_quantity_of_product_cart_repository_implementation.dart';
+export '/features/carts/presentation/view/widgets/empty_cart.dart';
+export '/features/carts/presentation/view/widgets/structure_of_view_product_cart.dart';
+export '/features/carts/presentation/view/widgets/body_of_cart_screen.dart';
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 /** external libraries **/

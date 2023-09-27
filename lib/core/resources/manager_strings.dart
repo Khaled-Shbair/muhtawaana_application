@@ -75,4 +75,10 @@ class ManagerStrings {
   static String areYouSureLogout = 'are_you_sure_logout'.tr;
   static String yes = 'yes'.tr;
   static String no = 'no'.tr;
+  static String looksLikeYouHaveNotMadeYourOrderYet =
+      'looks_like_you_have_not_made_your_order_yet'.tr;
+  static String yourCartIsEmpty = 'your_cart_is_empty'.tr;
+  static String noNotifications = 'no_notifications'.tr;
+  static String total = 'total'.tr;
+  static String buy = 'buy'.tr;
 }

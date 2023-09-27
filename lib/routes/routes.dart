@@ -15,4 +15,5 @@ class Routes {
   static const String editProfileScreen = '/edit_profile_screen';
   static const String settingsScreen = '/settings_screen';
   static const String notificationsScreen = '/notifications_screen';
+  static const String cartScreen = '/cart_screen';
 }

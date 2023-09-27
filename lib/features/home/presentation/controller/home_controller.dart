@@ -34,12 +34,15 @@ class HomeController extends GetxController with ShowSnackBar {
     loading = true;
     (await _useCase.execute()).fold(
       (l) {
+        getHomeData();
+        CartController.to.getAllCartProducts();
         showSnackBar(l.message, true);
       },
       (r) {
         products = r.data.products;
         banners = r.data.banners;
         CategoriesController.to.getCategories();
+        CartController.to.getAllCartProducts();
         loading = false;
         FavoritesController.to.getAllProductsFavorites();
       },
@@ -72,7 +75,9 @@ class HomeController extends GetxController with ShowSnackBar {
     update();
   }
 
-  void buttonShopInAppBar() {}
+  void buttonShopInAppBar() {
+    Get.toNamed(Routes.cartScreen);
+  }
 
   void buttonMoreCategories() async {
     await Get.toNamed(Routes.categoriesScreen);
@@ -84,7 +89,10 @@ class HomeController extends GetxController with ShowSnackBar {
     await Get.toNamed(Routes.productDetailsScreen, arguments: id);
   }
 
-  void addToCart() {}
+  void addToCart(int productId) async {
+    await CartController.to.addOrDeleteProductCart(productId, true);
+    await CartController.to.getAllCartProducts();
+  }
 
   void buttonFavorites(int productId) {
     for (var e in products) {

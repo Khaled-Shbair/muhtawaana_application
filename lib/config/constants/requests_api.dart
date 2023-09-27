@@ -14,4 +14,7 @@ class RequestsApi {
   static const String favorites = '${baseUrl}favorites';
   static const String updateProfile = '${baseUrl}update-profile';
   static const String fcmToken = '${baseUrl}fcm-token';
+  static const String carts = '${baseUrl}carts';
+  static const String updateProductOfCart =
+      '${baseUrl}carts/{${ApiConstants.id}}';
 }

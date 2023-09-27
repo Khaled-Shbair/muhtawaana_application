@@ -295,6 +295,91 @@ class _AppApi implements AppApi {
     return value;
   }
 
+  @override
+  Future<AddOrDeleteProductCartResponse> addOrDeleteProductCart(
+      dynamic productId) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = {'product_id': productId};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<AddOrDeleteProductCartResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'https://student.valuxapps.com/api/carts',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = AddOrDeleteProductCartResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<GetAllCartProductsResponse> getAllCartProducts() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<GetAllCartProductsResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'https://student.valuxapps.com/api/carts',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = GetAllCartProductsResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<UpdateQuantityOfProductCartResponse> updateProductOfCart(
+    int id,
+    dynamic quantity,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = {'quantity': quantity};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<UpdateQuantityOfProductCartResponse>(Options(
+      method: 'PUT',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'https://student.valuxapps.com/api/carts/${id}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = UpdateQuantityOfProductCartResponse.fromJson(_result.data!);
+    return value;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||

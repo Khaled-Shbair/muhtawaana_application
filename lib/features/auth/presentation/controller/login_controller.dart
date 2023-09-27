@@ -9,7 +9,7 @@ class LoginController extends GetxController
   bool obscureText = true;
   bool rememberMe = true;
   final LoginUseCase _useCase = instance<LoginUseCase>();
-  final AppSettingsSharedPreferences _sharedPreferences =
+  final AppSettingsSharedPreferences _sharedPref =
       instance<AppSettingsSharedPreferences>();
 
   @override
@@ -57,7 +57,7 @@ class LoginController extends GetxController
       (r) async {
         if (rememberMe) {
           var dataUser = r.data;
-          _sharedPreferences.setUser(
+          _sharedPref.setUser(
             _dataUserModel(
               points: dataUser.points,
               id: dataUser.id,
@@ -70,9 +70,9 @@ class LoginController extends GetxController
             ),
           );
         }
+        await _sharedPref.setLoggedIn(true);
         Get.back();
         await Get.offAllNamed(Routes.mainScreen);
-        await _sharedPreferences.setLoggedIn(true);
       },
     );
   }

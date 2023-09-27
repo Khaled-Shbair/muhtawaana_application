@@ -26,4 +26,8 @@ class AppConstants {
   static const double aspectRatioRatioX = 1;
   static const double aspectRatioRatioY = 1;
   static const int maxLengthOfPhoneNumber = 10;
+  static const double blurRadiusOfContainerInCartScreen = 10;
+  static const double xOffsetOfContainerInCartScreen = 0;
+  static const double yOffsetOfContainerInCartScreen = 2;
+
 }
