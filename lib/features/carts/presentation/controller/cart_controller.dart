@@ -25,11 +25,7 @@ class CartController extends GetxController with ShowSnackBar {
       AddOrDeleteProductCartBaseUseCaseInput(productId: productId),
     ))
         .fold(
-      (l) {
-        if (isProductDetail == true) {
-          showSnackBar(l.message, true);
-        }
-      },
+      (l) {},
       (r) {
         if (isProductDetail == true) {
           showSnackBar(r.message);
@@ -40,22 +36,17 @@ class CartController extends GetxController with ShowSnackBar {
   }
 
   Future<void> updateQuantityOfProductCart(int id, int quantity) async {
-    loading = true;
     (await _updateQuantityOfProductCartUseCase.execute(
       UpdateQuantityOfProductCartBaseUseCaseInput(id: id, quantity: quantity),
     ))
         .fold(
-      (l) {
-        showSnackBar(l.message, true);
-      },
+      (l) {},
       (r) {
         for (var e in allCartProducts) {
           if (e.id == id) {
             e.quantity = quantity;
-            totalPrice += e.product.price * quantity;
           }
         }
-        loading = false;
       },
     );
     update();
@@ -64,13 +55,13 @@ class CartController extends GetxController with ShowSnackBar {
   Future<void> getAllCartProducts() async {
     loading = true;
     (await _getAllCartProductsUseCase.execute()).fold(
-      (l) {
-        showSnackBar(l.message, true);
-      },
+      (l) {},
       (r) {
         allCartProducts = [];
         allCartProducts = r.data.cartItems;
-        totalPrice = r.data.total;
+        if (totalPrice == 0) {
+          totalPrice = r.data.total;
+        }
         loading = false;
       },
     );
@@ -87,7 +78,28 @@ class CartController extends GetxController with ShowSnackBar {
     update();
   }
 
-  void decreaseButton() {}
+  void decreaseButton(int id) {
+    for (var e in allCartProducts) {
+      if (e.id == id && e.quantity > 1) {
+        e.quantity--;
+        totalPrice -= e.product.price;
+        updateQuantityOfProductCart(id, e.quantity);
+      }
+    }
+    update();
+  }
 
-  void increaseButton() {}
+  void increaseButton(int id) {
+    for (var e in allCartProducts) {
+      if (e.id == id) {
+        e.quantity++;
+        totalPrice += e.product.price;
+        updateQuantityOfProductCart(id, e.quantity);
+      }
+    }
+
+    update();
+  }
+
+  void buyButton() {}
 }
