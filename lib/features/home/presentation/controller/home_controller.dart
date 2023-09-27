@@ -76,6 +76,7 @@ class HomeController extends GetxController with ShowSnackBar {
   }
 
   void buttonShopInAppBar() {
+    initPayment();
     Get.toNamed(Routes.cartScreen);
   }
 
