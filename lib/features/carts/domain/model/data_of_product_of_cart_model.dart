@@ -6,9 +6,9 @@ class DataOfProductOfCartModel {
   String name;
   String description;
   int id;
-  int price;
-  int oldPrice;
-  int discount;
+  double price;
+  double oldPrice;
+  double discount;
 
   DataOfProductOfCartModel({
     required this.images,

@@ -19,11 +19,11 @@ class DataOfProductOfCartResponse {
   @JsonKey(name: ApiConstants.id)
   int? id;
   @JsonKey(name: ApiConstants.price)
-  int? price;
+  double? price;
   @JsonKey(name: ApiConstants.oldPrice)
-  int? oldPrice;
+  double? oldPrice;
   @JsonKey(name: ApiConstants.discount)
-  int? discount;
+  double? discount;
 
   DataOfProductOfCartResponse({
     this.images,

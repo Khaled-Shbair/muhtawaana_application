@@ -14,11 +14,11 @@ DataOfProductOfCartResponse _$DataOfProductOfCartResponseFromJson(
       inCart: json['in_cart'] as bool?,
       inFavorites: json['in_favorites'] as bool?,
       id: json['id'] as int?,
-      discount: json['discount'] as int?,
+      discount: (json['discount'] as num?)?.toDouble(),
       image: json['image'] as String?,
       name: json['name'] as String?,
-      price: json['price'] as int?,
-      oldPrice: json['old_price'] as int?,
+      price: (json['price'] as num?)?.toDouble(),
+      oldPrice: (json['old_price'] as num?)?.toDouble(),
       description: json['description'] as String?,
     );
 
