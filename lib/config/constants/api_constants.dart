@@ -1,3 +1,5 @@
+import '../all_imports.dart';
+
 class ApiConstants {
   static const int receiveTimeout = 60;
   static const int sendTimeout = 60;
@@ -57,8 +59,8 @@ class ApiConstants {
   static const String errors = 'errors';
   static const String badRequest = 'bad request';
   static const String error = 'error';
-  static const String secretKey =
+  static String secretKey =
       'sk_test_51NuzxmIXh8V04Ufr1qyOYJ9haGcNMSLUNOpOciaU1p2P5S7XOG2Gy8Q668O1hAWFPKP71bOHJ7jQd4yBV35IXXzR00mKCiEy0G';
-  static const String publishableKey =
+  static String publishableKey =
       'pk_test_51NuzxmIXh8V04UfrZgzjbw01V6YGWFjliDCosLpX7SEprgKiIVm3tKECJQv9xOsECFE7UnWzE0cSh5W4pvKmxB6e002eDANMIW';
 }
