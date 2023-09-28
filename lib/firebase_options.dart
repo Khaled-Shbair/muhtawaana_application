@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCjTRAGhQXDMehGYFAIH4Y806ojZeZopgo',
-    appId: '1:117964232066:android:d23d9c2d35fed2c4f92b9b',
-    messagingSenderId: '117964232066',
-    projectId: 'shop-application-8679d',
-    storageBucket: 'shop-application-8679d.appspot.com',
+    apiKey: 'AIzaSyB6VHCSB4lv_a0SChv8mLmfRNjheSnqXkA',
+    appId: '1:478744736987:android:acc0c1fc14877cb72408fe',
+    messagingSenderId: '478744736987',
+    projectId: 'muhtawaana-application-67b17',
+    storageBucket: 'muhtawaana-application-67b17.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCtK9y49uLVgtqPavDb5eVAuHGPIzXPM0s',
-    appId: '1:117964232066:ios:368c25504593458ef92b9b',
-    messagingSenderId: '117964232066',
-    projectId: 'shop-application-8679d',
-    storageBucket: 'shop-application-8679d.appspot.com',
+    apiKey: 'AIzaSyCnecmEquKqi1Nwn-k-d3iINE5iyz5iRn0',
+    appId: '1:478744736987:ios:a9030453871b19192408fe',
+    messagingSenderId: '478744736987',
+    projectId: 'muhtawaana-application-67b17',
+    storageBucket: 'muhtawaana-application-67b17.appspot.com',
     iosBundleId: 'muhtawaana.com.muhtawaanaApp',
   );
 }
