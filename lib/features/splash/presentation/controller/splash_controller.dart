@@ -1,6 +1,6 @@
 import '/config/all_imports.dart';
 
-class SplashController extends GetxController {
+class SplashController extends GetxController with FbNotifications {
   final AppSettingsSharedPreferences _sharedPreferences =
       instance<AppSettingsSharedPreferences>();
 
@@ -16,6 +16,9 @@ class SplashController extends GetxController {
                 ? Routes.authScreen
                 : Routes.onBoardingScreen;
         await Get.offAllNamed(route);
+        await requestNotificationPermissions();
+        initializeForegroundNotificationForAndroid();
+        manageNotificationAction();
       },
     );
   }

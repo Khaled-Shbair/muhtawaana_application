@@ -14,6 +14,9 @@ Future<void> initModule() async {
 ////////////////////////////////////////////////////////////////////////////////
 Future<void> _initFirebase() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await FbNotifications.initNotifications();
+
+  debugPrint('${await FirebaseMessaging.instance.getToken()}');
 }
 ////////////////////////////////////////////////////////////////////////////////
 
