@@ -59,6 +59,7 @@ export '/core/widgets/my_card_product.dart';
 export '/core/widgets/structure_of_view_product.dart';
 export '/core/widgets/my_app_bar.dart';
 export '/core/widgets/no_data.dart';
+export '/core/storage/remote/firebase/firebase_notifications/fb_notifications.dart';
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -285,3 +286,4 @@ export 'package:image_picker/image_picker.dart';
 export 'package:firebase_core/firebase_core.dart';
 export '/firebase_options.dart';
 export 'package:google_sign_in/google_sign_in.dart';
+export 'package:firebase_messaging/firebase_messaging.dart';
