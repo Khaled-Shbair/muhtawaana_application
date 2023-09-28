@@ -14,7 +14,7 @@ Future<void> firebaseMessagingBackgroundHandler(
 late AndroidNotificationChannel channel;
 late FlutterLocalNotificationsPlugin localNotificationsPlugin;
 
-mixin FbNotifications {
+class FbNotifications {
   /// CALLED IN main function between ensureInitialized <-> runApp(widget);
   static Future<void> initNotifications() async {
     //Connect the previous created function with onBackgroundMessage to enable
@@ -55,7 +55,7 @@ mixin FbNotifications {
   }
 
   //iOS Notification Permission
-  Future<void> requestNotificationPermissions() async {
+  static Future<void> requestNotificationPermissions() async {
     NotificationSettings notificationSettings =
         await FirebaseMessaging.instance.requestPermission(
       alert: true,
@@ -76,7 +76,7 @@ mixin FbNotifications {
   }
 
   //ANDROID
-  void initializeForegroundNotificationForAndroid() {
+  static void initializeForegroundNotificationForAndroid() {
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       RemoteNotification? notification = message.notification;
       AndroidNotification? androidNotification = notification?.android;
@@ -99,13 +99,13 @@ mixin FbNotifications {
   }
 
   //GENERAL (Android & iOS)
-  void manageNotificationAction() {
+  static void manageNotificationAction() {
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
       _controlNotificationNavigation(message.data);
     });
   }
 
-  void _controlNotificationNavigation(Map<String, dynamic> data) {
+  static void _controlNotificationNavigation(Map<String, dynamic> data) {
     print('Data: $data');
     if (data['page'] != null) {
       switch (data['page']) {
