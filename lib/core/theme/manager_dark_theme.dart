@@ -2,7 +2,6 @@ import '/config/all_imports.dart';
 
 ThemeData managerDarkThemeData() {
   return ThemeData.dark().copyWith(
-    useMaterial3: true,
     primaryColor: ManagerColors.primaryColor,
     // primaryColorDark: ManagerColors.primaryColorDark,
     // scaffoldBackgroundColor: ManagerColors.scaffoldBackgroundColorDark,
