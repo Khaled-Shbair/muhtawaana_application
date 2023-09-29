@@ -1,5 +1,3 @@
-import '../all_imports.dart';
-
 class ApiConstants {
   static const int receiveTimeout = 60;
   static const int sendTimeout = 60;
