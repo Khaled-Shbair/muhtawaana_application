@@ -54,7 +54,7 @@ class HomeCategory extends StatelessWidget {
                   ),
                 );
               } else {
-                return MainShimmer();
+                return const MainShimmer();
               }
             },
           ),
