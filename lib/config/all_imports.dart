@@ -44,7 +44,7 @@ export '/core/internet_checker/internet_checker.dart';
 export '/core/error_handler/failure.dart';
 export '/core/error_handler/response_code.dart';
 export '/core/error_handler/error_handler.dart';
-export '/core/helpers/showLoadingDialog.dart';
+export '/core/helpers/show_loading_dialog.dart';
 export '/core/storage/local/shared_preferences/app_settings_shared_preferences.dart';
 export '/core/use_case/base_use_case.dart';
 export '/core/models/data_user_model.dart';
@@ -66,7 +66,7 @@ export '/core/storage/remote/firebase/firebase_notifications/fb_notifications.da
 /** features file **/
 // splash feature
 export '/features/splash/presentation/controller/splash_controller.dart';
-export '/features/splash/presentation/view/screens/splash_Screen.dart';
+export '/features/splash/presentation/view/screens/splash_screen.dart';
 
 // on_boarding feature
 export '/features/on_boarding/presentation/view/screens/on_boarding_screen.dart';
@@ -121,6 +121,7 @@ export '/features/auth/data/data_source/remote_change_password_data_source.dart'
 export '/features/auth/data/mapper/change_password_mapper.dart';
 export '/features/auth/data/repository_implementation/change_password_repository_implementation.dart';
 export '/features/auth/data/request/change_password_request.dart';
+export '/features/auth/presentation/controller/forget_password_controller.dart';
 
 // main feature
 export '/features/main/presentation/controller/main_controller.dart';
