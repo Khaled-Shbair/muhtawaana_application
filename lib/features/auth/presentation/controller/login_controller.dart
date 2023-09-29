@@ -77,9 +77,17 @@ class LoginController extends GetxController
     );
   }
 
-  void loginByFaceBook() {}
+  void loginByFaceBook() {
+    Runes emoji = Runes('\u{1f607}');
+    showSnackBar(
+        '${ManagerStrings.itWillBeAddedLater}${String.fromCharCodes(emoji)}');
+  }
 
-  void loginByGoogle() {}
+  void loginByGoogle() {
+    Runes emoji = Runes('\u{1f607}');
+    showSnackBar(
+        '${ManagerStrings.itWillBeAddedLater}${String.fromCharCodes(emoji)}');
+  }
 
   DataUserModel _dataUserModel({
     required String token,
@@ -106,8 +114,4 @@ class LoginController extends GetxController
   void backButton() {
     finishLogin();
   }
-
-/////////////////////////////////////////////////////////////////////////////
-
-/////////////////////////////////////////////////////////////////////////////
 }
