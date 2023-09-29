@@ -81,6 +81,7 @@ class ManagerStrings {
   static String noNotifications = 'no_notifications'.tr;
   static String total = 'total'.tr;
   static String buy = 'buy'.tr;
+  static String itWillBeAddedLater = 'it_will_be_added_later'.tr;
   static String somethingWentWrongTryAgain =
       'something_went_wrong_try_again'.tr;
 }

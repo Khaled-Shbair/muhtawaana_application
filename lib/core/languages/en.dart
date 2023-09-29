@@ -83,4 +83,5 @@ const Map<String, String> en = {
   'your_cart_is_empty': 'Your cart is empty',
   'no_notifications': 'No Notifications',
   'something_went_wrong_try_again': 'Something went wrong, try again',
+  'it_will_be_added_later': 'It will be added later',
 };
