@@ -5,6 +5,25 @@ class ForgetPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return GetBuilder<ForgetPasswordController>(
+      builder: (controller) {
+        return StructureOfLoginAndSignUp(
+          formKey: controller.formKey,
+          titleAppBar: ManagerStrings.forgetPassword,
+          onPressed: () => controller.backButton(),
+          children: [
+            Text(
+              '${ManagerStrings.itWillBeAddedLater}${String.fromCharCodes(Runes('\u{1f607}'))}',
+              style: TextStyle(
+                color: ManagerColors.blackColor,
+                fontFamily: ManagerFontFamily.roboto,
+                fontWeight: ManagerFontWeight.w400,
+                fontSize: ManagerFontSize.s18,
+              ),
+            ),
+          ],
+        );
+      },
+    );
   }
 }
