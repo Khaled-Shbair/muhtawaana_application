@@ -27,10 +27,9 @@ class RouteGenerator {
         initCategories();
         return MaterialPageRoute(builder: (_) => const CategoriesScreen());
       case Routes.forgetPasswordScreen:
-        initCategories();
+        initForgetPassword();
         return MaterialPageRoute(builder: (_) => const ForgetPasswordScreen());
       case Routes.homeScreen:
-        initCategories();
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       case Routes.categoryDetailsScreen:
         var id = settings.arguments as int;
