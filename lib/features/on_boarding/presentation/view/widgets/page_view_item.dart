@@ -33,12 +33,11 @@ class PageViewItem extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsetsDirectional.only(
-            start: ManagerWidth.w36,
-            end: ManagerWidth.w36,
+            start: ManagerWidth.w30,
+            end: ManagerWidth.w30,
             top: ManagerHeight.h16,
           ),
           child: SizedBox(
-            height: ManagerHeight.h76,
             child: Text(
               subTitle,
               textAlign: TextAlign.center,

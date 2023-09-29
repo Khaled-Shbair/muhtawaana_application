@@ -1,8 +1,7 @@
 import '/config/all_imports.dart';
 
 ThemeData managerLightThemeData() {
-  return ThemeData.light().copyWith(
-    useMaterial3: true,
+  return ThemeData.light(useMaterial3: true).copyWith(
     //this for disabled button color
     // disabledColor: ManagerColors.disabledColorLight,
     primaryColor: ManagerColors.primaryColor,

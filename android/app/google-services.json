@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "117964232066",
-    "project_id": "shop-application-8679d",
-    "storage_bucket": "shop-application-8679d.appspot.com"
+    "project_number": "478744736987",
+    "project_id": "muhtawaana-application-67b17",
+    "storage_bucket": "muhtawaana-application-67b17.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:117964232066:android:d23d9c2d35fed2c4f92b9b",
+        "mobilesdk_app_id": "1:478744736987:android:acc0c1fc14877cb72408fe",
         "android_client_info": {
           "package_name": "muhtawaana.com.muhtawaana_app"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCjTRAGhQXDMehGYFAIH4Y806ojZeZopgo"
+          "current_key": "AIzaSyB6VHCSB4lv_a0SChv8mLmfRNjheSnqXkA"
         }
       ],
       "services": {

@@ -1,8 +1,7 @@
 const String _imagePath = 'assets/images/';
-// const String _jsonPath = 'assets/json/';
 
 class ManagerAssets {
-  static const String logo = '${_imagePath}logo.jpg';
+  static const String logo = '${_imagePath}logo.png';
 
   //Splash images
   static const String backgroundSplash =
@@ -44,5 +43,3 @@ class ManagerAssets {
   static const String notificationEmpty =
       '${_imagePath}empty/notification_empty.svg';
 }
-
-class ManagerJson {}

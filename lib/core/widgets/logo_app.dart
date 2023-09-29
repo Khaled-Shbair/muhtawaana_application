@@ -10,7 +10,6 @@ class LogoApp extends StatelessWidget {
       height: ManagerHeight.h120,
       width: ManagerWidth.w120,
       filterQuality: FilterQuality.high,
-
     );
   }
 }

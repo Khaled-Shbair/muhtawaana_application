@@ -14,6 +14,11 @@ Future<void> initModule() async {
 ////////////////////////////////////////////////////////////////////////////////
 Future<void> _initFirebase() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await FbNotifications.initNotifications();
+  await FbNotifications.requestNotificationPermissions();
+  FbNotifications.initializeForegroundNotificationForAndroid();
+  FbNotifications.manageNotificationAction();
+  debugPrint('FCM: ${await FirebaseMessaging.instance.getToken()}');
 }
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -394,8 +399,8 @@ initProfile() async {
 finishProfile() async {
   await Get.delete<ProfileController>();
 }
-////////////////////////////////////////////////////////////////////////////////
 
+////////////////////////////////////////////////////////////////////////////////
 initCart() {
   if (!GetIt.I.isRegistered<RemoteAddOrDeleteProductCartDataSource>()) {
     instance.registerLazySingleton<RemoteAddOrDeleteProductCartDataSource>(
@@ -501,5 +506,14 @@ initPayment() async {
 
 finishPayment() async {
   await Get.delete<PaymentController>();
+}
+
+////////////////////////////////////////////////////////////////////////////////
+initForgetPassword() async {
+  Get.put<ForgetPasswordController>(ForgetPasswordController());
+}
+
+finishForgetPassword() async {
+  await Get.delete<ForgetPasswordController>();
 }
 ////////////////////////////////////////////////////////////////////////////////

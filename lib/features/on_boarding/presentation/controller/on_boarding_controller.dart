@@ -50,7 +50,7 @@ class OnBoardingController extends GetxController {
     currentPage = pageViewItems.length - 1;
     pageController.animateToPage(
       currentPage,
-      curve: Curves.easeInExpo,
+      curve: Curves.fastLinearToSlowEaseIn,
       duration: const Duration(seconds: AppConstants.durationOnBoarding),
     );
     update();
@@ -58,7 +58,7 @@ class OnBoardingController extends GetxController {
 
   void nextPage() {
     pageController.nextPage(
-      curve: Curves.easeInExpo,
+      curve: Curves.fastLinearToSlowEaseIn,
       duration: const Duration(seconds: AppConstants.durationOnBoarding),
     );
     update();
