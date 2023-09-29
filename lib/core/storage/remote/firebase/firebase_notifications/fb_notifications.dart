@@ -9,6 +9,8 @@ Future<void> firebaseMessagingBackgroundHandler(
     RemoteMessage remoteMessage) async {
   //BACKGROUND Notifications - iOS & Android
   await Firebase.initializeApp();
+
+  debugPrint('FCM: ${await FirebaseMessaging.instance.getToken()}');
 }
 
 late AndroidNotificationChannel channel;
@@ -22,7 +24,6 @@ class FbNotifications {
     FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
 
     //Channel
-
     if (!kIsWeb) {
       channel = const AndroidNotificationChannel(
         'notification_channel',
@@ -68,58 +69,62 @@ class FbNotifications {
     );
     if (notificationSettings.authorizationStatus ==
         AuthorizationStatus.authorized) {
-      print('GRANT PERMISSION');
+      debugPrint('GRANT PERMISSION');
     } else if (notificationSettings.authorizationStatus ==
         AuthorizationStatus.denied) {
-      print('Permission Denied');
+      debugPrint('Permission Denied');
     }
   }
 
   //ANDROID
   static void initializeForegroundNotificationForAndroid() {
-    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      RemoteNotification? notification = message.notification;
-      AndroidNotification? androidNotification = notification?.android;
-      if (notification != null && androidNotification != null) {
-        localNotificationsPlugin.show(
-          notification.hashCode,
-          notification.title,
-          notification.body,
-          NotificationDetails(
-            android: AndroidNotificationDetails(
-              channel.id,
-              channel.name,
-              channelDescription: channel.description,
-              icon: 'launch_background',
+    FirebaseMessaging.onMessage.listen(
+      (RemoteMessage message) {
+        RemoteNotification? notification = message.notification;
+        AndroidNotification? androidNotification = notification?.android;
+
+        if (notification != null && androidNotification != null) {
+          localNotificationsPlugin.show(
+            notification.hashCode,
+            notification.title,
+            notification.body,
+            NotificationDetails(
+              android: AndroidNotificationDetails(
+                channel.id,
+                channel.name,
+                channelDescription: channel.description,
+                icon: '@mipmap/ic_launcher',
+              ),
             ),
-          ),
-        );
-      }
-    });
+          );
+        }
+      },
+    );
   }
 
   //GENERAL (Android & iOS)
   static void manageNotificationAction() {
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+      debugPrint('message: ${message.notification!.body}');
       _controlNotificationNavigation(message.data);
     });
   }
 
   static void _controlNotificationNavigation(Map<String, dynamic> data) {
-    print('Data: $data');
+    debugPrint('Data: $data');
     if (data['page'] != null) {
       switch (data['page']) {
         case 'products':
           var productId = data['id'];
-          print('Product Id: $productId');
+          debugPrint('Product Id: $productId');
           break;
 
         case 'settings':
-          print('Navigate to settings');
+          debugPrint('Navigate to settings');
           break;
 
         case 'profile':
-          print('Navigate to Profile');
+          debugPrint('Navigate to Profile');
           break;
       }
     }
