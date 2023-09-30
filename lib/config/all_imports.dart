@@ -288,3 +288,4 @@ export 'package:firebase_core/firebase_core.dart';
 export '/firebase_options.dart';
 export 'package:google_sign_in/google_sign_in.dart';
 export 'package:firebase_messaging/firebase_messaging.dart';
+export 'package:flutter_dotenv/flutter_dotenv.dart';
