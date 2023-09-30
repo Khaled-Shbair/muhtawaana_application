@@ -2,6 +2,7 @@ import '/config/all_imports.dart';
 
 void main() async {
   await initModule();
+  await dotenv.load(fileName: ".env");
   runApp(MyApp());
 }
 
