@@ -222,6 +222,8 @@ export '/features/profile/presentation/view/screens/edit_profile_screen.dart';
 export '/features/profile/presentation/controller/edit_profile_controller.dart';
 export '/features/profile/presentation/view/widgets/my_button_of_choose_image.dart';
 export '/features/profile/presentation/view/widgets/my_image_profile.dart';
+export '/features/profile/data/response/profile_response.dart';
+export '/features/profile/data/response/data_of_profile_response.dart';
 
 // cart feature
 export '/features/carts/data/response/add_or_delete_product_cart_response.dart';
