@@ -45,6 +45,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const EditProfileScreen());
       case Routes.cartScreen:
         return MaterialPageRoute(builder: (_) => const CartScreen());
+      case Routes.notificationsScreen:
+        return MaterialPageRoute(builder: (_) => const NotificationsScreens());
       default:
         return unDefinedRoute();
     }
