@@ -394,10 +394,37 @@ finishEditProfile() async {
 }
 
 initProfile() async {
+  if (!GetIt.I.isRegistered<RemoteProfileDataSource>()) {
+    instance.registerLazySingleton<RemoteProfileDataSource>(
+      () => RemoteProfileDataSourceImplementation(instance<AppApi>()),
+    );
+  }
+  if (!GetIt.I.isRegistered<ProfileRepository>()) {
+    instance.registerLazySingleton<ProfileRepository>(
+      () => ProfileRepositoryImplementation(
+        instance<NetworkInfo>(),
+        instance<RemoteProfileDataSource>(),
+      ),
+    );
+  }
+  if (!GetIt.I.isRegistered<ProfileUseCase>()) {
+    instance.registerLazySingleton<ProfileUseCase>(
+      () => ProfileUseCase(instance<ProfileRepository>()),
+    );
+  }
   Get.put<ProfileController>(ProfileController());
 }
 
 finishProfile() async {
+  if (GetIt.I.isRegistered<RemoteProfileDataSource>()) {
+    await instance.unregister<RemoteProfileDataSource>();
+  }
+  if (GetIt.I.isRegistered<ProfileRepository>()) {
+    await instance.unregister<ProfileRepository>();
+  }
+  if (GetIt.I.isRegistered<ProfileUseCase>()) {
+    await instance.unregister<ProfileUseCase>();
+  }
   await Get.delete<ProfileController>();
 }
 
