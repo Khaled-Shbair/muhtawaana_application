@@ -192,6 +192,7 @@ initMainController() {
   initCart();
   initCategories();
   initProfile();
+  initNotifications();
   initCategoryDetails();
   initFavorites();
   _finishSplash();
@@ -515,5 +516,14 @@ initForgetPassword() async {
 
 finishForgetPassword() async {
   await Get.delete<ForgetPasswordController>();
+}
+
+////////////////////////////////////////////////////////////////////////////////
+initNotifications() async {
+  Get.put<NotificationsController>(NotificationsController());
+}
+
+finishNotifications() async {
+  await Get.delete<NotificationsController>();
 }
 ////////////////////////////////////////////////////////////////////////////////
