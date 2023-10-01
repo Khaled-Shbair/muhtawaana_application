@@ -5,14 +5,15 @@ class MainController extends GetxController {
   List<Widget> screens = [
     const HomeScreen(),
     const FavoritesScreen(),
-    Container(color: Colors.green),
+    NotificationsScreens(),
     const ProfileScreen(),
   ];
 
   List<PersistentBottomNavBarItem> items = [
     bottomNavBarItem(Icons.home_outlined, ManagerStrings.home),
     bottomNavBarItem(Icons.favorite_border_outlined, ManagerStrings.favorites),
-    bottomNavBarItem(Icons.shopping_cart_outlined, ManagerStrings.cart),
+    bottomNavBarItem(
+        Icons.notifications_outlined, ManagerStrings.notifications),
     bottomNavBarItem(Icons.person_outline, ManagerStrings.profile),
   ];
 
