@@ -224,6 +224,14 @@ export '/features/profile/presentation/view/widgets/my_button_of_choose_image.da
 export '/features/profile/presentation/view/widgets/my_image_profile.dart';
 export '/features/profile/data/response/profile_response.dart';
 export '/features/profile/data/response/data_of_profile_response.dart';
+export '/features/profile/domain/model/data_of_profile_model.dart';
+export '/features/profile/domain/model/profile_model.dart';
+export '/features/profile/domain/repository/profile_repository.dart';
+export '/features/profile/data/data_source/remote_profile_data_source.dart';
+export '/features/profile/data/mapper/data_of_profile_mapper.dart';
+export '/features/profile/data/mapper/profile_mapper.dart';
+export '/features/profile/domain/use_case/profile_use_case.dart';
+export '/features/profile/data/repository_implementation/profile_repository_implementation.dart';
 
 // cart feature
 export '/features/carts/data/response/add_or_delete_product_cart_response.dart';
