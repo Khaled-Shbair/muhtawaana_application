@@ -33,37 +33,20 @@ class PaymentController extends GetxController with ShowSnackBar {
   }
 
   Future<void> _initPaymentSheet(String clientSecret) async {
-    await Stripe.instance
-        .initPaymentSheet(
+    await Stripe.instance.initPaymentSheet(
       paymentSheetParameters: SetupPaymentSheetParameters(
         paymentIntentClientSecret: clientSecret,
         merchantDisplayName: 'Payment',
         allowsDelayedPaymentMethods: true,
       ),
-    )
-        .then((value) {
-      showDialog(
-        context: Get.context!,
-        builder: (context) {
-          return const AlertDialog(
-            content: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Row(
-                  children: [
-                    Icon(
-                      Icons.check_circle,
-                      color: ManagerColors.successColor,
-                    ),
-                    Text('Payment Successfully'),
-                  ],
-                ),
-              ],
-            ),
-          );
-        },
-      );
-    });
+    );
+  }
+
+  Future<void> displayPaymentSheet() async {
+    try {
+      await Stripe.instance.presentPaymentSheet();
+      CartController.to.clearCart();
+    } catch (e) {}
   }
 
   Future<void> makePayment(double amount) async {
@@ -71,7 +54,7 @@ class PaymentController extends GetxController with ShowSnackBar {
     await _getClientSecret(price, 'USD');
     if (_clientSecret.isNotEmpty) {
       await _initPaymentSheet(_clientSecret);
-      await Stripe.instance.presentPaymentSheet();
+      displayPaymentSheet();
     }
   }
 }
