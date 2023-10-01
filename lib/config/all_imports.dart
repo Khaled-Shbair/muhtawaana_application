@@ -265,6 +265,10 @@ export '/features/carts/presentation/view/widgets/body_of_cart_screen.dart';
 //payment feature
 export '/features/payment/presentation/controller/payment_controller.dart';
 
+//notifications feature
+export '/features/notifications/presentation/view/screens/notifications_screen.dart';
+export '/features/notifications/presentation/controller/notifications_controller.dart';
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 /** external libraries **/
