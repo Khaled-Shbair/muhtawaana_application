@@ -30,6 +30,7 @@ class SignUpScreen extends StatelessWidget {
               maxLength: AppConstants.maxLengthOfPhoneNumber,
               hintText: ManagerStrings.phone,
               keyboardType: TextInputType.phone,
+              counterText: '',
             ),
             SizedBox(height: ManagerHeight.h14),
             MainTextField(
