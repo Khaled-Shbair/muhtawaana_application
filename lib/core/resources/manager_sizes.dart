@@ -1,6 +1,7 @@
 import '/config/all_imports.dart';
 
 class ManagerHeight {
+  static double h102 = SizeUtil.setHeight(102);
   static double h128 = SizeUtil.setHeight(128);
   static double h98 = SizeUtil.setHeight(98);
   static double h40 = SizeUtil.setHeight(40);
