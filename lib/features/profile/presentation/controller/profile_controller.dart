@@ -1,6 +1,7 @@
 import '/config/all_imports.dart';
 
 class ProfileController extends GetxController {
+  static ProfileController get to => Get.find();
   final AppSettingsSharedPreferences _sharedPref =
       instance<AppSettingsSharedPreferences>();
   final ProfileUseCase _profileUseCase = instance<ProfileUseCase>();
@@ -44,7 +45,7 @@ class ProfileController extends GetxController {
     ),
   ];
 
-  void getProfileData() async {
+  Future<void> getProfileData() async {
     (await _profileUseCase.execute()).fold(
       (l) {},
       (r) async {
@@ -62,6 +63,7 @@ class ProfileController extends GetxController {
         );
       },
     );
+    update();
   }
 
   DataUserModel _dataUserModel({
