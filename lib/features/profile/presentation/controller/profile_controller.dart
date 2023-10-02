@@ -49,7 +49,7 @@ class ProfileController extends GetxController {
     (await _profileUseCase.execute()).fold(
       (l) {},
       (r) async {
-        _sharedPref.setUser(
+        await _sharedPref.setUser(
           _dataUserModel(
             points: r.data.points,
             id: r.data.id,
