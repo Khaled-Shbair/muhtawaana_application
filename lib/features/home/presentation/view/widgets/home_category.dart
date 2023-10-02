@@ -8,7 +8,7 @@ class HomeCategory extends StatelessWidget {
     return GetBuilder<CategoriesController>(
       builder: (controller) {
         return SizedBox(
-          height: ManagerHeight.h100,
+          height: ManagerHeight.h102,
           child: ListView.separated(
             padding: EdgeInsetsDirectional.only(
               start: ManagerWidth.w16,
@@ -28,7 +28,7 @@ class HomeCategory extends StatelessWidget {
                     start: ManagerWidth.w8,
                     end: ManagerWidth.w8,
                   ),
-                  width: ManagerWidth.w78,
+                  width: ManagerWidth.w80,
                   decoration: BoxDecoration(
                     color: ManagerColors.c15,
                     borderRadius: BorderRadius.circular(ManagerRadius.r10),
@@ -40,15 +40,12 @@ class HomeCategory extends StatelessWidget {
                         backgroundImage: NetworkImage(data.image),
                       ),
                       SizedBox(height: ManagerHeight.h10),
-                      SizedBox(
-                        height: ManagerHeight.h29,
-                        child: Text(
-                          data.name,
-                          textAlign: TextAlign.center,
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
-                          style: nameOfCategoryInHomeCategoryOfHomeScreen(),
-                        ),
+                      Text(
+                        data.name,
+                        textAlign: TextAlign.center,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
+                        style: nameOfCategoryInHomeCategoryOfHomeScreen(),
                       ),
                     ],
                   ),
