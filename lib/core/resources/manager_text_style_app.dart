@@ -126,6 +126,8 @@ TextStyle nameOfCategoryInHomeCategoryOfHomeScreen() {
     fontFamily: ManagerFontFamily.roboto,
     fontSize: ManagerFontSize.s12,
     color: ManagerColors.c5,
+    height: 1.2,
+
   );
 }
 
