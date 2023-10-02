@@ -9,6 +9,7 @@ TextStyle _textStyle({
   Color? decorationColor,
   double? decorationThickness,
   double? letterSpacing,
+  double? height,
 }) {
   return TextStyle(
     fontWeight: fontWeight,
@@ -19,6 +20,7 @@ TextStyle _textStyle({
     decorationColor: decorationColor,
     decorationThickness: decorationThickness,
     letterSpacing: letterSpacing,
+    height: height,
   );
 }
 
@@ -43,6 +45,7 @@ TextStyle regularTextStyle({
   required double fontSize,
   TextDecoration? decoration,
   double? letterSpacing,
+  double? height,
 }) {
   return _textStyle(
     fontWeight: ManagerFontWeight.w400,
@@ -51,6 +54,7 @@ TextStyle regularTextStyle({
     fontSize: fontSize,
     decoration: decoration,
     letterSpacing: letterSpacing,
+    height: height,
   );
 }
 
