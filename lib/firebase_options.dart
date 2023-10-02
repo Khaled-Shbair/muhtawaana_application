@@ -63,6 +63,6 @@ class DefaultFirebaseOptions {
     messagingSenderId: '478744736987',
     projectId: 'muhtawaana-application-67b17',
     storageBucket: 'muhtawaana-application-67b17.appspot.com',
-    iosBundleId: 'muhtawaana.com.muhtawaanaApp',
+    iosBundleId: 'com.muhtawaana',
   );
 }

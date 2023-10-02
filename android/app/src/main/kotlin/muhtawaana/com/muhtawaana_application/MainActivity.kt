@@ -1,4 +1,4 @@
-package muhtawaana.com.muhtawaana_application
+package com.muhtawaana
 
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.android.FlutterFragmentActivity
