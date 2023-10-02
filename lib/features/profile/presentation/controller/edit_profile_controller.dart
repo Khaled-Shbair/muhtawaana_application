@@ -65,20 +65,9 @@ class EditProfileController extends GetxController
         showSnackBar(l.message, true);
       },
       (r) async {
-        await _sharedPref.setUser(
-          _dataUserModel(
-            points: r.data.points,
-            id: r.data.id,
-            phone: r.data.phone,
-            credit: r.data.credit,
-            email: r.data.email,
-            name: r.data.name,
-            image: r.data.image,
-            token: r.data.token,
-          ),
-        );
+        await ProfileController.to.getProfileData();
         Get.back();
-        Get.back();
+        backButton();
       },
     );
     update();
@@ -99,28 +88,6 @@ class EditProfileController extends GetxController
         phone: phone.text.isNotEmpty ? phone.text.toString() : userPhone,
       );
     }
-  }
-
-  DataUserModel _dataUserModel({
-    required String token,
-    required String name,
-    required String image,
-    required String email,
-    required String phone,
-    required int credit,
-    required int id,
-    required int points,
-  }) {
-    return DataUserModel(
-      token: token,
-      name: name,
-      image: image,
-      email: email,
-      credit: credit,
-      phone: phone,
-      id: id,
-      points: points,
-    );
   }
 
 ///////////////////////////////////////////////////////////////////////////////
