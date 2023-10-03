@@ -66,6 +66,7 @@ TextStyle mediumTextStyle({
   double? letterSpacing,
   Color? decorationColor,
   double? decorationThickness,
+  double? height,
 }) {
   return _textStyle(
     fontWeight: ManagerFontWeight.w500,
@@ -76,6 +77,7 @@ TextStyle mediumTextStyle({
     letterSpacing: letterSpacing,
     decorationColor: decorationColor,
     decorationThickness: decorationThickness,
+    height: height,
   );
 }
 
