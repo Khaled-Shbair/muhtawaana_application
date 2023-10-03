@@ -3,7 +3,6 @@ import '/config/all_imports.dart';
 class CategoriesController extends GetxController {
   static CategoriesController get to => Get.find();
   final CategoriesUseCase _categoriesUseCase = instance<CategoriesUseCase>();
-  List<DataOfProductOfCategoryModel> categoryDetails = [];
   List<DataOfCategoryModel> categories = [];
   bool loading = false;
 
@@ -27,24 +26,13 @@ class CategoriesController extends GetxController {
   }
 
   void onTapOnCategory(int id) async {
-    await Get.toNamed(Routes.categoryDetailsScreen, arguments: id);
     initCategoryDetails();
-    await getCategoryDetails(id);
+    ProductOfCategoryController.to.getCategoryDetails(id);
+    await Get.toNamed(Routes.categoryDetailsScreen, arguments: id);
   }
 
-  Future<void> getCategoryDetails(int id) async {
-    final CategoryUseCase categoryDetailsUseCase = instance<CategoryUseCase>();
-    categoryDetails = [];
-    loading = true;
-    (await categoryDetailsUseCase.execute(CategoryBaseUseCaseInput(id))).fold(
-      (l) {},
-      (r) {
-        categoryDetails = r.data.data;
-        loading = false;
-      },
-    );
-    update();
+  void backButton() {
+    finishCategoryDetails();
+    finishCategories();
   }
-
-  void favoriteButton() {}
 }
