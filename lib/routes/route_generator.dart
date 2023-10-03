@@ -32,8 +32,8 @@ class RouteGenerator {
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       case Routes.categoryDetailsScreen:
-        var id = settings.arguments as int;
         initCategoryDetails();
+        var id = settings.arguments as int;
         return MaterialPageRoute(builder: (_) => ProductsOfCategoryScreen(id));
       case Routes.productDetailsScreen:
         var data = settings.arguments as dynamic;
