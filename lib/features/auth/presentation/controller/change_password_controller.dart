@@ -61,4 +61,8 @@ class ChangePasswordController extends GetxController
       },
     );
   }
+
+  void backButton() {
+    finishChangePassword();
+  }
 }
