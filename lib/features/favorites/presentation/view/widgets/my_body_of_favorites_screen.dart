@@ -17,7 +17,6 @@ class MyBodyOfFavoritesScreen extends StatelessWidget {
           horizontal: ManagerWidth.w16,
           vertical: ManagerHeight.h14,
         ),
-        physics: const NeverScrollableScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: ManagerWidth.w10,
