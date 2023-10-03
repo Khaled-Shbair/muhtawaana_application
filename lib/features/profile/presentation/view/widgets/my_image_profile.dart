@@ -25,7 +25,7 @@ class MyImageProfile extends StatelessWidget {
                 fit: BoxFit.fill,
               )
             : DecorationImage(
-                image: NetworkImage(image),
+                image: CachedNetworkImageProvider(image),
                 filterQuality: FilterQuality.high,
                 fit: BoxFit.fill,
               ),

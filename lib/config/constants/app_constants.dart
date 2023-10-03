@@ -29,5 +29,6 @@ class AppConstants {
   static const double blurRadiusOfContainerInCartScreen = 10;
   static const double xOffsetOfContainerInCartScreen = 0;
   static const double yOffsetOfContainerInCartScreen = 2;
+  static const int maxLengthOfNameInSignUpScreen = 20;
 
 }

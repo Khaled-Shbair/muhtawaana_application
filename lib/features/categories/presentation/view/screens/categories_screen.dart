@@ -1,4 +1,3 @@
-
 import '/config/all_imports.dart';
 
 class CategoriesScreen extends StatelessWidget {
@@ -6,12 +5,15 @@ class CategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ManagerColors.whiteColor,
-      appBar: myAppBar(text: ManagerStrings.categories),
-      body: GetBuilder<CategoriesController>(
-        builder: (controller) {
-          return GridView.builder(
+    return GetBuilder<CategoriesController>(
+      builder: (controller) {
+        return Scaffold(
+          backgroundColor: ManagerColors.whiteColor,
+          appBar: myAppBar(
+            text: ManagerStrings.categories,
+            onPressed: () => controller.backButton(),
+          ),
+          body: GridView.builder(
             padding: EdgeInsetsDirectional.only(
               start: ManagerWidth.w16,
               end: ManagerWidth.w16,
@@ -25,61 +27,68 @@ class CategoriesScreen extends StatelessWidget {
             ),
             itemCount: controller.loading ? 8 : controller.categories.length,
             itemBuilder: (context, index) {
-              var data = controller.categories[index];
-              return InkWell(
-                onTap: () => controller.onTapOnCategory(data.id),
-                highlightColor: ManagerColors.transparentColor,
-                splashColor: ManagerColors.transparentColor,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: ManagerColors.whiteColor,
-                    borderRadius: BorderRadius.circular(ManagerRadius.r10),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: ManagerColors.shadow_09,
-                        offset: Offset(
-                          AppConstants.xOffsetOfContainerInCategoriesScreen,
-                          AppConstants.yOffsetOfContainerInCategoriesScreen,
-                        ),
-                        blurRadius: AppConstants
-                            .blurRadiusOfContainerInCategoriesScreen,
-                      ),
-                    ],
-                    image: DecorationImage(
-                      image: NetworkImage(data.image),
-                      filterQuality: FilterQuality.high,
-                      fit: BoxFit.fill,
-                    ),
-                  ),
+              if (controller.loading) {
+                return MainShimmer(
+                  height: ManagerHeight.h152,
+                  width: ManagerWidth.w162,
+                );
+              } else {
+                var data = controller.categories[index];
+                return InkWell(
+                  onTap: () => controller.onTapOnCategory(data.id),
+                  highlightColor: ManagerColors.transparentColor,
+                  splashColor: ManagerColors.transparentColor,
                   child: Container(
-                    alignment: AlignmentDirectional.center,
-                    height: double.infinity,
-                    width: double.infinity,
-                    padding: EdgeInsetsDirectional.symmetric(
-                      horizontal: ManagerWidth.w4,
-                    ),
                     decoration: BoxDecoration(
-                      color: Colors.black38.withOpacity(.3),
+                      color: ManagerColors.whiteColor,
                       borderRadius: BorderRadius.circular(ManagerRadius.r10),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: ManagerColors.shadow_09,
+                          offset: Offset(
+                            AppConstants.xOffsetOfContainerInCategoriesScreen,
+                            AppConstants.yOffsetOfContainerInCategoriesScreen,
+                          ),
+                          blurRadius: AppConstants
+                              .blurRadiusOfContainerInCategoriesScreen,
+                        ),
+                      ],
+                      image: DecorationImage(
+                        image: CachedNetworkImageProvider(data.image),
+                        filterQuality: FilterQuality.high,
+                        fit: BoxFit.fill,
+                      ),
                     ),
-                    child: Text(
-                      data.name,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontFamily: ManagerFontFamily.roboto,
-                        color: ManagerColors.whiteColor,
-                        fontWeight: ManagerFontWeight.w400,
-                        fontSize: ManagerFontSize.s14,
+                    child: Container(
+                      alignment: AlignmentDirectional.center,
+                      height: double.infinity,
+                      width: double.infinity,
+                      padding: EdgeInsetsDirectional.symmetric(
+                        horizontal: ManagerWidth.w4,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.black38.withOpacity(.3),
+                        borderRadius: BorderRadius.circular(ManagerRadius.r10),
+                      ),
+                      child: Text(
+                        data.name,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontFamily: ManagerFontFamily.roboto,
+                          color: ManagerColors.whiteColor,
+                          fontWeight: ManagerFontWeight.w400,
+                          fontSize: ManagerFontSize.s14,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              );
+                );
+              }
             },
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }

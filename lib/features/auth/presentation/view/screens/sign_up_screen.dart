@@ -22,6 +22,8 @@ class SignUpScreen extends StatelessWidget {
               controller: controller.name,
               prefixIcon: Icons.person,
               hintText: ManagerStrings.fullName,
+              maxLength: AppConstants.maxLengthOfNameInSignUpScreen,
+              counterText: '',
             ),
             SizedBox(height: ManagerHeight.h14),
             MainTextField(
@@ -30,6 +32,7 @@ class SignUpScreen extends StatelessWidget {
               maxLength: AppConstants.maxLengthOfPhoneNumber,
               hintText: ManagerStrings.phone,
               keyboardType: TextInputType.phone,
+              counterText: '',
             ),
             SizedBox(height: ManagerHeight.h14),
             MainTextField(

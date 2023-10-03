@@ -56,8 +56,8 @@ class StructureOfViewProduct extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(ManagerRadius.r10),
-                  child: Image.network(
-                    image,
+                  child: CachedNetworkImage(
+                    imageUrl: image,
                     height: ManagerHeight.h125,
                     width: ManagerWidth.w148,
                   ),

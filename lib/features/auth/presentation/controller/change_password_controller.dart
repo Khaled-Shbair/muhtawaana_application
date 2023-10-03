@@ -55,10 +55,15 @@ class ChangePasswordController extends GetxController
         showSnackBar(l.message, true);
       },
       (r) async {
-        Get.back();
         showSnackBar(r.message);
-        await Get.offAllNamed(Routes.settingsScreen);
+        Get.back();
+        Get.back();
+        backButton();
       },
     );
+  }
+
+  void backButton() {
+    finishChangePassword();
   }
 }

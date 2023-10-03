@@ -42,6 +42,9 @@ abstract class AppApi {
     @Field(ApiConstants.newPassword) newPassword,
   );
 
+  @GET(RequestsApi.profile)
+  Future<ProfileResponse> getProfileData();
+
   @PUT(RequestsApi.updateProfile)
   Future<EditProfileResponse> editProfile(
     @Field(ApiConstants.name) name,

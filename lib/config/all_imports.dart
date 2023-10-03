@@ -188,6 +188,7 @@ export '/features/categories/domain/repository/category_repository.dart';
 export '/features/categories/data/repository_implementation/category_repository_implementation.dart';
 export '/features/categories/domain/use_case/category_use_case.dart';
 export '/features/categories/presentation/view/screens/products_of_category_screen.dart';
+export '/features/categories/presentation/controller/product_of_category_controller.dart';
 
 // favorites feature
 export '/features/favorites/domain/model/favorites_model.dart';
@@ -222,6 +223,16 @@ export '/features/profile/presentation/view/screens/edit_profile_screen.dart';
 export '/features/profile/presentation/controller/edit_profile_controller.dart';
 export '/features/profile/presentation/view/widgets/my_button_of_choose_image.dart';
 export '/features/profile/presentation/view/widgets/my_image_profile.dart';
+export '/features/profile/data/response/profile_response.dart';
+export '/features/profile/data/response/data_of_profile_response.dart';
+export '/features/profile/domain/model/data_of_profile_model.dart';
+export '/features/profile/domain/model/profile_model.dart';
+export '/features/profile/domain/repository/profile_repository.dart';
+export '/features/profile/data/data_source/remote_profile_data_source.dart';
+export '/features/profile/data/mapper/data_of_profile_mapper.dart';
+export '/features/profile/data/mapper/profile_mapper.dart';
+export '/features/profile/domain/use_case/profile_use_case.dart';
+export '/features/profile/data/repository_implementation/profile_repository_implementation.dart';
 
 // cart feature
 export '/features/carts/data/response/add_or_delete_product_cart_response.dart';
@@ -265,6 +276,15 @@ export '/features/carts/presentation/view/widgets/body_of_cart_screen.dart';
 //payment feature
 export '/features/payment/presentation/controller/payment_controller.dart';
 
+//notifications feature
+export '/features/notifications/presentation/view/screens/notifications_screen.dart';
+export '/features/notifications/presentation/controller/notifications_controller.dart';
+
+//settings feature
+export '/features/settings/presentation/controller/settings_controller.dart';
+export '/features/settings/presentation/view/screens/settings_screen.dart';
+export '/features/settings/presentation/view/widgets/my_switch_button.dart';
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 /** external libraries **/
@@ -288,3 +308,5 @@ export 'package:firebase_core/firebase_core.dart';
 export '/firebase_options.dart';
 export 'package:google_sign_in/google_sign_in.dart';
 export 'package:firebase_messaging/firebase_messaging.dart';
+export 'package:flutter_dotenv/flutter_dotenv.dart';
+export 'package:cached_network_image/cached_network_image.dart';

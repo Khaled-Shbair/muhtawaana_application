@@ -1,8 +1,10 @@
 import '/config/all_imports.dart';
 
 class ProfileController extends GetxController {
+  static ProfileController get to => Get.find();
   final AppSettingsSharedPreferences _sharedPref =
       instance<AppSettingsSharedPreferences>();
+  final ProfileUseCase _profileUseCase = instance<ProfileUseCase>();
 
   String get userName => _sharedPref.getName;
 
@@ -32,9 +34,9 @@ class ProfileController extends GetxController {
       },
     ),
     ProfileCard(
-      name: ManagerStrings.notifications,
-      icon: Icons.notifications_outlined,
-      onTap: () => Get.toNamed(Routes.notificationsScreen),
+      name: ManagerStrings.changePassword,
+      icon: Icons.lock_outline,
+      onTap: () => Get.toNamed(Routes.changePasswordScreen),
     ),
     ProfileCard(
       name: ManagerStrings.logout,
@@ -42,4 +44,47 @@ class ProfileController extends GetxController {
       onTap: () => initLogout(),
     ),
   ];
+
+  Future<void> getProfileData() async {
+    (await _profileUseCase.execute()).fold(
+      (l) {},
+      (r) async {
+        await _sharedPref.setUser(
+          _dataUserModel(
+            points: r.data.points,
+            id: r.data.id,
+            phone: r.data.phone,
+            credit: r.data.credit,
+            email: r.data.email,
+            name: r.data.name,
+            image: r.data.image,
+            token: r.data.token,
+          ),
+        );
+      },
+    );
+    update();
+  }
+
+  DataUserModel _dataUserModel({
+    required String token,
+    required String name,
+    required String image,
+    required String email,
+    required String phone,
+    required int credit,
+    required int id,
+    required int points,
+  }) {
+    return DataUserModel(
+      token: token,
+      name: name,
+      image: image,
+      email: email,
+      credit: credit,
+      phone: phone,
+      id: id,
+      points: points,
+    );
+  }
 }

@@ -11,7 +11,6 @@ class CartController extends GetxController with ShowSnackBar {
   bool loading = false;
   List<ListOfProductsOfCartModel> allCartProducts = [];
   double totalPrice = 0;
-  double quantity = 1;
 
   @override
   onInit() {
@@ -58,10 +57,9 @@ class CartController extends GetxController with ShowSnackBar {
       (l) {},
       (r) {
         allCartProducts = [];
+        totalPrice = 0;
         allCartProducts = r.data.cartItems;
-        if (totalPrice == 0) {
-          totalPrice = r.data.total;
-        }
+        totalPrice = r.data.total;
         loading = false;
       },
     );
@@ -107,5 +105,18 @@ class CartController extends GetxController with ShowSnackBar {
 
   void buyButton() async {
     await PaymentController.to.makePayment(totalPrice);
+  }
+
+  void clearCart() async {
+    loading = true;
+    for (var e in allCartProducts) {
+      await addOrDeleteProductCart(e.product.id);
+    }
+    Get.back();
+    allCartProducts.clear();
+    backButton();
+    totalPrice = 0;
+    loading = false;
+    update();
   }
 }

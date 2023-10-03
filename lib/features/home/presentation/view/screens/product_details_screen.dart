@@ -45,8 +45,9 @@ class ProductDetailsScreen extends StatelessWidget {
                         children: [
                           ...List.generate(
                             data.images.length,
-                            (index) => Image.network(
-                              data.images[index],
+                            (index) => CachedNetworkImage(
+                              imageUrl: data.images[index],
+                              filterQuality: FilterQuality.high,
                             ),
                           ),
                         ],

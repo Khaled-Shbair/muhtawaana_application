@@ -84,4 +84,13 @@ const Map<String, String> en = {
   'no_notifications': 'No Notifications',
   'something_went_wrong_try_again': 'Something went wrong, try again',
   'it_will_be_added_later': 'It will be added later',
+  'dark_mode': 'Dark Mode',
+  'arabic_language': 'Arabic Language',
+  'enable_dark_theme': 'Enable dark theme',
+  'un_enable_dark_theme': 'Un Enable dark theme',
+  'english_language': 'English language',
+  'enable_english_language': 'Enable english language',
+  'un_enable_english_language': 'Un Enable english language',
+  'enable_notifications': 'Enable notifications',
+  'un_enable_notifications': 'Un Enable notifications',
 };

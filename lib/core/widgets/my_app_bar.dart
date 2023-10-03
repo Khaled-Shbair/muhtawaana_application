@@ -5,12 +5,13 @@ AppBar myAppBar({
   List<Widget>? actions,
   Function()? onPressed,
   bool appearLeading = true,
+  bool foregroundColor = true,
 }) {
   return AppBar(
     leading: appearLeading ? MyBackIcon(onPressed: onPressed) : null,
     backgroundColor: ManagerColors.whiteColor,
     shadowColor: ManagerColors.whiteColor,
-    foregroundColor: ManagerColors.whiteColor,
+    foregroundColor: foregroundColor ? ManagerColors.whiteColor : null,
     surfaceTintColor: ManagerColors.whiteColor,
     scrolledUnderElevation: AppConstants.scrolledUnderElevationAppBar,
     elevation: AppConstants.elevationAppBar,

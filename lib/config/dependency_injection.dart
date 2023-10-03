@@ -20,8 +20,8 @@ Future<void> _initFirebase() async {
   FbNotifications.manageNotificationAction();
   debugPrint('FCM: ${await FirebaseMessaging.instance.getToken()}');
 }
-////////////////////////////////////////////////////////////////////////////////
 
+////////////////////////////////////////////////////////////////////////////////
 Future<void> _initSharedPreferences() async {
   if (!GetIt.I.isRegistered<AppSettingsSharedPreferences>()) {
     final SharedPreferences sharedPref = await SharedPreferences.getInstance();
@@ -29,8 +29,8 @@ Future<void> _initSharedPreferences() async {
         () => AppSettingsSharedPreferences(sharedPref));
   }
 }
-////////////////////////////////////////////////////////////////////////////////
 
+////////////////////////////////////////////////////////////////////////////////
 Future<void> _intiInternetChecker() async {
   if (!GetIt.I.isRegistered<NetworkInfo>()) {
     InternetConnection internetConnection = InternetConnection();
@@ -38,8 +38,8 @@ Future<void> _intiInternetChecker() async {
         () => NetworkInfoImplementation(internetConnection));
   }
 }
-////////////////////////////////////////////////////////////////////////////////
 
+////////////////////////////////////////////////////////////////////////////////
 Future<void> _intiDio() async {
   if (!GetIt.I.isRegistered<DioFactory>()) {
     instance.registerLazySingleton<DioFactory>(() => DioFactory());
@@ -102,10 +102,37 @@ finishSignUp() async {
 
 ////////////////////////////////////////////////////////////////////////////////
 initChangePassword() {
+  if (!GetIt.I.isRegistered<RemoteChangePasswordDataSource>()) {
+    instance.registerLazySingleton<RemoteChangePasswordDataSource>(
+      () => RemoteChangePasswordDataSourceImplementation(instance<AppApi>()),
+    );
+  }
+  if (!GetIt.I.isRegistered<ChangePasswordRepository>()) {
+    instance.registerLazySingleton<ChangePasswordRepository>(
+      () => ChangePasswordRepositoryImplementation(
+        instance<NetworkInfo>(),
+        instance<RemoteChangePasswordDataSource>(),
+      ),
+    );
+  }
+  if (!GetIt.I.isRegistered<ChangePasswordUseCase>()) {
+    instance.registerFactory<ChangePasswordUseCase>(
+      () => ChangePasswordUseCase(instance<ChangePasswordRepository>()),
+    );
+  }
   Get.put<ChangePasswordController>(ChangePasswordController());
 }
 
 finishChangePassword() async {
+  if (GetIt.I.isRegistered<RemoteChangePasswordDataSource>()) {
+    await instance.unregister<RemoteChangePasswordDataSource>();
+  }
+  if (GetIt.I.isRegistered<ChangePasswordRepository>()) {
+    await instance.unregister<ChangePasswordRepository>();
+  }
+  if (GetIt.I.isRegistered<ChangePasswordUseCase>()) {
+    await instance.unregister<ChangePasswordUseCase>();
+  }
   await Get.delete<ChangePasswordController>();
 }
 
@@ -192,7 +219,8 @@ initMainController() {
   initCart();
   initCategories();
   initProfile();
-  initCategoryDetails();
+  initNotifications();
+  // initCategoryDetails();
   initFavorites();
   _finishSplash();
   _finishOnBoarding();
@@ -342,6 +370,7 @@ initCategoryDetails() {
       () => CategoryUseCase(instance<CategoryRepository>()),
     );
   }
+  Get.put<ProductOfCategoryController>(ProductOfCategoryController());
 }
 
 finishCategoryDetails() async {
@@ -354,6 +383,7 @@ finishCategoryDetails() async {
   if (GetIt.I.isRegistered<CategoryUseCase>()) {
     await instance.unregister<CategoryUseCase>();
   }
+  await Get.delete<ProductOfCategoryController>();
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -393,10 +423,37 @@ finishEditProfile() async {
 }
 
 initProfile() async {
+  if (!GetIt.I.isRegistered<RemoteProfileDataSource>()) {
+    instance.registerLazySingleton<RemoteProfileDataSource>(
+      () => RemoteProfileDataSourceImplementation(instance<AppApi>()),
+    );
+  }
+  if (!GetIt.I.isRegistered<ProfileRepository>()) {
+    instance.registerLazySingleton<ProfileRepository>(
+      () => ProfileRepositoryImplementation(
+        instance<NetworkInfo>(),
+        instance<RemoteProfileDataSource>(),
+      ),
+    );
+  }
+  if (!GetIt.I.isRegistered<ProfileUseCase>()) {
+    instance.registerLazySingleton<ProfileUseCase>(
+      () => ProfileUseCase(instance<ProfileRepository>()),
+    );
+  }
   Get.put<ProfileController>(ProfileController());
 }
 
 finishProfile() async {
+  if (GetIt.I.isRegistered<RemoteProfileDataSource>()) {
+    await instance.unregister<RemoteProfileDataSource>();
+  }
+  if (GetIt.I.isRegistered<ProfileRepository>()) {
+    await instance.unregister<ProfileRepository>();
+  }
+  if (GetIt.I.isRegistered<ProfileUseCase>()) {
+    await instance.unregister<ProfileUseCase>();
+  }
   await Get.delete<ProfileController>();
 }
 
@@ -515,5 +572,23 @@ initForgetPassword() async {
 
 finishForgetPassword() async {
   await Get.delete<ForgetPasswordController>();
+}
+
+////////////////////////////////////////////////////////////////////////////////
+initNotifications() async {
+  Get.put<NotificationsController>(NotificationsController());
+}
+
+finishNotifications() async {
+  await Get.delete<NotificationsController>();
+}
+
+////////////////////////////////////////////////////////////////////////////////
+initSettings() async {
+  Get.put<SettingsController>(SettingsController());
+}
+
+finishSettings() async {
+  await Get.delete<SettingsController>();
 }
 ////////////////////////////////////////////////////////////////////////////////
