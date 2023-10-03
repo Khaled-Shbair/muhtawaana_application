@@ -20,6 +20,7 @@ Future<void> _initFirebase() async {
   FbNotifications.manageNotificationAction();
   debugPrint('FCM: ${await FirebaseMessaging.instance.getToken()}');
 }
+
 ////////////////////////////////////////////////////////////////////////////////
 Future<void> _initSharedPreferences() async {
   if (!GetIt.I.isRegistered<AppSettingsSharedPreferences>()) {
@@ -28,6 +29,7 @@ Future<void> _initSharedPreferences() async {
         () => AppSettingsSharedPreferences(sharedPref));
   }
 }
+
 ////////////////////////////////////////////////////////////////////////////////
 Future<void> _intiInternetChecker() async {
   if (!GetIt.I.isRegistered<NetworkInfo>()) {
@@ -36,6 +38,7 @@ Future<void> _intiInternetChecker() async {
         () => NetworkInfoImplementation(internetConnection));
   }
 }
+
 ////////////////////////////////////////////////////////////////////////////////
 Future<void> _intiDio() async {
   if (!GetIt.I.isRegistered<DioFactory>()) {
@@ -101,12 +104,12 @@ finishSignUp() async {
 initChangePassword() {
   if (!GetIt.I.isRegistered<RemoteChangePasswordDataSource>()) {
     instance.registerLazySingleton<RemoteChangePasswordDataSource>(
-          () => RemoteChangePasswordDataSourceImplementation(instance<AppApi>()),
+      () => RemoteChangePasswordDataSourceImplementation(instance<AppApi>()),
     );
   }
   if (!GetIt.I.isRegistered<ChangePasswordRepository>()) {
     instance.registerLazySingleton<ChangePasswordRepository>(
-          () => ChangePasswordRepositoryImplementation(
+      () => ChangePasswordRepositoryImplementation(
         instance<NetworkInfo>(),
         instance<RemoteChangePasswordDataSource>(),
       ),
@@ -114,7 +117,7 @@ initChangePassword() {
   }
   if (!GetIt.I.isRegistered<ChangePasswordUseCase>()) {
     instance.registerFactory<ChangePasswordUseCase>(
-          () => ChangePasswordUseCase(instance<ChangePasswordRepository>()),
+      () => ChangePasswordUseCase(instance<ChangePasswordRepository>()),
     );
   }
   Get.put<ChangePasswordController>(ChangePasswordController());
@@ -217,7 +220,7 @@ initMainController() {
   initCategories();
   initProfile();
   initNotifications();
-  initCategoryDetails();
+  // initCategoryDetails();
   initFavorites();
   _finishSplash();
   _finishOnBoarding();
@@ -367,6 +370,7 @@ initCategoryDetails() {
       () => CategoryUseCase(instance<CategoryRepository>()),
     );
   }
+  Get.put<ProductOfCategoryController>(ProductOfCategoryController());
 }
 
 finishCategoryDetails() async {
@@ -379,6 +383,7 @@ finishCategoryDetails() async {
   if (GetIt.I.isRegistered<CategoryUseCase>()) {
     await instance.unregister<CategoryUseCase>();
   }
+  await Get.delete<ProductOfCategoryController>();
 }
 
 ////////////////////////////////////////////////////////////////////////////////
