@@ -188,6 +188,7 @@ export '/features/categories/domain/repository/category_repository.dart';
 export '/features/categories/data/repository_implementation/category_repository_implementation.dart';
 export '/features/categories/domain/use_case/category_use_case.dart';
 export '/features/categories/presentation/view/screens/products_of_category_screen.dart';
+export '/features/categories/presentation/controller/product_of_category_controller.dart';
 
 // favorites feature
 export '/features/favorites/domain/model/favorites_model.dart';
