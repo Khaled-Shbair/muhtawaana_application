@@ -34,9 +34,9 @@ class ProfileController extends GetxController {
       },
     ),
     ProfileCard(
-      name: ManagerStrings.notifications,
-      icon: Icons.notifications_outlined,
-      onTap: () => Get.toNamed(Routes.notificationsScreen),
+      name: ManagerStrings.changePassword,
+      icon: Icons.lock_outline,
+      onTap: () => Get.toNamed(Routes.changePasswordScreen),
     ),
     ProfileCard(
       name: ManagerStrings.logout,
