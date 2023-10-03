@@ -5,59 +5,59 @@ class ChangePasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      backgroundColor: ManagerColors.whiteColor,
-      appBar: AppBar(
-        title: Text(
-          ManagerStrings.changePassword,
-          style: titleAppBarInAuthScreen(),
-        ),
-        leading: MyBackIcon(onPressed: () => finishChangePassword()),
-      ),
-      body: Stack(
-        alignment: AlignmentDirectional.bottomEnd,
-        children: [
-          SvgPicture.asset(
-            ManagerAssets.bottomLeftCorner,
-            height: ManagerHeight.h293,
-            width: double.infinity,
+    return GetBuilder<ChangePasswordController>(
+      builder: (controller) {
+        return Scaffold(
+          resizeToAvoidBottomInset: false,
+          backgroundColor: ManagerColors.whiteColor,
+          appBar: AppBar(
+            title: Text(
+              ManagerStrings.changePassword,
+              style: titleAppBarInAuthScreen(),
+            ),
+            leading: MyBackIcon(onPressed: () => controller.backButton()),
           ),
-          Column(
+          body: Stack(
+            alignment: AlignmentDirectional.bottomEnd,
             children: [
-              SizedBox(height: ManagerHeight.h24),
               SvgPicture.asset(
-                ManagerAssets.changePasswordImage,
-                height: ManagerHeight.h200,
-                width: ManagerWidth.w230,
+                ManagerAssets.bottomLeftCorner,
+                height: ManagerHeight.h293,
+                width: double.infinity,
               ),
-              Container(
-                margin: EdgeInsetsDirectional.only(
-                  start: ManagerWidth.w20,
-                  end: ManagerWidth.w16,
-                  top: ManagerHeight.h36,
-                ),
-                padding: EdgeInsetsDirectional.only(
-                  start: ManagerWidth.w24,
-                  end: ManagerWidth.w24,
-                  top: ManagerHeight.h24,
-                  bottom: ManagerHeight.h30,
-                ),
-                decoration: BoxDecoration(
-                  color: ManagerColors.whiteColor,
-                  borderRadius: BorderRadius.circular(ManagerRadius.r30),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: ManagerColors.shadow_09,
-                      offset: Offset(0, 10),
-                      spreadRadius: 5,
-                      blurRadius: 10,
+              Column(
+                children: [
+                  SizedBox(height: ManagerHeight.h24),
+                  SvgPicture.asset(
+                    ManagerAssets.changePasswordImage,
+                    height: ManagerHeight.h200,
+                    width: ManagerWidth.w230,
+                  ),
+                  Container(
+                    margin: EdgeInsetsDirectional.only(
+                      start: ManagerWidth.w20,
+                      end: ManagerWidth.w16,
+                      top: ManagerHeight.h36,
                     ),
-                  ],
-                ),
-                child: GetBuilder<ChangePasswordController>(
-                  builder: (controller) {
-                    return Form(
+                    padding: EdgeInsetsDirectional.only(
+                      start: ManagerWidth.w24,
+                      end: ManagerWidth.w24,
+                      top: ManagerHeight.h24,
+                      bottom: ManagerHeight.h30,
+                    ),
+                    decoration: BoxDecoration(
+                      color: ManagerColors.whiteColor,
+                      borderRadius: BorderRadius.circular(ManagerRadius.r30),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: ManagerColors.shadow_09,
+                          offset: Offset(0, 10),
+                          spreadRadius: 5,
+                          blurRadius: 10,
+                        ),
+                      ],
+                    ),
+                    child: Form(
                       key: controller.formKey,
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -104,14 +104,14 @@ class ChangePasswordScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                    );
-                  },
-                ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
