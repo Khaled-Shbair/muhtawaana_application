@@ -49,6 +49,8 @@ class MySearch extends StatelessWidget {
           highlightColor: ManagerColors.transparentColor,
           splashColor: ManagerColors.transparentColor,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SvgPicture.asset(
                 ManagerAssets.searchIcon,
@@ -65,6 +67,9 @@ class MySearch extends StatelessWidget {
                   controller: controller,
                   style: styleOfSearchInMySearch(ManagerColors.blackColor),
                   decoration: InputDecoration(
+                    contentPadding: EdgeInsetsDirectional.only(
+                      bottom: ManagerHeight.h10,
+                    ),
                     hintText: ManagerStrings.search,
                     hintStyle: styleOfSearchInMySearch(),
                     border:
