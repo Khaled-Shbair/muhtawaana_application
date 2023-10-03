@@ -17,10 +17,15 @@ class HomeCategory extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             separatorBuilder: (context, index) =>
                 SizedBox(width: ManagerWidth.w8),
-            itemCount: controller.categories.length,
+            itemCount: controller.loading ? 8 : controller.categories.length,
             itemBuilder: (context, index) {
-              var data = controller.categories[index];
-              if (controller.loading == false) {
+              if (controller.loading) {
+                return MainShimmer(
+                  height: double.infinity,
+                  width: ManagerWidth.w80,
+                );
+              } else {
+                var data = controller.categories[index];
                 return Container(
                   padding: EdgeInsetsDirectional.only(
                     top: ManagerHeight.h10,
@@ -50,8 +55,6 @@ class HomeCategory extends StatelessWidget {
                     ],
                   ),
                 );
-              } else {
-                return const MainShimmer();
               }
             },
           ),
