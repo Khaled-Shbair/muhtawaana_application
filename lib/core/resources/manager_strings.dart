@@ -84,4 +84,13 @@ class ManagerStrings {
   static String itWillBeAddedLater = 'it_will_be_added_later'.tr;
   static String somethingWentWrongTryAgain =
       'something_went_wrong_try_again'.tr;
+  static String darkMode = 'dark_mode'.tr;
+  static String enableDarkTheme = 'enable_dark_theme'.tr;
+  static String unEnableDarkTheme = 'un_enable_dark_theme'.tr;
+  static String arabicLanguage = 'arabic_language'.tr;
+  static String englishLanguage = 'english_language'.tr;
+  static String enableEnglishLanguage = 'enable_english_language'.tr;
+  static String unEnableEnglishLanguage = 'un_enable_english_language'.tr;
+  static String enableNotifications = 'enable_notifications'.tr;
+  static String unEnableNotifications = 'un_enable_notifications'.tr;
 }
