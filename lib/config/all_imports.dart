@@ -279,6 +279,11 @@ export '/features/payment/presentation/controller/payment_controller.dart';
 export '/features/notifications/presentation/view/screens/notifications_screen.dart';
 export '/features/notifications/presentation/controller/notifications_controller.dart';
 
+//settings feature
+export '/features/settings/presentation/controller/settings_controller.dart';
+export '/features/settings/presentation/view/screens/settings_screen.dart';
+export '/features/settings/presentation/view/widgets/my_switch_button.dart';
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 /** external libraries **/
