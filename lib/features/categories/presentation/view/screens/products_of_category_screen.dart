@@ -7,16 +7,17 @@ class ProductsOfCategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<CategoriesController>(
+    return GetBuilder<ProductOfCategoryController>(
       builder: (controller) {
         return Scaffold(
-          appBar: myAppBar(text: ManagerStrings.categoryProducts),
+          appBar: myAppBar(
+              text: ManagerStrings.categoryProducts,
+              onPressed: () => controller.backButton()),
           body: GridView.builder(
             shrinkWrap: true,
             padding: EdgeInsetsDirectional.symmetric(
               horizontal: ManagerWidth.w16,
             ),
-            physics: const NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: ManagerWidth.w10,
@@ -43,8 +44,7 @@ class ProductsOfCategoryScreen extends StatelessWidget {
                   oldPrice: data.oldPrice,
                   price: data.price,
                   data: data,
-                  buttonFavorites: () {},
-                  // buttonFavorites: () => controller.buttonFavorites(data.id),
+                  buttonFavorites: () => controller.buttonFavorites(data.id),
                 );
               }
             },
