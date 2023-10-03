@@ -16,14 +16,15 @@ class FavoritesController extends GetxController with ShowSnackBar {
     (await _useCase.execute(FavoritesBaseUseCaseInput(productId: productId)))
         .fold(
       (l) => showSnackBar(l.message, true),
-      (r) => getAllProductsFavorites(),
+      (r) async {
+        await getAllProductsFavorites();
+      },
     );
     update();
   }
 
   void buttonFavorites(int productId) async {
     HomeController.to.buttonFavorites(productId);
-    getAllProductsFavorites();
     update();
   }
 
