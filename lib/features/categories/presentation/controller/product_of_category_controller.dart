@@ -26,7 +26,7 @@ class ProductOfCategoryController extends GetxController {
         e.inFavorites = !e.inFavorites;
       }
     }
-    FavoritesController.to.addOrDeleteProductFavorites(id);
+    FavoritesController.to.buttonFavorites(id);
     update();
   }
 
