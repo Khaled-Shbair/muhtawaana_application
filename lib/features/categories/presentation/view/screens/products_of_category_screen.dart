@@ -11,8 +11,9 @@ class ProductsOfCategoryScreen extends StatelessWidget {
       builder: (controller) {
         return Scaffold(
           appBar: myAppBar(
-              text: ManagerStrings.categoryProducts,
-              onPressed: () => controller.backButton()),
+            text: ManagerStrings.categoryProducts,
+            onPressed: () => controller.backButton(),
+          ),
           body: GridView.builder(
             shrinkWrap: true,
             padding: EdgeInsetsDirectional.symmetric(

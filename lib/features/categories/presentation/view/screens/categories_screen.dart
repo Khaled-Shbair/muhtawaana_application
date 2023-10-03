@@ -54,7 +54,7 @@ class CategoriesScreen extends StatelessWidget {
                         ),
                       ],
                       image: DecorationImage(
-                        image: NetworkImage(data.image),
+                        image: CachedNetworkImageProvider(data.image),
                         filterQuality: FilterQuality.high,
                         fit: BoxFit.fill,
                       ),

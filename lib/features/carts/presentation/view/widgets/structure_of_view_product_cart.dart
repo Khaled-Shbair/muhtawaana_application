@@ -41,9 +41,7 @@ class StructureOfViewProductCart extends StatelessWidget {
               color: ManagerColors.whiteColor,
               borderRadius: BorderRadius.circular(ManagerRadius.r10),
               image: DecorationImage(
-                image: NetworkImage(
-                  data.image,
-                ),
+                image: CachedNetworkImageProvider(data.image),
                 filterQuality: FilterQuality.high,
               ),
             ),

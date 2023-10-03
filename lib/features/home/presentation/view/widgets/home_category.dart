@@ -42,7 +42,7 @@ class HomeCategory extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         radius: ManagerRadius.r20,
-                        backgroundImage: NetworkImage(data.image),
+                        backgroundImage: CachedNetworkImageProvider(data.image),
                       ),
                       SizedBox(height: ManagerHeight.h10),
                       Text(

@@ -309,3 +309,4 @@ export '/firebase_options.dart';
 export 'package:google_sign_in/google_sign_in.dart';
 export 'package:firebase_messaging/firebase_messaging.dart';
 export 'package:flutter_dotenv/flutter_dotenv.dart';
+export 'package:cached_network_image/cached_network_image.dart';

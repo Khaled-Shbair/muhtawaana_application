@@ -12,7 +12,7 @@ AppBar homeAppBar({
     leading: Padding(
       padding: EdgeInsetsDirectional.only(start: ManagerWidth.w16),
       child: CircleAvatar(
-        backgroundImage: NetworkImage(imageUser),
+        backgroundImage: CachedNetworkImageProvider(imageUser),
       ),
     ),
     title: Column(

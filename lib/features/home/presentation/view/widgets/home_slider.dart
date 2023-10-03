@@ -17,9 +17,9 @@ class HomeSlider extends StatelessWidget {
         items: sliders.map((e) {
           return ClipRRect(
             borderRadius: BorderRadius.circular(ManagerRadius.r10),
-            child: Image(
+            child: CachedNetworkImage(
               fit: BoxFit.fill,
-              image: NetworkImage(e.image),
+              imageUrl: e.image,
               filterQuality: FilterQuality.high,
             ),
           );
