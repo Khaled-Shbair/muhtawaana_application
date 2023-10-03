@@ -127,7 +127,6 @@ TextStyle nameOfCategoryInHomeCategoryOfHomeScreen() {
     fontSize: ManagerFontSize.s12,
     color: ManagerColors.c5,
     height: 1.2,
-
   );
 }
 
@@ -373,4 +372,24 @@ TextStyle totalOfProductInCartScreen([bool isTotalPrice = false]) {
       fontFamily: ManagerFontFamily.roboto,
     );
   }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+/// Text style of settings feature
+TextStyle titleInMySwitchButton() {
+  return mediumTextStyle(
+    fontFamily: ManagerFontFamily.roboto,
+    fontSize: ManagerFontSize.s17,
+    color: ManagerColors.blackColor,
+    height: 0,
+  );
+}
+
+TextStyle subTitleInMySwitchButton() {
+  return regularTextStyle(
+    fontFamily: ManagerFontFamily.roboto,
+    fontSize: ManagerFontSize.s10,
+    color: ManagerColors.c30,
+    height: 0,
+  );
 }
