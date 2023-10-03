@@ -47,6 +47,9 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const CartScreen());
       case Routes.notificationsScreen:
         return MaterialPageRoute(builder: (_) => const NotificationsScreens());
+      case Routes.settingsScreen:
+        initSettings();
+        return MaterialPageRoute(builder: (_) => const SettingsScreen());
       default:
         return unDefinedRoute();
     }
